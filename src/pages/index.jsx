@@ -9,12 +9,8 @@ import intakeInfo from "../content/intake";
 const IndexPage = function (props) {
   let { language, languageToUse } = props;
 
-  language === "english" ? (languageToUse = content.english) : null;
-  language === "french" ? (languageToUse = content.french) : null;
-  language === "dutch" ? (languageToUse = content.dutch) : null;
+  languageToUse = content.french;
 
-  console.log(languageToUse);
-  console.log(languageToUse.metaKeywords);
   return (
     <div>
       <Helmet>
@@ -25,6 +21,7 @@ const IndexPage = function (props) {
         <link rel="canonical" href={intakeInfo.domainName} />
       </Helmet>
       <div className="header-placeholder" />
+      <h1>Bowling Val Thorens</h1>
     </div>
   );
 };
