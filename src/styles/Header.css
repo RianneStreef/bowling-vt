@@ -1,7 +1,9 @@
 .header {
   position: fixed;
-  background-color: var(--color-background-light);
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
   width: 100vw;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,6 +12,18 @@
 
 .links {
   display: flex;
+}
+
+.mobile-title {
+  color: var(--color-text-light);
+  text-decoration: none;
+  padding: var(--padding-mobile);
+  text-align: left;
+}
+
+.mobile-title:visited {
+  color: var(--color-text-light);
+  text-decoration: none;
 }
 
 .links li {

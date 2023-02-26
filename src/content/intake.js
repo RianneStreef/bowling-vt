@@ -1,13 +1,13 @@
 const intakeInfo = {
-  companyName: "Template",
-  companyAddress: "Template Street",
-  domainName: "www.template.com",
+  companyName: "Bowling Val Thorens",
+  companyAddress: "Place de l'Arche, 73440 Les Belleville",
+  domainName: "https://www.bowlingvalthorens.com",
   contactEmail: "",
 
-  siteName: "Template site",
-  highlightColor: "#ff00ff",
+  siteName: "Bowling Val Thorens",
+  highlightColor: "#00ffff",
 
-  taxNumber: "1313",
+  taxNumber: "49143490800019",
 };
 
 export default intakeInfo;

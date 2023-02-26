@@ -8,13 +8,13 @@ const Layout = ({ children }) => {
   let languageToUse = "";
   let languageInStorage = "";
 
-  useEffect(() => {
-    if (localStorage.getItem("languageInStorage")) {
-      setLanguage(languageInStorage);
-      console.log("language found");
-      console.log(languageInStorage);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("languageInStorage")) {
+  //     setLanguage(languageInStorage);
+  //     console.log("language found");
+  //     console.log(languageInStorage);
+  //   }
+  // }, []);
 
   const childrenWithProps = React.Children.map(children, (child) =>
     React.cloneElement(child, {

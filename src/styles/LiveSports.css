@@ -1,0 +1,30 @@
+.live-sports {
+  background-image: url("../images/live-sports-bg.jpg");
+  background-position: center;
+  padding: 0 50px 50px 50px;
+}
+
+.program {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
+  padding: var(--padding-mobile);
+}
+
+.program-day {
+  font-size: 20px;
+  margin: 20px;
+}
+
+.program table {
+  text-align: left;
+  font-size: 12px;
+}
+
+.program td {
+  padding-right: 5px;
+}
+
+.week-program {
+  width: 100%;
+  height: auto;
+}

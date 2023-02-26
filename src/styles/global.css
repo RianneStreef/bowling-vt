@@ -1,14 +1,45 @@
-html {
-  font-size: calc(60% + 0.8vmin);
+:root {
+  --color-highlight: #00ffff;
+  --color-shadow: #eaeaea;
+  --color-text-light: #fff;
+  --color-text-dark: #000;
+  --color-background-dark: #000;
+  --color-background-light: #fff;
+
+  --font-size-mobile: 20px;
+  --font-size-desktop: 35px;
+  --line-height-mobile: 30px;
+  --line-height-desktop: 40px;
+
+  --padding-mobile: 20px;
 }
 
-* {
-  font-size: 1rem;
+@font-face {
+  font-family: "Futura";
+  src: local("Futura"),
+    url(../fonts/futura/futura\ light\ bt.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura Bold";
+  src: local("Futura Bold"), url(../fonts/futura/futur.ttf) format("truetype");
+  font-display: swap;
+}
+
+html {
+  font-size: calc(60% + 0.8vmin);
+  font-family: Futura;
+}
+
+body {
+  margin: 0;
+  text-align: center;
 }
 
 main {
   max-width: 40rem;
-  margin: 0 auto;
+  margin: 0;
 }
 
 h1 {
@@ -17,6 +48,8 @@ h1 {
 
 h2 {
   font-size: 1.6rem;
+  margin: 0;
+  padding: var(--padding-mobile);
 }
 
 h3 {
@@ -56,4 +89,11 @@ h3 {
 
 .header-placeholder {
   height: 80px;
+  background-color: var(--color-background-dark);
+}
+
+.divider {
+  background-color: var(--color-background-dark);
+  height: 100px;
+  width: 100vw;
 }

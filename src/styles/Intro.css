@@ -1,0 +1,9 @@
+.intro {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
+  padding: var(--padding-mobile);
+}
+
+.intro h1 {
+  color: var(--color-highlight);
+}

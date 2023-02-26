@@ -7,7 +7,6 @@ import logo from "../images/icon.png";
 
 import flagEn from "../images/icon-en.png";
 import flagFr from "../images/icon-fr.png";
-import flagNl from "../images/icon-nl.png";
 
 import { content } from "../content/languages";
 
@@ -23,20 +22,13 @@ const Header = (props) => {
 
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
-  language === "dutch" ? (languageToUse = content.dutch) : null;
+
   return (
     <div className="header">
-      <div className="hidden-desktop">
-        <Burger
-          language={language}
-          setLanguage={setLanguage}
-          languageToUse={languageToUse}
-        />
-      </div>
       <ul className="links hidden-mobile">
         <li>
           <Link to="/" className="nav-link">
-            Welcome
+            {languageToUse.welcome}
           </Link>
         </li>
 
@@ -44,7 +36,6 @@ const Header = (props) => {
           <div className="set-language">
             <button
               onClick={() => handleSetLanguage("english")}
-              onKeyPress={() => handleSetLanguage("english")}
               className="invisible-button"
             >
               <img
@@ -57,7 +48,6 @@ const Header = (props) => {
             </button>
             <button
               onClick={() => handleSetLanguage("french")}
-              onKeyPress={() => handleSetLanguage("french")}
               className="invisible-button"
             >
               <img
@@ -68,25 +58,23 @@ const Header = (props) => {
                 } `}
               />
             </button>
-            <button
-              onClick={() => handleSetLanguage("dutch")}
-              onKeyPress={() => handleSetLanguage("dutch")}
-              className="invisible-button"
-            >
-              <img
-                src={flagNl}
-                alt="nederlands"
-                className={`flag ${
-                  languageToUse.language === "dutch" ? "opaque" : "fade"
-                } `}
-              />
-            </button>
           </div>
         </li>
       </ul>
-      <Link to="/" className="logo-link">
+      <Link to="/" className="logo-link hidden-mobile">
         <img src={logo} alt="Logo" className="logo" />
       </Link>
+      <Link to="/" className="hidden-desktop mobile-title">
+        <p>BOWLING - SPORT'S BAR</p>
+        <p>VAL THORENS</p>
+      </Link>
+      <div className="hidden-desktop">
+        <Burger
+          language={language}
+          setLanguage={setLanguage}
+          languageToUse={languageToUse}
+        />
+      </div>
     </div>
   );
 };
