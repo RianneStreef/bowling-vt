@@ -22,6 +22,13 @@ export const french = {
 
   weekProgram: "programme de la semaine",
 
+  activity1Description1:
+    "A votre disposition, 8 pistes de bowling ultra modernes et homologuées QUBICA AMF.",
+  activity1Description2:
+    "La nuit, les pistes se dévoilent sous une ambiance fluo. Convivialité assurée !",
+  activity1Description3:
+    "Toutes les pistes sont équipées de barrières pour enfant.",
+
   contact: "Contact",
   contactIntro: "Contact intro",
   name: "Nom",
@@ -30,4 +37,7 @@ export const french = {
   send: "Envoyer",
 
   thanks: "Merci pour votre message!",
+
+  rights: "Tous droits réservés",
+  legal: "Mentions légales",
 };

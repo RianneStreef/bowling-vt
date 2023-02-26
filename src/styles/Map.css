@@ -1,0 +1,4 @@
+.map {
+  background-color: var(--color-highlight);
+  padding: 50px var(--padding-mobile);
+}

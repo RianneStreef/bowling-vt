@@ -1,0 +1,17 @@
+.activities {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
+  padding-bottom: 50px;
+}
+
+.activity-description {
+  padding: var(--padding-mobile);
+  margin: var(--margin-mobile);
+  color: var(--color-text-dark);
+}
+
+.activity-description-1 {
+  background-image: url("../images/bowling-background-white.jpg");
+  background-position: center;
+  background-size: cover;
+}

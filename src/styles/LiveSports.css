@@ -1,13 +1,16 @@
 .live-sports {
   background-image: url("../images/live-sports-bg.jpg");
   background-position: center;
-  padding: 0 50px 50px 50px;
+  padding-bottom: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .program {
   background-color: var(--color-background-dark);
   color: var(--color-text-light);
   padding: var(--padding-mobile);
+  margin: var(--margin-mobile);
 }
 
 .program-day {
@@ -27,4 +30,8 @@
 .week-program {
   width: 100%;
   height: auto;
+}
+
+.insta-feed {
+  z-index: 5;
 }

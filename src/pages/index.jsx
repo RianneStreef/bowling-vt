@@ -11,6 +11,8 @@ import Intro from "../components/Intro";
 import LiveSports1 from "../components/LiveSports1";
 import LiveSports2 from "../components/LiveSports2";
 import LiveSports3 from "../components/LiveSports3";
+import Activities from "../components/Activities";
+import Map from "../components/Map";
 
 const IndexPage = function (props) {
   let { language, languageToUse } = props;
@@ -37,6 +39,8 @@ const IndexPage = function (props) {
       <LiveSports1 language={language} languageToUse={languageToUse} />
       <LiveSports2 language={language} languageToUse={languageToUse} />
       <LiveSports3 language={language} languageToUse={languageToUse} />
+      <Activities language={language} languageToUse={languageToUse} />
+      <Map />
     </div>
   );
 };
