@@ -13,13 +13,13 @@ const Activities = (props) => {
 
   function handleClickLeft() {
     if (activeSheet === 1) {
-      setActive(4);
+      setActiveSheet(4);
     } else setActiveSheet(activeSheet - 1);
   }
 
   function handleClickRight() {
     if (activeSheet === 4) {
-      setActive(1);
+      setActiveSheet(1);
     } else setActiveSheet(activeSheet + 1);
   }
 
@@ -30,7 +30,10 @@ const Activities = (props) => {
       </div>
       <div>
         <div className="activities-container">
-          <div className="activity activity-1">
+          <div
+            className={`activity ${activeSheet === 1 ? "active-activity" : ""}
+}`}
+          >
             <h2>BOWLING</h2>
             <div className="activity-description activity-description-1">
               <p>{languageToUse.activity1Description1}</p>
@@ -40,7 +43,10 @@ const Activities = (props) => {
               <p className="p-no-margin">{languageToUse.activity1Price2}</p>
             </div>
           </div>
-          <div className="activity activity-2">
+          <div
+            className={`activity ${activeSheet === 2 ? "active-activity" : ""}
+}`}
+          >
             <h2>BAR</h2>
             <div className="activity-description activity-description-2">
               <p>{languageToUse.activity1Description1}</p>
@@ -50,7 +56,11 @@ const Activities = (props) => {
               <p className="p-no-margin">{languageToUse.activity1Price2}</p>
             </div>
           </div>
-          <div className="activity activity-3">
+          <div
+            className={`activity ${activeSheet === 3 ? "active-activity" : ""}
+}`}
+          >
+            {" "}
             <h2>BILLARDS</h2>
             <div className="activity-description activity-description-3">
               <p>{languageToUse.activity1Description1}</p>
@@ -60,7 +70,11 @@ const Activities = (props) => {
               <p className="p-no-margin">{languageToUse.activity1Price2}</p>
             </div>
           </div>
-          <div className="activity activity-4">
+          <div
+            className={`activity ${activeSheet === 4 ? "active-activity" : ""}
+}`}
+          >
+            {" "}
             <h2>SALLE DE JEUX</h2>
             <div className="activity-description activity-description-4">
               <p>{languageToUse.activity1Description1}</p>

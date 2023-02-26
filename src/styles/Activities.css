@@ -18,10 +18,20 @@
   margin-top: 0;
 }
 
-/* .activities-container {
-  overflow: hidden;
-  display: flex;
+/* .activity-container {
+  position: relative;
 } */
+
+.activity {
+  /* position: absolute; */
+  opacity: 0;
+  transition: opacity 1000ms fade-out;
+}
+
+.active-activity {
+  opacity: 100%;
+  transition: opacity 1000ms fade-in;
+}
 
 .activity-description {
   padding: var(--padding-mobile);
