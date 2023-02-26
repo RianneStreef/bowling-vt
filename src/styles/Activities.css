@@ -1,17 +1,44 @@
 .activities {
   background-color: var(--color-background-dark);
   color: var(--color-text-light);
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+  display: flex;
 }
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.arrow-container span {
+  font-size: 30px;
+  padding: 30px;
+  margin-top: 0;
+}
+
+/* .activities-container {
+  overflow: hidden;
+  display: flex;
+} */
 
 .activity-description {
   padding: var(--padding-mobile);
-  margin: var(--margin-mobile);
   color: var(--color-text-dark);
+  background-position: center;
+  background-size: cover;
 }
 
 .activity-description-1 {
   background-image: url("../images/bowling-background-white.jpg");
-  background-position: center;
-  background-size: cover;
+}
+.activity-description-2 {
+  background-image: url("../images/bowling-background-white.jpg");
+}
+.activity-description-3 {
+  background-image: url("../images/bowling-background-white.jpg");
+}
+.activity-description-4 {
+  background-image: url("../images/bowling-background-white.jpg");
 }

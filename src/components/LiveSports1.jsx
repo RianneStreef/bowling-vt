@@ -16,7 +16,7 @@ const LiveSports1 = (props) => {
         <h2>LIVE SPORTS TV</h2>
         <div className="program">
           <p className="program-day">{languageToUse.saturday}</p>
-          <p className="program-info">
+          <div className="program-info">
             <table>
               <tr>
                 <th>15h00</th>
@@ -29,9 +29,9 @@ const LiveSports1 = (props) => {
                 <td>FRANCE - SCOTLAND</td>
               </tr>
             </table>
-          </p>
+          </div>
           <p className="program-day">{languageToUse.sunday}</p>
-          <p className="program-info">
+          <div className="program-info">
             <table>
               <tr>
                 <th>15h00</th>
@@ -44,9 +44,9 @@ const LiveSports1 = (props) => {
                 <td>FRANCE - SCOTLAND</td>
               </tr>
             </table>
-          </p>
+          </div>
           <p className="program-day">{languageToUse.monday}</p>
-          <p className="program-info">
+          <div className="program-info">
             <table>
               <tr>
                 <th>15h00</th>
@@ -59,9 +59,9 @@ const LiveSports1 = (props) => {
                 <td>FRANCE - SCOTLAND</td>
               </tr>
             </table>
-          </p>
+          </div>
           <p className="program-day">{languageToUse.tuesday}</p>
-          <p className="program-info">
+          <div className="program-info">
             <table>
               <tr>
                 <th>15h00</th>
@@ -74,9 +74,9 @@ const LiveSports1 = (props) => {
                 <td>FRANCE - SCOTLAND</td>
               </tr>
             </table>
-          </p>
+          </div>
           <p className="program-day">{languageToUse.wednesday}</p>
-          <p className="program-info">
+          <div className="program-info">
             <table>
               <tr>
                 <th>15h00</th>
@@ -89,9 +89,9 @@ const LiveSports1 = (props) => {
                 <td>FRANCE - SCOTLAND</td>
               </tr>
             </table>
-          </p>
+          </div>
           <p className="program-day">{languageToUse.thursday}</p>
-          <p className="program-info">
+          <div className="program-info">
             <table>
               <tr>
                 <th>15h00</th>
@@ -104,9 +104,9 @@ const LiveSports1 = (props) => {
                 <td>FRANCE - SCOTLAND</td>
               </tr>
             </table>
-          </p>
+          </div>
           <p className="program-day">{languageToUse.friday}</p>
-          <p className="program-info">
+          <div className="program-info">
             <table>
               <tr>
                 <th>15h00</th>
@@ -119,7 +119,7 @@ const LiveSports1 = (props) => {
                 <td>FRANCE - SCOTLAND</td>
               </tr>
             </table>
-          </p>
+          </div>
         </div>
       </div>
       <div className="divider" />

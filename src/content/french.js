@@ -28,6 +28,8 @@ export const french = {
     "La nuit, les pistes se dévoilent sous une ambiance fluo. Convivialité assurée !",
   activity1Description3:
     "Toutes les pistes sont équipées de barrières pour enfant.",
+  activity1Price1: "Location de chaussures - 2,00 € / personne",
+  activity1Price2: "1 partie de Bowling	- 10,00 € / personne",
 
   contact: "Contact",
   contactIntro: "Contact intro",
