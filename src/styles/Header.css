@@ -31,19 +31,17 @@
   display: flex;
 }
 
-.logo {
-  width: 80%;
-  margin: 10px;
-}
-
 .nav-link {
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
   text-decoration: none;
-  margin: 10px;
+  margin: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo-link {
-  text-align: right;
+.nav-link-dash {
+  display: none;
 }
 
 .nav-link:hover {
@@ -51,7 +49,7 @@
 }
 
 .nav-link:visited {
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
 }
 
 .header ul {
@@ -68,5 +66,25 @@
   }
   .hidden-desktop {
     display: none;
+  }
+
+  .setLanguage {
+    margin-right: 50px;
+  }
+
+  .nav-link-dash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-link {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .logo {
+    width: 15%;
+    margin: 10px;
   }
 }

@@ -31,6 +31,22 @@ export const french = {
   activity1Price1: "Location de chaussures - 2,00 € / personne",
   activity1Price2: "1 partie de Bowling	- 10,00 € / personne",
 
+  activity2Description1:
+    "Tous les jours de l'hiver, les plus beaux événements sportifs sont retransmis en 'live'.",
+  activity2Description2:
+    "Confort assuré au sport's bar 'La Bicicleta' grace aux multiples écrans.",
+  activity2Description3:
+    "Rien d'impossible à 'La Bicicleta'. La technologie moderne des équipements vous permettra de visionner jusqu'à 4 évènement sportif en simultané...",
+
+  activity3Description1:
+    "Une grande variété de billards pour autant de plaisir s'offrent à vous dans nos deux salles de billards.",
+  activity3Description2: "7 pool anglais (8 ball) de 7 feet",
+  activity3Description3: "1 américain de 9 feet",
+
+  activity4Description1: "De nombreaux jeux sont à votre disposition :",
+  activity4Description2: "Simulateur de F1",
+  activity4Description3: "Jeux vidéos",
+
   contact: "Contact",
   contactIntro: "Contact intro",
   name: "Nom",

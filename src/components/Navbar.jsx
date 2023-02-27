@@ -7,6 +7,8 @@ import flagFr from "../images/icon-fr.png";
 
 import { content } from "../content/languages";
 
+import Menu from "../components/Menu";
+
 const Ul = styled.ul`
   list-style: none;
   display: flex;
@@ -24,7 +26,6 @@ const Ul = styled.ul`
     color: #fff;
     padding-right: 25px;
     margin: 10px 0;
-    font-family: "Source Sans Pro Bold";
     font-size: 20px;
     a {
       color: #fff;
@@ -71,11 +72,7 @@ const Navbar = (props) => {
   return (
     <div className="nav-bar">
       <Ul open={open}>
-        <li>
-          <Link to="/" className="nav-link" onClick={() => setOpen(!open)}>
-            Welcome
-          </Link>
-        </li>
+        <Menu open={open} setOpen={setOpen} />
 
         <li className="social-links-header">
           <div className="nav-item-language">

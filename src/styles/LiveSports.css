@@ -9,7 +9,7 @@
 .program {
   background-color: var(--color-background-dark);
   color: var(--color-text-light);
-  padding: var(--padding-mobile);
+  padding: 10px;
   margin: var(--margin-mobile);
 }
 
@@ -25,6 +25,7 @@
 
 .program td {
   padding-right: 5px;
+  width: fit-content;
 }
 
 .week-program {
@@ -34,4 +35,24 @@
 
 .insta-feed {
   z-index: 5;
+}
+
+@media only screen and (min-width: 768px) {
+  .program {
+    margin: var(--margin-desktop);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 0;
+  }
+
+  .program-day {
+    font-size: 40px;
+    margin: 20px;
+  }
+
+  .program table {
+    font-size: 20px;
+  }
 }

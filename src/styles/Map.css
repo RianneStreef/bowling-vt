@@ -1,4 +1,18 @@
-.map {
+.contact {
+  display: flex;
+  justify-content: space-evenly;
   background-color: var(--color-highlight);
   padding: 50px var(--padding-mobile);
+}
+
+/* .google-map-iframe {
+  filter: grayscale(100%);
+} */
+
+@media only screen and (min-width: 768px) {
+  .contact-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

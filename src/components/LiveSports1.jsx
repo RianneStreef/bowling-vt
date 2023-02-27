@@ -12,7 +12,9 @@ const LiveSports1 = (props) => {
 
   return (
     <>
-      <div className="live-sports">
+      <div className="live-sports" id="live">
+        <div className="header-placeholder" />
+
         <h2>LIVE SPORTS TV</h2>
         <div className="program">
           <p className="program-day">{languageToUse.saturday}</p>
