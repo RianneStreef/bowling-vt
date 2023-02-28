@@ -33,7 +33,7 @@ const IndexPage = function (props) {
           data-usrc
         ></script>
       </Helmet>
-      <div className="header-placeholder" />
+      <div className="header-placeholder-mobile" />
       <Hero language={language} languageToUse={languageToUse} />
       <Intro language={language} languageToUse={languageToUse} />
       <LiveSports1 language={language} languageToUse={languageToUse} />
