@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 
 import Burger from "../components/Burger";
 
-import logo from "../images/icon.png";
+import logo from "../images/logo.png";
 
 import flagEn from "../images/icon-en.png";
 import flagFr from "../images/icon-fr.png";

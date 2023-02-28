@@ -91,11 +91,6 @@ h3 {
   margin: 10px;
 }
 
-.header-placeholder {
-  height: 80px;
-  background-color: var(--color-background-dark);
-}
-
 .divider {
   background-color: var(--color-background-dark);
   height: 100px;
@@ -135,5 +130,9 @@ h3 {
 
   .dots {
     display: none;
+  }
+  .header-placeholder {
+    height: 80px;
+    background-color: var(--color-background-dark);
   }
 }
