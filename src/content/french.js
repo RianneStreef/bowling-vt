@@ -6,6 +6,7 @@ export const french = {
   metaKeywords: "Bowling Val Thorens",
 
   welcome: "Accueil",
+  reservation: "Réserver",
 
   introText1:
     "Au coeur de la station de Val Thorens, venez decouvrir les différentes activités que vous propose le Bowling de Val Thorens.  ",

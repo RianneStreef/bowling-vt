@@ -14,6 +14,8 @@ import LiveSports3 from "../components/LiveSports3";
 import Activities from "../components/Activities";
 import Map from "../components/Map";
 
+import phone from "../images/phone.png";
+
 const IndexPage = function (props) {
   let { language, languageToUse } = props;
 
@@ -33,12 +35,16 @@ const IndexPage = function (props) {
           data-usrc
         ></script>
       </Helmet>
+      <a href="tel:0033479222557" className="reservation-button">
+        <img src={phone} alt="call button" className="phone-icon" />{" "}
+        {languageToUse.reservation}
+      </a>
       <div className="header-placeholder-mobile" />
       <Hero language={language} languageToUse={languageToUse} />
       <Intro language={language} languageToUse={languageToUse} />
       <LiveSports1 language={language} languageToUse={languageToUse} />
-      {/* <LiveSports2 language={language} languageToUse={languageToUse} />
-      <LiveSports3 language={language} languageToUse={languageToUse} /> */}
+      {/* <LiveSports2 language={language} languageToUse={languageToUse} /> */}
+      <LiveSports3 language={language} languageToUse={languageToUse} />
       <Activities language={language} languageToUse={languageToUse} />
       <Map language={language} languageToUse={languageToUse} />
     </div>

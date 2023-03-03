@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import { content } from "../content/languages";
 
@@ -10,6 +11,9 @@ const LiveSports1 = (props) => {
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
 
+  let day = new Date().getDate();
+  let month = new Date().getMonth();
+
   return (
     <>
       <div className="live-sports live-sports-coded" id="live">
@@ -18,18 +22,31 @@ const LiveSports1 = (props) => {
         <h2>LIVE SPORTS TV</h2>
         <div className="program program-coded">
           <div className="program-container">
-            <p className="program-day">{languageToUse.saturday}</p>
+            <p className="program-day">TODAY</p>
 
             <div className="program-info">
               <div className="date-container">
-                <p className="date">02</p>
-                <p className="month">MAR</p>
+                <p className="date">{day}</p>
+                <p className="month">
+                  {month === 0 ? <span>JAN</span> : null}
+                  {month === 1 ? <span>FEB</span> : null}
+                  {month === 2 ? <span> MAR</span> : null}
+                  {month === 3 ? <span>APR</span> : null}
+                  {month === 4 ? <span>MAY</span> : null}
+                  {month === 5 ? <span>JUN</span> : null}
+                  {month === 6 ? <span>JUL</span> : null}
+                  {month === 7 ? <span>AUG</span> : null}
+                  {month === 8 ? <span>SEP</span> : null}
+                  {month === 9 ? <span>OCT</span> : null}
+                  {month === 10 ? <span>NOV</span> : null}
+                  {month === 11 ? <span>DEC</span> : null}
+                </p>
               </div>
               <table>
                 <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
+                  <td>15h00</td>
+                  <td>FOOT</td>
+                  <td>TOTTENHAM - CHELSEA</td>
                 </tr>
 
                 <tr>
@@ -40,157 +57,11 @@ const LiveSports1 = (props) => {
               </table>
             </div>
           </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.sunday}</p>
-            <div className="program-info">
-              <div className="date-container">
-                <p className="date">03</p>
-                <p className="month">MAR</p>
-              </div>
-              <table>
-                <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
-                </tr>
-                <tr>
-                  <td>20h00</td>
-                  <td>VI NATIONS</td>
-                  <td>FRANCE - SCOTLAND</td>
-                </tr>
-                <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
-                </tr>
-                <tr>
-                  <td>20h00</td>
-                  <td>VI NATIONS</td>
-                  <td>FRANCE - SCOTLAND</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.monday}</p>
-            <div className="program-info">
-              <div className="date-container">
-                <p className="date">04</p>
-                <p className="month">MAR</p>
-              </div>
-              <table>
-                <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
-                </tr>
-                <tr>
-                  <td>20h00</td>
-                  <td>VI NATIONS</td>
-                  <td>FRANCE - SCOTLAND</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.tuesday}</p>
-            <div className="program-info">
-              <div className="date-container">
-                <p className="date">05</p>
-                <p className="month">MAR</p>
-              </div>
-              <table>
-                <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
-                </tr>
-                <tr>
-                  <td>20h00</td>
-                  <td>VI NATIONS</td>
-                  <td>FRANCE - SCOTLAND</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.wednesday}</p>
-            <div className="program-info">
-              <div className="date-container">
-                <p className="date">06</p>
-                <p className="month">MAR</p>
-              </div>
-              <table>
-                <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
-                </tr>
-                <tr>
-                  <td>20h00</td>
-                  <td>VI NATIONS</td>
-                  <td>FRANCE - SCOTLAND</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.thursday}</p>
-            <div className="program-info">
-              <div className="date-container">
-                <p className="date">07</p>
-                <p className="month">MAR</p>
-              </div>
-              <table>
-                <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
-                </tr>
-                <tr>
-                  <td>20h00</td>
-                  <td>VI NATIONS</td>
-                  <td>FRANCE - SCOTLAND</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.friday}</p>
-            <div className="program-info">
-              <div className="date-container">
-                <p className="date">08</p>
-                <p className="month">MAR</p>
-              </div>
-              <table>
-                <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
-                </tr>
-                <tr>
-                  <td>20h00</td>
-                  <td>VI NATIONS</td>
-                  <td>FRANCE - SCOTLAND</td>
-                </tr>
-                <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
-                </tr>
-                <tr>
-                  <td>20h00</td>
-                  <td>VI NATIONS</td>
-                  <td>FRANCE - SCOTLAND</td>
-                </tr>
-                <tr>
-                  <th>15h00</th>
-                  <th>FOOT</th>
-                  <th>TOTTENHAM - CHELSEA</th>
-                </tr>
-              </table>
-            </div>
-          </div>
+        </div>
+        <div className="button-container">
+          <Link to="/program" className="button">
+            {languageToUse.weekProgram}
+          </Link>
         </div>
       </div>
       {/* <div className="divider" /> */}

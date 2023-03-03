@@ -35,6 +35,15 @@
   text-decoration: none;
   padding: var(--padding-mobile);
   text-align: left;
+  font-size: 20px;
+}
+
+.mobile-title-1 {
+  font-family: "Futura Bold";
+  margin: 0;
+}
+.mobile-title-2 {
+  margin: 0;
 }
 
 .mobile-title:visited {

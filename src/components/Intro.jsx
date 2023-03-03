@@ -12,7 +12,8 @@ const Intro = (props) => {
 
   return (
     <div className="intro" id="about">
-      <h1>BOWLING VAL THORENS</h1>
+      <h1>BOWLING - SPORT'S BAR </h1>
+      <h2>VAL THORENS</h2>
       <div className="intro-text">
         <p>{languageToUse.introText1}</p>
         <p>{languageToUse.introText2}</p>

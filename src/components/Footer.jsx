@@ -25,8 +25,8 @@ const Footer = (props) => {
   return (
     <div className="footer">
       <p>
-        Copyright © Bowling Val Thorens - {year}. {languageToUse.rights}{" "}
-        {screenWidth < 768 ? <br /> : "- "}
+        Copyright © Bowling - Sport's Bar, Val Thorens - {year}.{" "}
+        {languageToUse.rights} {screenWidth < 768 ? <br /> : "- "}
         <Link to="/legal">{languageToUse.legal} </Link> -{" "}
         <a href="https://vts-webdesign.com" target="_blank">
           {" "}

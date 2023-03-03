@@ -63,8 +63,8 @@ const Header = (props) => {
         </Link>
       </div>
       <Link to="/" className="hidden-desktop mobile-title">
-        <p>BOWLING - SPORT'S BAR</p>
-        <p>VAL THORENS</p>
+        <p className="mobile-title-1">BOWLING - SPORT'S BAR</p>
+        <p className="mobile-title-2">VAL THORENS</p>
       </Link>
 
       <div className="hidden-desktop">
