@@ -2,9 +2,15 @@ import React from "react";
 
 import "../styles/Map.css";
 
-const Map = () => {
+import { content } from "../content/languages";
+
+const Map = (props) => {
+  let { language, languageToUse } = props;
+
+  language === "english" ? (languageToUse = content.english) : null;
+  language === "french" ? (languageToUse = content.french) : null;
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <div className="map">
         <div className="google-map-iframe">
           <iframe
@@ -15,7 +21,10 @@ const Map = () => {
           />
         </div>
       </div>
-      <div className="contact-text hidden-mobile">CONTACT</div>
+      <div className="contact-text hidden-mobile">
+        <h3>CONTACT</h3>
+        <p>{languageToUse.contactText}</p>
+      </div>
     </div>
   );
 };

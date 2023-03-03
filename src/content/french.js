@@ -48,7 +48,7 @@ export const french = {
   activity4Description3: "Jeux vidéos",
 
   contact: "Contact",
-  contactIntro: "Contact intro",
+  contactText: "Contact intro",
   name: "Nom",
   email: "Email",
   message: "Message",

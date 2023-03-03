@@ -28,43 +28,40 @@ const Header = (props) => {
   language === "french" ? (languageToUse = content.french) : null;
 
   return (
-    <div className="header">
-      <ul className="links hidden-mobile">
-        <li>
-          <div className="set-language">
-            <button
-              onClick={() => handleSetLanguage("english")}
-              className="invisible-button"
-            >
-              <img
-                src={flagEn}
-                alt="english"
-                className={`flag ${
-                  languageToUse.language === "english" ? "opaque" : "fade"
-                } `}
-              />
-            </button>
-            <button
-              onClick={() => handleSetLanguage("french")}
-              className="invisible-button"
-            >
-              <img
-                src={flagFr}
-                alt="français"
-                className={`flag ${
-                  languageToUse.language === "french" ? "opaque" : "fade"
-                } `}
-              />
-            </button>
-          </div>
-        </li>
+    <div className="header-container">
+      <div className="header hidden-mobile">
+        <div className="set-language">
+          <button
+            onClick={() => handleSetLanguage("english")}
+            className="invisible-button"
+          >
+            <img
+              src={flagEn}
+              alt="english"
+              className={`flag ${
+                languageToUse.language === "english" ? "opaque" : "fade"
+              } `}
+            />
+          </button>
+          <button
+            onClick={() => handleSetLanguage("french")}
+            className="invisible-button"
+          >
+            <img
+              src={flagFr}
+              alt="français"
+              className={`flag ${
+                languageToUse.language === "french" ? "opaque" : "fade"
+              } `}
+            />
+          </button>
+        </div>
+
         <Menu open={open} setOpen={setOpen} />
-      </ul>
-      <ul className="hidden-mobile">
         <Link to="/" className="logo-link hidden-mobile">
           <img src={logo} alt="Logo" className="logo" />
         </Link>
-      </ul>
+      </div>
       <Link to="/" className="hidden-desktop mobile-title">
         <p>BOWLING - SPORT'S BAR</p>
         <p>VAL THORENS</p>

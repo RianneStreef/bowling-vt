@@ -37,10 +37,10 @@ const IndexPage = function (props) {
       <Hero language={language} languageToUse={languageToUse} />
       <Intro language={language} languageToUse={languageToUse} />
       <LiveSports1 language={language} languageToUse={languageToUse} />
-      <LiveSports2 language={language} languageToUse={languageToUse} />
-      <LiveSports3 language={language} languageToUse={languageToUse} />
+      {/* <LiveSports2 language={language} languageToUse={languageToUse} />
+      <LiveSports3 language={language} languageToUse={languageToUse} /> */}
       <Activities language={language} languageToUse={languageToUse} />
-      <Map />
+      <Map language={language} languageToUse={languageToUse} />
     </div>
   );
 };

@@ -5,29 +5,36 @@ const Menu = (props) => {
   let { language, languageToUse, open, setOpen } = props;
 
   return (
-    <>
+    <ul className="links">
       <li>
         <Link to="/" className="nav-link" onClick={() => setOpen(!open)}>
-          Welcome
+          Accueil
         </Link>
       </li>
-      <li className="nav-link-dash">-</li>
       <li>
         <Link to="/#live" className="nav-link" onClick={() => setOpen(!open)}>
-          Live
+          Live Sports
         </Link>
       </li>
-      <li className="nav-link-dash ">-</li>
       <li>
         <Link
           to="/#activities"
           className="nav-link"
           onClick={() => setOpen(!open)}
         >
-          Activities
+          Activitées
         </Link>
       </li>
-    </>
+      <li>
+        <Link
+          to="/#contact"
+          className="nav-link"
+          onClick={() => setOpen(!open)}
+        >
+          Contact
+        </Link>
+      </li>
+    </ul>
   );
 };
 

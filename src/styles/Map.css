@@ -1,18 +1,39 @@
 .contact {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: var(--color-highlight);
   padding: 50px var(--padding-mobile);
 }
 
-/* .google-map-iframe {
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.google-map-iframe {
   filter: grayscale(100%);
-} */
+  margin: auto;
+}
+
+iframe {
+  width: 100%;
+}
 
 @media only screen and (min-width: 768px) {
+  iframe {
+    width: 40vw;
+    height: 30vw;
+  }
   .contact-text {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
+  }
+  .map {
+    width: 50%;
   }
 }

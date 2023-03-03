@@ -3,6 +3,11 @@ import React, { useState } from "react";
 import "../styles/Activities.css";
 import { content } from "../content/languages";
 
+import bowlingImg from "../images/bowling-background.jpg";
+import barImg from "../images/bar-background.jpg";
+import billardImg from "../images/billard-background.jpg";
+import jeuxImg from "../images/jeux-background.jpg";
+
 const Activities = (props) => {
   let { language, languageToUse } = props;
 
@@ -25,7 +30,7 @@ const Activities = (props) => {
 
   return (
     <>
-      <div className="header-placeholder" />
+      {/* <div className="header-placeholder" /> */}
       <div className="activities" id="activities">
         <div className="arrow-container">
           <span onClick={() => handleClickLeft()}>&#60;</span>
@@ -46,6 +51,17 @@ const Activities = (props) => {
                 <p className="p-no-margin">{languageToUse.activity1Price2}</p>
               </div>
             </div>
+            <img
+              src={bowlingImg}
+              alt="bowling"
+              className="activity-image hidden-mobile"
+            />
+            <img
+              src={barImg}
+              alt="bar"
+              className="activity-image hidden-mobile"
+            />
+
             <div
               className={`activity ${activeSheet === 2 ? "active-activity" : ""}
 `}
@@ -72,6 +88,16 @@ const Activities = (props) => {
                 <p className="p-no-margin">{languageToUse.activity3Price2}</p>
               </div>
             </div>
+            <img
+              src={billardImg}
+              alt="billard"
+              className="activity-image hidden-mobile"
+            />
+            <img
+              src={jeuxImg}
+              alt="salle de jeux"
+              className="activity-image hidden-mobile"
+            />
             <div
               className={`activity ${activeSheet === 4 ? "active-activity" : ""}
 `}
