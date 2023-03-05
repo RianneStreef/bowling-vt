@@ -32,18 +32,19 @@ const Activities = (props) => {
     <>
       {/* <div className="header-placeholder" /> */}
       <div className="activities" id="activities">
-        <div className="arrow-container">
+        <div className="arrow-container arrow-container-left">
           <span onClick={() => handleClickLeft()}>&#60;</span>
         </div>
-        <div>
+        <div className="dots-container">
           <div className="activities-container">
             <div className="activity-placeholder hidden-desktop" />
             <div
               className={`activity ${activeSheet === 1 ? "active-activity" : ""}
-`}
+              ${activeSheet === 1 ? "activity-description-1" : ""}
+            `}
             >
               <h2>BOWLING</h2>
-              <div className="activity-description activity-description-1">
+              <div className="activity-description ">
                 <p>{languageToUse.activity1Description1}</p>
                 <p>{languageToUse.activity1Description2}</p>
                 <p>{languageToUse.activity1Description3}</p>
@@ -64,10 +65,11 @@ const Activities = (props) => {
 
             <div
               className={`activity ${activeSheet === 2 ? "active-activity" : ""}
-`}
+              ${activeSheet === 2 ? "activity-description-2" : ""}
+              `}
             >
               <h2>BAR</h2>
-              <div className="activity-description activity-description-2">
+              <div className="activity-description ">
                 <p>{languageToUse.activity2Description1}</p>
                 <p>{languageToUse.activity2Description2}</p>
                 <p>{languageToUse.activity2Description3}</p>
@@ -77,10 +79,11 @@ const Activities = (props) => {
             </div>
             <div
               className={`activity ${activeSheet === 3 ? "active-activity" : ""}
-`}
+              ${activeSheet === 3 ? "activity-description-3" : ""}
+              `}
             >
               <h2>BILLARDS</h2>
-              <div className="activity-description activity-description-3">
+              <div className="activity-description ">
                 <p>{languageToUse.activity3Description1}</p>
                 <p>{languageToUse.activity3Description2}</p>
                 <p>{languageToUse.activity3Description3}</p>
@@ -100,10 +103,11 @@ const Activities = (props) => {
             />
             <div
               className={`activity ${activeSheet === 4 ? "active-activity" : ""}
-`}
+              ${activeSheet === 4 ? "activity-description-4" : ""}
+              `}
             >
               <h2>SALLE DE JEUX</h2>
-              <div className="activity-description activity-description-4">
+              <div className="activity-description ">
                 <p>{languageToUse.activity4Description1}</p>
                 <p>{languageToUse.activity4Description2}</p>
                 <p>{languageToUse.activity4Description3}</p>
@@ -131,7 +135,7 @@ const Activities = (props) => {
             ></span>
           </div>
         </div>
-        <div className="arrow-container">
+        <div className="arrow-container arrow-container-right">
           <span onClick={() => handleClickRight()}>&#62;</span>
         </div>
       </div>

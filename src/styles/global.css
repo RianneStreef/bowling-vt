@@ -55,7 +55,7 @@ h1 {
 
 h2 {
   font-size: 3rem;
-  padding: var(--padding-mobile);
+  /* padding: var(--padding-mobile); */
 }
 
 h3 {
@@ -98,8 +98,14 @@ h3 {
   width: 100vw;
 }
 
+.dots-container {
+}
+
 .dots {
-  margin-top: 20px;
+  margin: 20px 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
 }
 
 .dot {
@@ -112,7 +118,7 @@ h3 {
 }
 
 .active-dot {
-  background-color: var(--color-highlight);
+  background-color: var(--color-background-dark);
 }
 
 .header-placeholder-mobile {
@@ -177,6 +183,10 @@ h3 {
     background-color: var(--color-background-dark);
   }
   .header-placeholder-mobile {
+    display: none;
+  }
+
+  .reservation-button {
     display: none;
   }
 }

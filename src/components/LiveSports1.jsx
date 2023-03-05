@@ -3,6 +3,14 @@ import { Link } from "gatsby";
 
 import { content } from "../content/languages";
 
+import { programMatchesSaturday } from "../content/program";
+import { programMatchesSunday } from "../content/program";
+import { programMatchesMonday } from "../content/program";
+import { programMatchesTuesday } from "../content/program";
+import { programMatchesWednesday } from "../content/program";
+import { programMatchesThursday } from "../content/program";
+import { programMatchesFriday } from "../content/program";
+
 import "../styles/LiveSports.css";
 
 const LiveSports1 = (props) => {
@@ -13,6 +21,72 @@ const LiveSports1 = (props) => {
 
   let day = new Date().getDate();
   let month = new Date().getMonth();
+  let weekday = new Date().getDay();
+
+  const programMatchesSaturdayList = programMatchesSaturday.map((match) => {
+    return (
+      <tr>
+        <td>{match.hour}</td>
+        <td>{match.category}</td>
+        <td>{match.game}</td>
+      </tr>
+    );
+  });
+
+  const programMatchesSundayList = programMatchesSunday.map((match) => {
+    return (
+      <tr>
+        <td>{match.hour}</td>
+        <td>{match.category}</td>
+        <td>{match.game}</td>
+      </tr>
+    );
+  });
+  const programMatchesMondayList = programMatchesMonday.map((match) => {
+    return (
+      <tr>
+        <td>{match.hour}</td>
+        <td>{match.category}</td>
+        <td>{match.game}</td>
+      </tr>
+    );
+  });
+  const programMatchesTuesdayList = programMatchesTuesday.map((match) => {
+    return (
+      <tr>
+        <td>{match.hour}</td>
+        <td>{match.category}</td>
+        <td>{match.game}</td>
+      </tr>
+    );
+  });
+  const programMatchesWednesdayList = programMatchesWednesday.map((match) => {
+    return (
+      <tr>
+        <td>{match.hour}</td>
+        <td>{match.category}</td>
+        <td>{match.game}</td>
+      </tr>
+    );
+  });
+  const programMatchesThursdayList = programMatchesThursday.map((match) => {
+    return (
+      <tr>
+        <td>{match.hour}</td>
+        <td>{match.category}</td>
+        <td>{match.game}</td>
+      </tr>
+    );
+  });
+  const programMatchesFridayList = programMatchesFriday.map((match) => {
+    return (
+      <tr>
+        <td>{match.hour}</td>
+        <td>{match.category}</td>
+        <td>{match.game}</td>
+      </tr>
+    );
+  });
 
   return (
     <>
@@ -42,19 +116,32 @@ const LiveSports1 = (props) => {
                   {month === 11 ? <span>DEC</span> : null}
                 </p>
               </div>
-              <table>
-                <tr>
-                  <td>15h00</td>
-                  <td>FOOT</td>
-                  <td>TOTTENHAM - CHELSEA</td>
-                </tr>
+              <div>
+                {weekday === 6 ? (
+                  <table> {programMatchesSaturdayList} </table>
+                ) : null}
 
-                <tr>
-                  <td>20h00</td>
-                  <td>VI NATIONS</td>
-                  <td>FRANCE - SCOTLAND</td>
-                </tr>
-              </table>
+                {weekday === 0 ? (
+                  <table> {programMatchesSundayList} </table>
+                ) : null}
+                {weekday === 1 ? (
+                  <table> {programMatchesMondayList} </table>
+                ) : null}
+
+                {weekday === 2 ? (
+                  <table> {programMatchesTuesdayList} </table>
+                ) : null}
+                {weekday === 3 ? (
+                  <table> {programMatchesWednesdayList} </table>
+                ) : null}
+
+                {weekday === 4 ? (
+                  <table> {programMatchesThursdayList} </table>
+                ) : null}
+                {weekday === 5 ? (
+                  <table> {programMatchesFridayList} </table>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>

@@ -49,7 +49,7 @@
 
 .program-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .date-container {
