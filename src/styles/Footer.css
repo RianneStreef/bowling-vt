@@ -1,6 +1,7 @@
 .footer {
   margin-top: auto;
   background-color: var(--color-background-dark);
+  overflow: hidden;
 }
 
 .footer p {

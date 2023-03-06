@@ -124,6 +124,7 @@ h3 {
 .header-placeholder-mobile {
   height: 80px;
   background-color: var(--color-background-dark);
+  overflow: hidden;
 }
 
 .button-container {
@@ -154,6 +155,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .phone-icon {
