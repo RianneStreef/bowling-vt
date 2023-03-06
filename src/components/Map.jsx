@@ -20,6 +20,7 @@ const Map = (props) => {
             src="https://maps.google.com/maps?q=place%20de%20l'arche%2073440%20Val%20Thorens&t=&z=17&ie=UTF8&iwloc=&output=embed"
           />
         </div>
+        <div className="divider" />
       </div>
       <div className="contact-text hidden-mobile">
         <h3>CONTACT</h3>

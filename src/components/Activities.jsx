@@ -35,12 +35,20 @@ const Activities = (props) => {
         <div className="arrow-container arrow-container-left">
           <span onClick={() => handleClickLeft()}>&#60;</span>
         </div>
-        <div className="dots-container">
+        <div
+          className={`dots-container 
+              ${activeSheet === 1 ? "activity-description-1" : ""}   
+              ${activeSheet === 2 ? "activity-description-2" : ""}
+              ${activeSheet === 3 ? "activity-description-3" : ""}
+              ${activeSheet === 4 ? "activity-description-4" : ""}
+                       `}
+        >
+          {" "}
           <div className="activities-container">
             <div className="activity-placeholder hidden-desktop" />
             <div
               className={`activity ${activeSheet === 1 ? "active-activity" : ""}
-              ${activeSheet === 1 ? "activity-description-1" : ""}
+            
             `}
             >
               <h2>BOWLING</h2>
@@ -65,7 +73,6 @@ const Activities = (props) => {
 
             <div
               className={`activity ${activeSheet === 2 ? "active-activity" : ""}
-              ${activeSheet === 2 ? "activity-description-2" : ""}
               `}
             >
               <h2>BAR</h2>
@@ -79,7 +86,6 @@ const Activities = (props) => {
             </div>
             <div
               className={`activity ${activeSheet === 3 ? "active-activity" : ""}
-              ${activeSheet === 3 ? "activity-description-3" : ""}
               `}
             >
               <h2>BILLARDS</h2>
@@ -103,7 +109,6 @@ const Activities = (props) => {
             />
             <div
               className={`activity ${activeSheet === 4 ? "active-activity" : ""}
-              ${activeSheet === 4 ? "activity-description-4" : ""}
               `}
             >
               <h2>SALLE DE JEUX</h2>
@@ -139,6 +144,7 @@ const Activities = (props) => {
           <span onClick={() => handleClickRight()}>&#62;</span>
         </div>
       </div>
+      <div className="divider" />
     </>
   );
 };

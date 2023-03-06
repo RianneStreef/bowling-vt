@@ -5,20 +5,32 @@
 
 .footer p {
   font-size: 12px;
-  color: #fff;
+  color: var(--color-text-light);
   margin-bottom: 60px;
 }
 
 .footer a {
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 .footer a:visited {
-  color: #fff;
+  color: var(--color-text-light);
 }
 
 @media only screen and (min-width: 768px) {
+  .footer {
+    margin-top: auto;
+    background-color: var(--color-highlight);
+  }
   .footer p {
     margin-bottom: 20px;
+    color: var(--color-text-dark);
+  }
+  .footer a {
+    color: var(--color-text-dark);
+  }
+
+  .footer a:visited {
+    color: var(--color-text-dark);
   }
 }

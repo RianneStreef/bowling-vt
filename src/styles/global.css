@@ -94,8 +94,8 @@ h3 {
 
 .divider {
   background-color: var(--color-background-dark);
-  height: 100px;
-  width: 100vw;
+  height: 50px;
+  /* width: 100vw; */
 }
 
 .dots-container {
@@ -187,6 +187,10 @@ h3 {
   }
 
   .reservation-button {
+    display: none;
+  }
+
+  .divider {
     display: none;
   }
 }

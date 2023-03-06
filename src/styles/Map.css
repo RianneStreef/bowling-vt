@@ -1,8 +1,8 @@
 .contact {
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-highlight);
-  color: var(--color-text-dark);
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
   /* text-shadow: #000 1px 0 20px; */
 }
 
@@ -36,7 +36,7 @@
     justify-content: center;
     align-items: center;
     width: 50%;
-    color: var(--color-text-dark);
+    color: var(--color-text-light);
   }
   .map {
     width: 50%;

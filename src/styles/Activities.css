@@ -68,22 +68,22 @@
 }
 
 .activity-description-1 {
-  background-image: url("../images/bowling-background-white.jpg");
+  background-image: url("../images/bowling-background-blue.jpg");
   background-position: center;
   background-size: cover;
 }
 .activity-description-2 {
-  background-image: url("../images/bar-background-white.jpg");
+  background-image: url("../images/bar-background-blue.jpg");
   background-position: center;
   background-size: cover;
 }
 .activity-description-3 {
-  background-image: url("../images/billard-background-white.jpg");
+  background-image: url("../images/billard-background-blue.jpg");
   background-position: center;
   background-size: cover;
 }
 .activity-description-4 {
-  background-image: url("../images/jeux-background-white.jpg");
+  background-image: url("../images/jeux-background-blue.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -115,7 +115,7 @@
 
   .activity-description {
     padding: var(--padding-desktop);
-    color: var(--color-text-light);
+    color: var(--color-text-dark);
   }
 
   .activity-description-1 {
