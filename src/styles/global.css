@@ -95,6 +95,8 @@ h3 {
 .divider {
   background-color: var(--color-background-dark);
   height: 50px;
+  overflow: hidden;
+
   /* width: 100vw; */
 }
 
