@@ -60,16 +60,8 @@ const Activities = (props) => {
                 <p className="p-no-margin">{languageToUse.activity1Price2}</p>
               </div>
             </div>
-            <img
-              src={bowlingImg}
-              alt="bowling"
-              className="activity-image hidden-mobile"
-            />
-            <img
-              src={barImg}
-              alt="bar"
-              className="activity-image hidden-mobile"
-            />
+            <div className="bowling-image hidden-mobile" />
+            <div className="bar-image hidden-mobile" />
 
             <div
               className={`activity ${activeSheet === 2 ? "active-activity" : ""}
@@ -97,16 +89,8 @@ const Activities = (props) => {
                 <p className="p-no-margin">{languageToUse.activity3Price2}</p>
               </div>
             </div>
-            <img
-              src={billardImg}
-              alt="billard"
-              className="activity-image hidden-mobile"
-            />
-            <img
-              src={jeuxImg}
-              alt="salle de jeux"
-              className="activity-image hidden-mobile"
-            />
+            <div className="billard-image hidden-mobile" />
+            <div className="jeux-image hidden-mobile" />
             <div
               className={`activity ${activeSheet === 4 ? "active-activity" : ""}
               `}

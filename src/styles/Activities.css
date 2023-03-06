@@ -89,6 +89,31 @@
   background-size: cover;
 }
 
+.bowling-image {
+  background-image: url("../images/bowling-background.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+}
+.bar-image {
+  background-image: url("../images/bar-background.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+}
+.billard-image {
+  background-image: url("../images/billard-background.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+}
+.jeux-image {
+  background-image: url("../images/jeux-background.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 50%;
+}
+
 @media only screen and (min-width: 768px) {
   .arrow-container {
     display: none;
