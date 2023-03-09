@@ -118,28 +118,28 @@ const LiveSports1 = (props) => {
               </div>
               <div>
                 {weekday === 6 ? (
-                  <table> {programMatchesSaturdayList} </table>
+                  <table>{programMatchesSaturdayList}</table>
                 ) : null}
 
                 {weekday === 0 ? (
-                  <table> {programMatchesSundayList} </table>
+                  <table>{programMatchesSundayList}</table>
                 ) : null}
                 {weekday === 1 ? (
-                  <table> {programMatchesMondayList} </table>
+                  <table>{programMatchesMondayList}</table>
                 ) : null}
 
                 {weekday === 2 ? (
-                  <table> {programMatchesTuesdayList} </table>
+                  <table>{programMatchesTuesdayList}</table>
                 ) : null}
                 {weekday === 3 ? (
-                  <table> {programMatchesWednesdayList} </table>
+                  <table>{programMatchesWednesdayList}</table>
                 ) : null}
 
                 {weekday === 4 ? (
-                  <table> {programMatchesThursdayList} </table>
+                  <table>{programMatchesThursdayList}</table>
                 ) : null}
                 {weekday === 5 ? (
-                  <table> {programMatchesFridayList} </table>
+                  <table>{programMatchesFridayList}</table>
                 ) : null}
               </div>
             </div>
