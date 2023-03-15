@@ -108,6 +108,7 @@
 @media only screen and (min-width: 1024px) {
   .hidden-mobile-menu {
     display: flex;
+    margin-right: 25px;
   }
   .hidden-desktop-menu {
     display: none;
