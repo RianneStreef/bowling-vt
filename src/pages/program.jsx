@@ -27,7 +27,7 @@ const Program = (props) => {
   const programMatchesSaturdayList = programMatchesSaturday.map((match) => {
     return (
       <div>
-        <p>
+        <p className="game-time">
           {match.hour} {match.category}
         </p>
         <p className="game-name">{match.game}</p>
@@ -38,7 +38,7 @@ const Program = (props) => {
   const programMatchesSundayList = programMatchesSunday.map((match) => {
     return (
       <div>
-        <p>
+        <p className="game-time">
           {match.hour} {match.category}
         </p>
         <p className="game-name">{match.game}</p>
@@ -48,7 +48,7 @@ const Program = (props) => {
   const programMatchesMondayList = programMatchesMonday.map((match) => {
     return (
       <div>
-        <p>
+        <p className="game-time">
           {match.hour} {match.category}
         </p>
         <p className="game-name">{match.game}</p>
@@ -58,7 +58,7 @@ const Program = (props) => {
   const programMatchesTuesdayList = programMatchesTuesday.map((match) => {
     return (
       <div>
-        <p>
+        <p className="game-time">
           {match.hour} {match.category}
         </p>
         <p className="game-name">{match.game}</p>
@@ -68,7 +68,7 @@ const Program = (props) => {
   const programMatchesWednesdayList = programMatchesWednesday.map((match) => {
     return (
       <div>
-        <p>
+        <p className="game-time">
           {match.hour} {match.category}
         </p>
         <p className="game-name">{match.game}</p>
@@ -78,7 +78,7 @@ const Program = (props) => {
   const programMatchesThursdayList = programMatchesThursday.map((match) => {
     return (
       <div>
-        <p>
+        <p className="game-time">
           {match.hour} {match.category}
         </p>
         <p className="game-name">{match.game}</p>
@@ -88,7 +88,7 @@ const Program = (props) => {
   const programMatchesFridayList = programMatchesFriday.map((match) => {
     return (
       <div>
-        <p>
+        <p className="game-time">
           {match.hour} {match.category}
         </p>
         <p className="game-name">{match.game}</p>

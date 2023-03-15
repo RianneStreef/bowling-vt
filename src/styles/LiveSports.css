@@ -77,6 +77,10 @@
   align-items: flex-start;
 }
 
+.game-time {
+  font-size: 15px;
+}
+
 .game-name {
   font-size: 20px;
 }
@@ -138,6 +142,10 @@
     margin: 10px 0;
   }
 
+  .game-time {
+    font-size: 20px;
+  }
+
   .game-name {
     font-size: 30px;
   }
@@ -163,6 +171,10 @@
 @media only screen and (min-width: 1100px) {
   .date-container {
     margin: 25px 150px;
+  }
+
+  .game-time {
+    font-size: 25px;
   }
 
   .game-name {
