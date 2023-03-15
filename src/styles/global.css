@@ -187,9 +187,6 @@ h3 {
   .header-placeholder-mobile {
     display: none;
   }
-  .invisible-button {
-    width: 20px;
-  }
 
   .reservation-button {
     display: none;
@@ -197,5 +194,11 @@ h3 {
 
   .divider {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .invisible-button {
+    width: 20px;
   }
 }

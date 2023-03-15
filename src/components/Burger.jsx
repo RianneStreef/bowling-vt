@@ -37,7 +37,7 @@ const Burger = (props) => {
   let { language, setLanguage, languageToUse, open, setOpen } = props;
 
   return (
-    <div className="hidden-desktop">
+    <div className="hidden-desktop-menu">
       <Navbar
         open={open}
         setOpen={setOpen}

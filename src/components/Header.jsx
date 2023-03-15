@@ -24,7 +24,7 @@ const Header = (props) => {
         <p className="mobile-title-2">VAL THORENS</p>
       </Link>
 
-      <div className="hidden-desktop">
+      <div className="hidden-desktop-menu">
         <Burger
           language={language}
           setLanguage={setLanguage}
@@ -33,7 +33,7 @@ const Header = (props) => {
           setOpen={setOpen}
         />
       </div>
-      <div className="header hidden-mobile">
+      <div className="header hidden-mobile-menu">
         <Menu
           open={open}
           setOpen={setOpen}

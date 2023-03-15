@@ -2,9 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-import flagEn from "../images/icon-en.png";
-import flagFr from "../images/icon-fr.png";
-
 import { content } from "../content/languages";
 
 import Menu from "../components/Menu";
