@@ -47,7 +47,9 @@ const Activities = (props) => {
           <div className="activities-container">
             <div className="activity-placeholder hidden-desktop" />
             <div
-              className={`activity ${activeSheet === 1 ? "active-activity" : ""}
+              className={`activity activity-1 ${
+                activeSheet === 1 ? "active-activity" : ""
+              }
             
             `}
             >
@@ -64,7 +66,9 @@ const Activities = (props) => {
             <div className="bar-image hidden-mobile" />
 
             <div
-              className={`activity ${activeSheet === 2 ? "active-activity" : ""}
+              className={`activity activity-2 ${
+                activeSheet === 2 ? "active-activity" : ""
+              }
               `}
             >
               <h2>BAR</h2>
@@ -77,7 +81,9 @@ const Activities = (props) => {
               </div>
             </div>
             <div
-              className={`activity ${activeSheet === 3 ? "active-activity" : ""}
+              className={`activity activity-3 ${
+                activeSheet === 3 ? "active-activity" : ""
+              }
               `}
             >
               <h2>BILLARDS</h2>
@@ -92,7 +98,9 @@ const Activities = (props) => {
             <div className="billard-image hidden-mobile" />
             <div className="jeux-image hidden-mobile" />
             <div
-              className={`activity ${activeSheet === 4 ? "active-activity" : ""}
+              className={`activity activity-4 ${
+                activeSheet === 4 ? "active-activity" : ""
+              }
               `}
             >
               <h2>SALLE DE JEUX</h2>

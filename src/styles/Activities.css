@@ -63,9 +63,12 @@
 
 .activity-description {
   padding: 40px;
-  color: var(--color-text-dark);
   background-position: center;
   background-size: cover;
+}
+
+.activity-1 {
+  color: var(--color-text-dark);
 }
 
 .activity-description-1 {
@@ -141,21 +144,24 @@
 
   .activity-description {
     padding: var(--padding-desktop);
-    color: var(--color-text-dark);
   }
 
-  .activity-description-1 {
-    background-image: none;
+  .activity-2 {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
   }
-  .activity-description-2 {
-    background-image: none;
+
+  .activity-3 {
+    background-color: var(--color-background-light);
   }
-  .activity-description-3 {
-    background-image: none;
-  }
+
+  .activity-description-1,
+  .activity-description-2,
+  .activity-description-3,
   .activity-description-4 {
     background-image: none;
   }
+
   .activity-image {
     width: 50%;
   }

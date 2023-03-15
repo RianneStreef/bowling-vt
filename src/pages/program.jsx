@@ -26,66 +26,73 @@ const Program = (props) => {
 
   const programMatchesSaturdayList = programMatchesSaturday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
 
   const programMatchesSundayList = programMatchesSunday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesMondayList = programMatchesMonday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesTuesdayList = programMatchesTuesday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesWednesdayList = programMatchesWednesday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesThursdayList = programMatchesThursday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesFridayList = programMatchesFriday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
 

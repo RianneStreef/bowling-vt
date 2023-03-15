@@ -25,66 +25,73 @@ const LiveSports1 = (props) => {
 
   const programMatchesSaturdayList = programMatchesSaturday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
 
   const programMatchesSundayList = programMatchesSunday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesMondayList = programMatchesMonday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesTuesdayList = programMatchesTuesday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesWednesdayList = programMatchesWednesday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesThursdayList = programMatchesThursday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
   const programMatchesFridayList = programMatchesFriday.map((match) => {
     return (
-      <tr>
-        <td>{match.hour}</td>
-        <td>{match.category}</td>
-        <td>{match.game}</td>
-      </tr>
+      <div>
+        <p>
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
     );
   });
 
@@ -118,28 +125,42 @@ const LiveSports1 = (props) => {
               </div>
               <div>
                 {weekday === 6 ? (
-                  <table>{programMatchesSaturdayList}</table>
+                  <div className="match-details">
+                    {programMatchesSaturdayList}{" "}
+                  </div>
                 ) : null}
 
                 {weekday === 0 ? (
-                  <table>{programMatchesSundayList}</table>
+                  <div className="match-details">
+                    {programMatchesSundayList}{" "}
+                  </div>
                 ) : null}
                 {weekday === 1 ? (
-                  <table>{programMatchesMondayList}</table>
+                  <div className="match-details">
+                    {programMatchesMondayList}{" "}
+                  </div>
                 ) : null}
 
                 {weekday === 2 ? (
-                  <table>{programMatchesTuesdayList}</table>
+                  <div className="match-details">
+                    {programMatchesTuesdayList}{" "}
+                  </div>
                 ) : null}
                 {weekday === 3 ? (
-                  <table>{programMatchesWednesdayList}</table>
+                  <div className="match-details">
+                    {programMatchesWednesdayList}
+                  </div>
                 ) : null}
 
                 {weekday === 4 ? (
-                  <table>{programMatchesThursdayList}</table>
+                  <div className="match-details">
+                    {programMatchesThursdayList}{" "}
+                  </div>
                 ) : null}
                 {weekday === 5 ? (
-                  <table>{programMatchesFridayList}</table>
+                  <div className="match-details">
+                    {programMatchesFridayList}{" "}
+                  </div>
                 ) : null}
               </div>
             </div>

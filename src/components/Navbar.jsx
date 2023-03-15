@@ -24,7 +24,6 @@ const Ul = styled.ul`
     justify-content: center;
     align-items: center;
     color: #fff;
-    padding-right: 25px;
     margin: 10px 0;
     font-size: 20px;
     a {
@@ -73,25 +72,6 @@ const Navbar = (props) => {
     <div className="nav-bar">
       <Ul open={open}>
         <Menu open={open} setOpen={setOpen} />
-
-        <li className="social-links-header">
-          <div className="nav-item-language">
-            <img
-              src={flagEn}
-              onClick={() => handleSetLanguage("english")}
-              className={`flag ${
-                languageToUse.language === "english" ? "opaque" : "fade"
-              } `}
-            />
-            <img
-              src={flagFr}
-              onClick={() => handleSetLanguage("french")}
-              className={`flag ${
-                languageToUse.language === "french" ? "opaque" : "fade"
-              } `}
-            />
-          </div>
-        </li>
       </Ul>
     </div>
   );
