@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+.intro-text p {
+  font-size: 20px;
+}
+
 .intro h1 {
   color: var(--color-highlight);
 }
@@ -12,5 +16,8 @@
 @media only screen and (min-width: 768px) {
   .intro {
     padding: var(--padding-desktop);
+  }
+  .intro-text p {
+    font-size: 35px;
   }
 }
