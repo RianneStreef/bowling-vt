@@ -1,6 +1,6 @@
 .activities {
   background-color: var(--color-highlight);
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
   /* padding-bottom: 20px; */
   display: flex;
   width: 100vw;
@@ -31,7 +31,7 @@
   font-size: 30px;
   padding: 30px;
   margin-top: 0;
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
 }
 
 .activities-container {
@@ -68,14 +68,11 @@
   font-size: 20px;
 }
 
-.activity-1 {
-  color: var(--color-text-dark);
-}
-
 .activity-description-1 {
-  background-image: url("../images/bowling-background-blue.jpg");
+  background-image: url("../images/bowling-background-black.jpg");
   background-position: center;
   background-size: cover;
+  color: #fff;
 }
 .activity-description-2 {
   background-image: url("../images/bar-background-black.jpg");
@@ -84,14 +81,16 @@
   color: #fff;
 }
 .activity-description-3 {
-  background-image: url("../images/billard-background-white.jpg");
+  background-image: url("../images/billard-background-black.jpg");
   background-position: center;
   background-size: cover;
+  color: #fff;
 }
 .activity-description-4 {
-  background-image: url("../images/jeux-background-blue.jpg");
+  background-image: url("../images/jeux-background-black.jpg");
   background-position: center;
   background-size: cover;
+  color: #fff;
 }
 
 .bowling-image {
@@ -148,6 +147,10 @@
     padding: 0 50px 50px 50px;
   }
 
+  .activity-1 {
+    color: var(--color-text-dark);
+  }
+
   .activity-2 {
     background-color: var(--color-background-dark);
     color: var(--color-text-light);
@@ -155,6 +158,11 @@
 
   .activity-3 {
     background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+  }
+
+  .activity-4 {
+    color: var(--color-text-dark);
   }
 
   .activity-description-1,
@@ -166,5 +174,8 @@
 
   .activity-image {
     width: 50%;
+  }
+  .activities {
+    color: var(--color-text-dark);
   }
 }

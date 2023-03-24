@@ -50,12 +50,14 @@ main {
 }
 
 h1 {
-  font-size: 7vw;
+  font-size: 6.5vw;
   margin: 20px 0 0 0;
+  font-family: "Futura Bold";
 }
 
 h2 {
-  font-size: 9vw;
+  font-size: 8.5vw;
+  font-family: "Futura Bold";
   /* padding: var(--padding-mobile); */
 }
 h3 {
@@ -108,7 +110,7 @@ h3 {
 }
 
 .active-dot {
-  background-color: var(--color-background-dark);
+  background-color: var(--color-highlight);
 }
 
 .header-placeholder-mobile {
@@ -154,12 +156,8 @@ h3 {
 }
 
 @media only screen and (min-width: 768px) {
-  h1 {
-    font-size: 8vw;
-  }
-
   h2 {
-    font-size: 7vw;
+    font-size: 6vw;
   }
 
   p {
