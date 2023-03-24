@@ -1,9 +1,15 @@
 .contact {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   background-color: var(--color-background-dark);
   color: var(--color-text-light);
   /* text-shadow: #000 1px 0 20px; */
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .map {
@@ -23,6 +29,26 @@
 .iframe-google {
   width: 100%;
   height: 50vh;
+}
+
+.contact-icon {
+  color: #fff;
+  width: 40px;
+}
+
+.contact-text a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.contact-text a:visited {
+  color: #fff;
+}
+
+.address {
+  margin: 5px;
+  font-size: 18px;
 }
 
 @media only screen and (min-width: 768px) {

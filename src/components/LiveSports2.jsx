@@ -24,7 +24,6 @@ const LiveSports1 = (props) => {
           />
         </div>
       </div>
-      <div className="divider" />
     </>
   );
 };

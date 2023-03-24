@@ -12,7 +12,7 @@
   --line-height-desktop: 40px;
 
   --margin-mobile: 0 50px;
-  --padding-mobile: 20px;
+  --padding-mobile: 0 20px;
 
   --margin-desktop: 50px 200px;
   --padding-desktop: 50px;
@@ -27,7 +27,8 @@
 
 @font-face {
   font-family: "Futura Bold";
-  src: local("Futura Bold"), url(../fonts/futura/futur.ttf) format("truetype");
+  src: local("Futura Bold"),
+    url(../fonts/futura/Futura\ Bold\ font.ttf) format("truetype");
   font-display: swap;
 }
 
@@ -49,15 +50,14 @@ main {
 }
 
 h1 {
-  font-size: 7.5vw;
-  margin: 0;
+  font-size: 7vw;
+  margin: 20px 0 0 0;
 }
 
 h2 {
-  font-size: 6.5vw;
+  font-size: 9vw;
   /* padding: var(--padding-mobile); */
 }
-
 h3 {
   font-size: 1.3rem;
 }
@@ -89,17 +89,6 @@ h3 {
   border: none;
   background-color: transparent;
   margin: 10px;
-}
-
-.divider {
-  background-color: var(--color-background-dark);
-  height: 50px;
-  overflow: hidden;
-
-  /* width: 100vw; */
-}
-
-.dots-container {
 }
 
 .dots {
@@ -189,10 +178,6 @@ h3 {
   }
 
   .reservation-button {
-    display: none;
-  }
-
-  .divider {
     display: none;
   }
 }

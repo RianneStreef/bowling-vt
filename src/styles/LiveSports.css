@@ -68,7 +68,7 @@
 
 .month {
   font-size: 15px;
-  margin: 10px 0;
+  margin: 0;
 }
 
 .match-details p {
@@ -79,10 +79,12 @@
 
 .game-time {
   font-size: 15px;
+  margin-bottom: 0;
 }
 
 .game-name {
   font-size: 20px;
+  margin-top: 0;
 }
 
 .program-info table {
@@ -106,14 +108,14 @@
   height: auto;
 }
 
-.insta {
-  margin: 50px 0;
-}
-
 .insta-feed {
   z-index: 5;
   width: 100vw;
   margin: 0;
+}
+
+.insta h2 {
+  color: var(--color-text-light);
 }
 
 @media only screen and (min-width: 768px) {
@@ -165,6 +167,10 @@
   .program td {
     padding: 0 15px;
     min-width: 120px;
+  }
+
+  .insta {
+    padding-bottom: 50px;
   }
 }
 

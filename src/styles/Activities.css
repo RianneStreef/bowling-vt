@@ -41,7 +41,7 @@
 
 .activity-placeholder {
   width: 100%;
-  height: 500px;
+  height: 480px;
 }
 
 .activity {
@@ -62,7 +62,7 @@
 }
 
 .activity-description {
-  padding: 50px;
+  padding: 0 50px;
   background-position: center;
   background-size: cover;
   font-size: 20px;
@@ -78,12 +78,13 @@
   background-size: cover;
 }
 .activity-description-2 {
-  background-image: url("../images/bar-background-blue.jpg");
+  background-image: url("../images/bar-background-black.jpg");
   background-position: center;
   background-size: cover;
+  color: #fff;
 }
 .activity-description-3 {
-  background-image: url("../images/billard-background-blue.jpg");
+  background-image: url("../images/billard-background-white.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -144,7 +145,7 @@
   }
 
   .activity-description {
-    padding: var(--padding-desktop);
+    padding: 0 50px 50px 50px;
   }
 
   .activity-2 {

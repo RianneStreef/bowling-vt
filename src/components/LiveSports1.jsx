@@ -172,7 +172,6 @@ const LiveSports1 = (props) => {
           </Link>
         </div>
       </div>
-      {/* <div className="divider" /> */}
     </>
   );
 };

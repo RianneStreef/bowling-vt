@@ -136,7 +136,6 @@ const Activities = (props) => {
           <span onClick={() => handleClickRight()}>&#62;</span>
         </div>
       </div>
-      <div className="divider" />
     </>
   );
 };

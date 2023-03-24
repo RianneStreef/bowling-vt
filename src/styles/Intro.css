@@ -13,6 +13,9 @@
   color: var(--color-highlight);
 }
 
+.intro h2 {
+  margin-top: 0;
+}
 @media only screen and (min-width: 768px) {
   .intro {
     padding: var(--padding-desktop);
