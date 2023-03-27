@@ -58,7 +58,7 @@
 
 .active-activity {
   opacity: 100%;
-  transition: opacity 1s;
+  transition: opacity 1s 0.5s;
 }
 
 .activity-description {
