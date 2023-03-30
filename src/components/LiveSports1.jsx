@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "gatsby";
 
 import { content } from "../content/languages";
@@ -14,7 +14,7 @@ import { programMatchesFriday } from "../content/program";
 import "../styles/LiveSports.css";
 
 const LiveSports1 = (props) => {
-  let { language, languageToUse } = props;
+  let { language, languageToUse, pathname } = props;
 
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
@@ -22,6 +22,14 @@ const LiveSports1 = (props) => {
   let day = new Date().getDate();
   let month = new Date().getMonth();
   let weekday = new Date().getDay();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      let element = document.getElementById("live");
+      element.classList.add("scale-in");
+    }, 5);
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   const programMatchesSaturdayList = programMatchesSaturday.map((match) => {
     return (
@@ -97,11 +105,11 @@ const LiveSports1 = (props) => {
 
   return (
     <>
-      <div className="live-sports live-sports-coded" id="live">
+      <div className="live-sports live-sports-coded" id="live-sports">
         {/* <div className="header-placeholder" /> */}
 
         <h2>LIVE SPORTS TV</h2>
-        <div className="program program-coded">
+        <div className="program program-coded" id="live">
           <div className="program-container">
             <p className="program-day">TODAY</p>
 

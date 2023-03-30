@@ -25,7 +25,11 @@ const Menu = (props) => {
         </Link>
       </li>
       <li>
-        <Link to="/#live" className="nav-link" onClick={() => setOpen(!open)}>
+        <Link
+          to="/#live-sports"
+          className="nav-link"
+          onClick={() => setOpen(!open)}
+        >
           Live Sports
         </Link>
       </li>
