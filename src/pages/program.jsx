@@ -126,8 +126,8 @@ const Program = (props) => {
           <Link to="/program">
             <button
               className={`button ${
-                pathname === "https://bowling-vt.netlify.app/next-program/" ||
-                pathname === "http://localhost:8000/next-program/"
+                pathname === "https://bowling-vt.netlify.app/program/" ||
+                pathname === "http://localhost:8000/program/"
                   ? "disabled-button"
                   : null
               }`}
@@ -142,8 +142,8 @@ const Program = (props) => {
           <Link to="/next-program">
             <button
               className={`button ${
-                pathname === "https://bowling-vt.netlify.app/next-program/" ||
-                pathname === "http://localhost:8000/next-program/"
+                pathname === "https://bowling-vt.netlify.app/program/" ||
+                pathname === "http://localhost:8000/program/"
                   ? "disabled-button"
                   : null
               }`}
