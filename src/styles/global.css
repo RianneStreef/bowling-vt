@@ -58,6 +58,10 @@ h3 {
   font-size: 1.3rem;
 }
 
+p {
+  line-height: 25px;
+}
+
 .p-no-margin {
   margin: 0;
 }
@@ -158,6 +162,7 @@ h3 {
 
   p {
     font-size: 25px;
+    line-height: 30px;
   }
 
   .dots {
