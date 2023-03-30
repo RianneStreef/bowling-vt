@@ -132,8 +132,8 @@ const Program = (props) => {
                   : null
               }`}
               disabled={
-                pathname === "https://bowling-vt.netlify.app/next-program/" ||
-                (pathname === "http://localhost:8000/next-program/" && true)
+                pathname === "https://bowling-vt.netlify.app/program/" ||
+                pathname === "http://localhost:8000/program/"
               }
             >
               {languageToUse.lastWeek}
@@ -142,14 +142,14 @@ const Program = (props) => {
           <Link to="/next-program">
             <button
               className={`button ${
-                pathname === "https://bowling-vt.netlify.app/program/" ||
-                pathname === "http://localhost:8000/program/"
+                pathname === "https://bowling-vt.netlify.app/next-program/" ||
+                pathname === "http://localhost:8000/next-program/"
                   ? "disabled-button"
                   : null
               }`}
               disabled={
                 pathname === "https://bowling-vt.netlify.app/next-program/" ||
-                (pathname === "http://localhost:8000/next-program/" && true)
+                pathname === "http://localhost:8000/next-program/"
               }
             >
               {languageToUse.nextWeek}
