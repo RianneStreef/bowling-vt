@@ -31,7 +31,7 @@ const Activities = (props) => {
   return (
     <>
       {/* <div className="header-placeholder" /> */}
-      <div className="activities" id="activities">
+      <div className="activities">
         <div className="arrow-container arrow-container-left">
           <span onClick={() => handleClickLeft()}>&#60;</span>
         </div>

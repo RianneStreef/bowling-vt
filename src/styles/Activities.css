@@ -8,6 +8,10 @@
   overflow: hidden;
 }
 
+#activities {
+  height: 80px;
+}
+
 .arrow-container-left {
   position: absolute;
   left: 0;

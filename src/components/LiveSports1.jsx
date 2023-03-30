@@ -105,7 +105,7 @@ const LiveSports1 = (props) => {
 
   return (
     <>
-      <div className="live-sports live-sports-coded" id="live-sports">
+      <div className="live-sports live-sports-coded">
         {/* <div className="header-placeholder" /> */}
 
         <h2>LIVE SPORTS TV</h2>

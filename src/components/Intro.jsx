@@ -17,7 +17,7 @@ const Intro = (props) => {
       <div className="intro-text">
         <p>{languageToUse.introText1}</p>
         <p>{languageToUse.introText2}</p>
-        <p>{languageToUse.openingHours}</p>
+        <p id="live-sports">{languageToUse.openingHours}</p>
       </div>
     </div>
   );

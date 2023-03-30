@@ -23,6 +23,7 @@ const LiveSports1 = (props) => {
           ></div>
         </div>
       </div>
+      <div id="activities" />
     </>
   );
 };

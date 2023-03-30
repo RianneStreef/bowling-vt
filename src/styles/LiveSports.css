@@ -136,10 +136,6 @@
   color: var(--color-text-light);
 }
 
-.insta {
-  padding-bottom: 50px;
-}
-
 @media only screen and (min-width: 768px) {
   .live-sports {
     padding: var(--padding-desktop);
@@ -189,10 +185,6 @@
   .program td {
     padding: 0 15px;
     min-width: 120px;
-  }
-
-  .insta {
-    padding-bottom: 50px;
   }
 }
 
