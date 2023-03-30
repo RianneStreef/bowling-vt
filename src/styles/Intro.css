@@ -3,7 +3,7 @@
   color: var(--color-text-light);
   padding: var(--padding-mobile);
   overflow: hidden;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 .intro-text p {
