@@ -19,22 +19,16 @@
 }
 
 @font-face {
-  font-family: "Futura";
-  src: local("Futura"),
-    url(../fonts/futura/futura\ light\ bt.ttf) format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Futura Bold";
-  src: local("Futura Bold"),
-    url(../fonts/futura/Futura\ Bold\ font.ttf) format("truetype");
+  font-family: "Archivo";
+  src: local("Archivo"),
+    url(../fonts/Archivo/Archivo-VariableFont.ttf) format("truetype");
   font-display: swap;
 }
 
 html {
-  font-size: calc(60% + 0.8vmin);
-  font-family: Futura;
+  font-size: 30px;
+  font-family: "Archivo";
+  font-weight: 100;
 }
 
 body {
@@ -50,15 +44,14 @@ main {
 }
 
 h1 {
-  font-size: 7.5vw;
+  font-size: 6vw;
   margin: 20px 0 0 0;
-  letter-spacing: 2px;
-  font-family: "Futura Bold";
+  font-weight: 900;
 }
 
 h2 {
   font-size: 8.5vw;
-  font-family: "Futura Bold";
+
   /* padding: var(--padding-mobile); */
 }
 h3 {
@@ -131,6 +124,7 @@ h3 {
   text-decoration: none;
   padding: 15px;
   border-radius: 10px;
+  font-size: 15px;
 }
 
 .reservation-button {
@@ -149,6 +143,7 @@ h3 {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  font-size: 15px;
 }
 
 .phone-icon {

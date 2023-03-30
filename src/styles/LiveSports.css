@@ -47,7 +47,7 @@
   font-size: 40px;
   margin: 20px;
   text-transform: uppercase;
-  font-family: "Futura Bold";
+  font-weight: 900;
 }
 
 .program-info {
@@ -81,7 +81,7 @@
 .game-time {
   font-size: 15px;
   margin-bottom: 0;
-  font-family: "Futura Bold";
+  font-weight: 900;
 }
 
 .game-name {
@@ -121,7 +121,7 @@
 }
 
 .insta {
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 @media only screen and (min-width: 768px) {
