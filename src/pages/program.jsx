@@ -136,9 +136,10 @@ const Program = (props) => {
                 pathname === "http://localhost:8000/program/"
               }
             >
-              {languageToUse.lastWeek}
+              &lt;
             </button>
           </Link>
+          <span>27 Mars - 2 Avril</span>
           <Link to="/next-program">
             <button
               className={`button ${
@@ -152,7 +153,7 @@ const Program = (props) => {
                 pathname === "http://localhost:8000/next-program/"
               }
             >
-              {languageToUse.nextWeek}
+              &gt;
             </button>
           </Link>
         </div>
