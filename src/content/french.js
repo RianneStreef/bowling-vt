@@ -22,7 +22,7 @@ export const french = {
   friday: "Vendredi",
 
   nextWeek: "Semaine prochaine",
-  lastWeek: "Cette semaine",
+  lastWeek: "Semaine precedante",
 
   weekProgram: "programme de la semaine",
 
