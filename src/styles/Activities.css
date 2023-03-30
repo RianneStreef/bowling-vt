@@ -48,7 +48,7 @@
   display: flex;
   flex-direction: column;
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 0.5s;
   position: absolute;
   top: 0;
   left: 0;
@@ -58,7 +58,7 @@
 
 .active-activity {
   opacity: 100%;
-  transition: opacity 1s 0.5s;
+  transition: opacity 1s 0.2s;
 }
 
 .activity-description {
