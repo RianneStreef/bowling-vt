@@ -6,14 +6,14 @@ import { Helmet } from "react-helmet";
 import intakeInfo from "../content/intake";
 
 import { content } from "../content/languages";
-import { programDates } from "../content/program";
-import { programMatchesSaturday } from "../content/program";
-import { programMatchesSunday } from "../content/program";
-import { programMatchesMonday } from "../content/program";
-import { programMatchesTuesday } from "../content/program";
-import { programMatchesWednesday } from "../content/program";
-import { programMatchesThursday } from "../content/program";
-import { programMatchesFriday } from "../content/program";
+import { programDates } from "../content/next-program";
+import { programMatchesSaturday } from "../content/next-program";
+import { programMatchesSunday } from "../content/next-program";
+import { programMatchesMonday } from "../content/next-program";
+import { programMatchesTuesday } from "../content/next-program";
+import { programMatchesWednesday } from "../content/next-program";
+import { programMatchesThursday } from "../content/next-program";
+import { programMatchesFriday } from "../content/next-program";
 
 import phone from "../images/phone.png";
 
@@ -23,7 +23,7 @@ const Program = (props) => {
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
 
-  console.log(pathname);
+  console.log(programMatchesSaturday);
 
   useEffect(() => {
     const timer = setTimeout(() => {

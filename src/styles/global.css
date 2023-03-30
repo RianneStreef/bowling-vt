@@ -128,7 +128,13 @@ p {
   text-decoration: none;
   padding: 15px;
   border-radius: 10px;
-  font-size: 15px;
+  border: none;
+  transition: background-color 0.3s ease-in;
+}
+
+.disabled-button {
+  background-color: grey;
+  transition: background-color 0.3s ease-in;
 }
 
 .reservation-button {

@@ -21,6 +21,9 @@ export const french = {
   thursday: "Jeudi",
   friday: "Vendredi",
 
+  nextWeek: "Semaine prochaine",
+  lastWeek: "Cette semaine",
+
   weekProgram: "programme de la semaine",
 
   activity1Description1:

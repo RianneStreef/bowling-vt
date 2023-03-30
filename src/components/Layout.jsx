@@ -8,6 +8,8 @@ const Layout = ({ children }) => {
   let languageToUse = "";
   let languageInStorage = "";
 
+  const [pathname, setPathname] = useState(`/`);
+
   // useEffect(() => {
   //   if (localStorage.getItem("languageInStorage")) {
   //     setLanguage(languageInStorage);
@@ -16,11 +18,16 @@ const Layout = ({ children }) => {
   //   }
   // }, []);
 
+  useEffect(() => {
+    setPathname(window.location.href);
+  });
+
   const childrenWithProps = React.Children.map(children, (child) =>
     React.cloneElement(child, {
       language,
       setLanguage,
       languageToUse,
+      pathname,
     })
   );
   return (

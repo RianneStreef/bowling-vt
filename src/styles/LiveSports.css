@@ -16,6 +16,14 @@
   align-items: center;
 }
 
+.juggle-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 30px 0;
+}
+
 .program-coded {
   margin: var(--margin-mobile);
   display: flex;
@@ -26,6 +34,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+  scale: 0.98;
+  opacity: 0;
+}
+
+.scale-in {
+  scale: 1;
+  opacity: 1;
+  transition: all 0.5s ease-in;
 }
 
 .program-container {
@@ -164,7 +180,7 @@
 
   .program-day {
     font-size: 80px;
-    margin: 20px;
+    margin: 100px;
   }
 
   .program table {
