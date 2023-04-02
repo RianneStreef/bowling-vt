@@ -8,7 +8,8 @@ const Layout = ({ children }) => {
   let languageToUse = "";
   let languageInStorage = "";
 
-  const [pathname, setPathname] = useState(`/`);
+  const [pathname, setPathname] = useState("/");
+  const [currentWeek, setCurrentWeek] = useState(14);
 
   // useEffect(() => {
   //   if (localStorage.getItem("languageInStorage")) {
@@ -19,7 +20,16 @@ const Layout = ({ children }) => {
   // }, []);
 
   useEffect(() => {
+    let currentDate = new Date();
+    let year = new Date(currentDate.getFullYear(), 0, 1);
+    let days = Math.floor((currentDate - year) / (24 * 60 * 60 * 1000));
+    let week = Math.ceil((currentDate.getDay() + 1 + days) / 7);
+    console.log(
+      "Week Number of the current date (" + currentDate + ") is : " + week
+    );
+
     setPathname(window.location.href);
+    setCurrentWeek(week);
   });
 
   const childrenWithProps = React.Children.map(children, (child) =>
@@ -28,6 +38,8 @@ const Layout = ({ children }) => {
       setLanguage,
       languageToUse,
       pathname,
+      currentWeek,
+      setCurrentWeek,
     })
   );
   return (

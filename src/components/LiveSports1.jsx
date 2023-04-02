@@ -3,18 +3,13 @@ import { Link } from "gatsby";
 
 import { content } from "../content/languages";
 
-import { programMatchesSaturday } from "../content/program";
-import { programMatchesSunday } from "../content/program";
-import { programMatchesMonday } from "../content/program";
-import { programMatchesTuesday } from "../content/program";
-import { programMatchesWednesday } from "../content/program";
-import { programMatchesThursday } from "../content/program";
-import { programMatchesFriday } from "../content/program";
+import program14 from "../content/programs/program14";
+import program15 from "../content/programs/program15";
 
 import "../styles/LiveSports.css";
 
 const LiveSports1 = (props) => {
-  let { language, languageToUse, pathname } = props;
+  let { language, languageToUse, pathname, currentWeek } = props;
 
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
@@ -31,83 +26,22 @@ const LiveSports1 = (props) => {
     return () => clearTimeout(timer);
   }, [pathname]);
 
-  const programMatchesSaturdayList = programMatchesSaturday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
+  // let programDate = program14.6.matches;
 
-  const programMatchesSundayList = programMatchesSunday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesMondayList = programMatchesMonday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesTuesdayList = programMatchesTuesday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesWednesdayList = programMatchesWednesday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesThursdayList = programMatchesThursday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesFridayList = programMatchesFriday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
+  // const todayProgram = programDate.map((match) => {
+  //   return (
+  //     <div>
+  //       <p className="game-time">
+  //         {match.hour} {match.category}
+  //       </p>
+  //       <p className="game-name">{match.game}</p>
+  //     </div>
+  //   );
+  // });
 
   return (
     <>
       <div className="live-sports live-sports-coded">
-        {/* <div className="header-placeholder" /> */}
-
         <h2>LIVE SPORTS TV</h2>
         <div className="program program-coded" id="live">
           <div className="program-container">
@@ -132,44 +66,7 @@ const LiveSports1 = (props) => {
                 </p>
               </div>
               <div>
-                {weekday === 6 ? (
-                  <div className="match-details">
-                    {programMatchesSaturdayList}{" "}
-                  </div>
-                ) : null}
-
-                {weekday === 0 ? (
-                  <div className="match-details">
-                    {programMatchesSundayList}{" "}
-                  </div>
-                ) : null}
-                {weekday === 1 ? (
-                  <div className="match-details">
-                    {programMatchesMondayList}{" "}
-                  </div>
-                ) : null}
-
-                {weekday === 2 ? (
-                  <div className="match-details">
-                    {programMatchesTuesdayList}{" "}
-                  </div>
-                ) : null}
-                {weekday === 3 ? (
-                  <div className="match-details">
-                    {programMatchesWednesdayList}
-                  </div>
-                ) : null}
-
-                {weekday === 4 ? (
-                  <div className="match-details">
-                    {programMatchesThursdayList}{" "}
-                  </div>
-                ) : null}
-                {weekday === 5 ? (
-                  <div className="match-details">
-                    {programMatchesFridayList}{" "}
-                  </div>
-                ) : null}
+                {/* <div className="match-details">{todayProgram}</div> */}
               </div>
             </div>
           </div>
