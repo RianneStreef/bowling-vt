@@ -17,7 +17,7 @@ import Map from "../components/Map";
 import phone from "../images/phone.png";
 
 const IndexPage = function (props) {
-  let { language, languageToUse } = props;
+  let { language, languageToUse, currentWeek } = props;
 
   languageToUse = content.french;
 
@@ -42,7 +42,11 @@ const IndexPage = function (props) {
       <div className="header-placeholder-mobile" />
       <Hero language={language} languageToUse={languageToUse} />
       <Intro language={language} languageToUse={languageToUse} />
-      <LiveSports1 language={language} languageToUse={languageToUse} />
+      <LiveSports1
+        language={language}
+        languageToUse={languageToUse}
+        currentWeek={currentWeek}
+      />
       {/* <LiveSports2 language={language} languageToUse={languageToUse} /> */}
       <LiveSports3 language={language} languageToUse={languageToUse} />
       <Activities language={language} languageToUse={languageToUse} />

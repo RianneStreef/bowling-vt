@@ -3,18 +3,12 @@ import { Link } from "gatsby";
 
 import { content } from "../content/languages";
 
-import { programMatchesSaturday } from "../content/program";
-import { programMatchesSunday } from "../content/program";
-import { programMatchesMonday } from "../content/program";
-import { programMatchesTuesday } from "../content/program";
-import { programMatchesWednesday } from "../content/program";
-import { programMatchesThursday } from "../content/program";
-import { programMatchesFriday } from "../content/program";
+import { program } from "../content/programs/program";
 
 import "../styles/LiveSports.css";
 
 const LiveSports1 = (props) => {
-  let { language, languageToUse, pathname } = props;
+  let { language, languageToUse, pathname, currentWeek } = props;
 
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
@@ -22,6 +16,21 @@ const LiveSports1 = (props) => {
   let day = new Date().getDate();
   let month = new Date().getMonth();
   let weekday = new Date().getDay();
+
+  let weekToUse;
+
+  currentWeek === 14 ? (weekToUse = program.program14) : null;
+  currentWeek === 15 ? (weekToUse = program.program15) : null;
+
+  let dayToUse;
+
+  weekday === 0 ? (dayToUse = weekToUse.sunday.matches) : null;
+  weekday === 1 ? (dayToUse = weekToUse.monday.matches) : null;
+  weekday === 2 ? (dayToUse = weekToUse.tuesday.matches) : null;
+  weekday === 3 ? (dayToUse = weekToUse.wednesday.matches) : null;
+  weekday === 4 ? (dayToUse = weekToUse.thursday.matches) : null;
+  weekday === 5 ? (dayToUse = weekToUse.friday.matches) : null;
+  weekday === 6 ? (dayToUse = weekToUse.saturday.matches) : null;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -31,68 +40,7 @@ const LiveSports1 = (props) => {
     return () => clearTimeout(timer);
   }, [pathname]);
 
-  const programMatchesSaturdayList = programMatchesSaturday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-
-  const programMatchesSundayList = programMatchesSunday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesMondayList = programMatchesMonday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesTuesdayList = programMatchesTuesday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesWednesdayList = programMatchesWednesday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesThursdayList = programMatchesThursday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMatchesFridayList = programMatchesFriday.map((match) => {
+  const programToday = dayToUse.map((match) => {
     return (
       <div>
         <p className="game-time">
@@ -106,14 +54,12 @@ const LiveSports1 = (props) => {
   return (
     <>
       <div className="live-sports live-sports-coded">
-        {/* <div className="header-placeholder" /> */}
-
         <h2>LIVE SPORTS TV</h2>
         <div className="program program-coded" id="live">
-          <div className="program-container">
+          <div className="program-container program-info">
             <p className="program-day">TODAY</p>
 
-            <div className="program-info">
+            <div className="flex-container">
               <div className="date-container">
                 <p className="date">{day}</p>
                 <p className="month">
@@ -131,46 +77,7 @@ const LiveSports1 = (props) => {
                   {month === 11 ? <span>DEC</span> : null}
                 </p>
               </div>
-              <div>
-                {weekday === 6 ? (
-                  <div className="match-details">
-                    {programMatchesSaturdayList}{" "}
-                  </div>
-                ) : null}
-
-                {weekday === 0 ? (
-                  <div className="match-details">
-                    {programMatchesSundayList}{" "}
-                  </div>
-                ) : null}
-                {weekday === 1 ? (
-                  <div className="match-details">
-                    {programMatchesMondayList}{" "}
-                  </div>
-                ) : null}
-
-                {weekday === 2 ? (
-                  <div className="match-details">
-                    {programMatchesTuesdayList}{" "}
-                  </div>
-                ) : null}
-                {weekday === 3 ? (
-                  <div className="match-details">
-                    {programMatchesWednesdayList}
-                  </div>
-                ) : null}
-
-                {weekday === 4 ? (
-                  <div className="match-details">
-                    {programMatchesThursdayList}{" "}
-                  </div>
-                ) : null}
-                {weekday === 5 ? (
-                  <div className="match-details">
-                    {programMatchesFridayList}{" "}
-                  </div>
-                ) : null}
-              </div>
+              <div className="match-details">{programToday}</div>
             </div>
           </div>
         </div>

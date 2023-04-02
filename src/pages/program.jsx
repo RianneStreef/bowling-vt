@@ -1,52 +1,53 @@
-import React, { useEffect } from "react";
-import { Link } from "gatsby";
+import React, { useEffect, useState } from "react";
 
 import { Helmet } from "react-helmet";
 
 import intakeInfo from "../content/intake";
 
 import { content } from "../content/languages";
-import { programDates } from "../content/program";
-import { programMatchesSaturday } from "../content/program";
-import { programMatchesSunday } from "../content/program";
-import { programMatchesMonday } from "../content/program";
-import { programMatchesTuesday } from "../content/program";
-import { programMatchesWednesday } from "../content/program";
-import { programMatchesThursday } from "../content/program";
-import { programMatchesFriday } from "../content/program";
+
+import { program } from "../content/programs/program";
 
 import phone from "../images/phone.png";
 
 const Program = (props) => {
-  let { language, languageToUse, pathname } = props;
+  let { language, languageToUse, pathname, currentWeek } = props;
 
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
 
-  console.log(pathname);
+  const [week, setWeek] = useState(currentWeek);
+
+  let weekToUse;
+
+  week === 14 ? (weekToUse = program.program14) : null;
+  week === 15 ? (weekToUse = program.program15) : null;
+
+  console.log(weekToUse);
+
+  let firstWeek = 14;
+  let lastWeek = 15;
 
   useEffect(() => {
+    let element = document.getElementById("live");
+    element.classList.remove("scale-in");
     const timer = setTimeout(() => {
-      let element = document.getElementById("live");
       element.classList.add("scale-in");
     }, 5);
     return () => clearTimeout(timer);
-  }, [pathname]);
+  }, [pathname, week]);
 
-  const programMatchesSaturdayList = programMatchesSaturday.map((match) => {
-    return (
-      <div>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
+  let currentWeekProgramSaturday = weekToUse.saturday.matches;
+  let currentWeekProgramSunday = weekToUse.sunday.matches;
+  let currentWeekProgramMonday = weekToUse.monday.matches;
+  let currentWeekProgramTuesday = weekToUse.tuesday.matches;
+  let currentWeekProgramWednesday = weekToUse.wednesday.matches;
+  let currentWeekProgramThursday = weekToUse.thursday.matches;
+  let currentWeekProgramFriday = weekToUse.friday.matches;
 
-  const programMatchesSundayList = programMatchesSunday.map((match) => {
+  const programSaturday = currentWeekProgramSaturday.map((match) => {
     return (
-      <div>
+      <div key={match.id}>
         <p className="game-time">
           {match.hour} {match.category}
         </p>
@@ -54,9 +55,9 @@ const Program = (props) => {
       </div>
     );
   });
-  const programMatchesMondayList = programMatchesMonday.map((match) => {
+  const programSunday = currentWeekProgramSunday.map((match) => {
     return (
-      <div>
+      <div key={match.id}>
         <p className="game-time">
           {match.hour} {match.category}
         </p>
@@ -64,9 +65,9 @@ const Program = (props) => {
       </div>
     );
   });
-  const programMatchesTuesdayList = programMatchesTuesday.map((match) => {
+  const programMonday = currentWeekProgramMonday.map((match) => {
     return (
-      <div>
+      <div key={match.id}>
         <p className="game-time">
           {match.hour} {match.category}
         </p>
@@ -74,9 +75,9 @@ const Program = (props) => {
       </div>
     );
   });
-  const programMatchesWednesdayList = programMatchesWednesday.map((match) => {
+  const programTuesday = currentWeekProgramTuesday.map((match) => {
     return (
-      <div>
+      <div key={match.id}>
         <p className="game-time">
           {match.hour} {match.category}
         </p>
@@ -84,9 +85,9 @@ const Program = (props) => {
       </div>
     );
   });
-  const programMatchesThursdayList = programMatchesThursday.map((match) => {
+  const programWednesday = currentWeekProgramWednesday.map((match) => {
     return (
-      <div>
+      <div key={match.id}>
         <p className="game-time">
           {match.hour} {match.category}
         </p>
@@ -94,9 +95,19 @@ const Program = (props) => {
       </div>
     );
   });
-  const programMatchesFridayList = programMatchesFriday.map((match) => {
+  const programThursday = currentWeekProgramThursday.map((match) => {
     return (
-      <div>
+      <div key={match.id}>
+        <p className="game-time">
+          {match.hour} {match.category}
+        </p>
+        <p className="game-name">{match.game}</p>
+      </div>
+    );
+  });
+  const programFriday = currentWeekProgramFriday.map((match) => {
+    return (
+      <div key={match.id}>
         <p className="game-time">
           {match.hour} {match.category}
         </p>
@@ -123,112 +134,88 @@ const Program = (props) => {
 
         <h2>LIVE SPORTS TV</h2>
         <div className="juggle-buttons">
-          <Link to="/program">
-            <button
-              className={`button ${
-                pathname === "https://bowling-vt.netlify.app/program/" ||
-                pathname === "http://localhost:8000/program/"
-                  ? "disabled-button"
-                  : null
-              }`}
-              disabled={
-                pathname === "https://bowling-vt.netlify.app/program/" ||
-                pathname === "http://localhost:8000/program/"
-              }
-            >
-              &lt;
-            </button>
-          </Link>
-          <span>27 Mars - 2 Avril</span>
-          <Link to="/next-program">
-            <button
-              className={`button ${
-                pathname === "https://bowling-vt.netlify.app/next-program/" ||
-                pathname === "http://localhost:8000/next-program/"
-                  ? "disabled-button"
-                  : null
-              }`}
-              disabled={
-                pathname === "https://bowling-vt.netlify.app/next-program/" ||
-                pathname === "http://localhost:8000/next-program/"
-              }
-            >
-              &gt;
-            </button>
-          </Link>
+          <button
+            className={`button ${
+              week === firstWeek ? "disabled-button" : null
+            }`}
+            disabled={week === firstWeek}
+            onClick={() => setWeek(week - 1)}
+          >
+            &lt;
+          </button>
+
+          <span>{weekToUse.week}</span>
+
+          <button
+            className={`button ${week === lastWeek ? "disabled-button" : null}`}
+            disabled={week === lastWeek}
+            onClick={() => setWeek(week + 1)}
+          >
+            &gt;
+          </button>
         </div>
         <div className="program program-coded" id="live">
-          <div className="program-container">
-            <p className="program-day">{languageToUse.saturday}</p>
-
-            <div className="program-info">
+          <div className="program-info">
+            <div className="flex-container">
               <div className="date-container">
-                <p className="date">{programDates.saturday.day}</p>
-                <p className="month">{programDates.saturday.monthText}</p>
+                <p className="date">{weekToUse.saturday.day}</p>
+                <p className="month">{weekToUse.saturday.monthText}</p>
               </div>
-              <table>{programMatchesSaturdayList}</table>
+              <div className="match-details">{programSaturday}</div>
             </div>
           </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.sunday}</p>
-            <div className="program-info">
+          <div className="program-info">
+            <div className="flex-container">
               <div className="date-container">
-                <p className="date">{programDates.sunday.day}</p>
-                <p className="month">{programDates.sunday.monthText}</p>
+                <p className="date">{weekToUse.sunday.day}</p>
+                <p className="month">{weekToUse.sunday.monthText}</p>
               </div>
-              <table>{programMatchesSundayList}</table>
+              <div className="match-details">{programSunday}</div>
             </div>
           </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.monday}</p>
-            <div className="program-info">
+          <div className="program-info">
+            <div className="flex-container">
               <div className="date-container">
-                <p className="date">{programDates.monday.day}</p>
-                <p className="month">{programDates.monday.monthText}</p>
+                <p className="date">{weekToUse.monday.day}</p>
+                <p className="month">{weekToUse.monday.monthText}</p>
               </div>
-              <table>
-                <table>{programMatchesMondayList}</table>
-              </table>
+              <div className="match-details">{programMonday}</div>
             </div>
           </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.tuesday}</p>
-            <div className="program-info">
+          <div className="program-info">
+            <div className="flex-container">
               <div className="date-container">
-                <p className="date">{programDates.tuesday.day}</p>
-                <p className="month">{programDates.tuesday.monthText}</p>
+                <p className="date">{weekToUse.tuesday.day}</p>
+                <p className="month">{weekToUse.tuesday.monthText}</p>
               </div>
-              <table>{programMatchesTuesdayList}</table>
+              <div className="match-details">{programTuesday}</div>
             </div>
           </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.wednesday}</p>
-            <div className="program-info">
+          <div className="program-info">
+            <div className="flex-container">
               <div className="date-container">
-                <p className="date">{programDates.wednesday.day}</p>
-                <p className="month">{programDates.wednesday.monthText}</p>
+                <p className="date">{weekToUse.wednesday.day}</p>
+                <p className="month">{weekToUse.wednesday.monthText}</p>
               </div>
-              <table>{programMatchesWednesdayList}</table>
+              <div className="match-details">{programWednesday}</div>
             </div>
           </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.thursday}</p>
-            <div className="program-info">
+          <div className="program-info">
+            <div className="flex-container">
               <div className="date-container">
-                <p className="date">{programDates.thursday.day}</p>
-                <p className="month">{programDates.thursday.monthText}</p>
+                <p className="date">{weekToUse.thursday.day}</p>
+                <p className="month">{weekToUse.thursday.monthText}</p>
               </div>
-              <table>{programMatchesThursdayList}</table>
+              <div className="match-details">{programThursday}</div>
             </div>
           </div>
-          <div className="program-container">
-            <p className="program-day">{languageToUse.friday}</p>
-            <div className="program-info">
+          <div className="program-info">
+            <div className="flex-container">
               <div className="date-container">
-                <p className="date">{programDates.friday.day}</p>
-                <p className="month">{programDates.friday.monthText}</p>
+                <p className="date">{weekToUse.friday.day}</p>
+                <p className="month">{weekToUse.friday.monthText}</p>
               </div>
-              <table>{programMatchesFridayList}</table>
+              <div className="match-details">{programFriday}</div>
             </div>
           </div>
         </div>

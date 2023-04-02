@@ -15,7 +15,7 @@ const LiveSports1 = (props) => {
   return (
     <>
       <div className="insta">
-        <h2>DENIERES ACTUS</h2>
+        <h2>DERNIERES ACTUS</h2>
         <div>
           <div
             className="insta-feed"
