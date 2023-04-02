@@ -156,53 +156,67 @@ const Program = (props) => {
         </div>
         <div className="program program-coded" id="live">
           <div className="program-info">
-            <div className="date-container">
-              <p className="date">{weekToUse.saturday.day}</p>
-              <p className="month">{weekToUse.saturday.monthText}</p>
+            <div className="flex-container">
+              <div className="date-container">
+                <p className="date">{weekToUse.saturday.day}</p>
+                <p className="month">{weekToUse.saturday.monthText}</p>
+              </div>
+              <div className="match-details">{programSaturday}</div>
             </div>
-            <div className="match-details">{programSaturday}</div>
           </div>
           <div className="program-info">
-            <div className="date-container">
-              <p className="date">{weekToUse.sunday.day}</p>
-              <p className="month">{weekToUse.sunday.monthText}</p>
+            <div className="flex-container">
+              <div className="date-container">
+                <p className="date">{weekToUse.sunday.day}</p>
+                <p className="month">{weekToUse.sunday.monthText}</p>
+              </div>
+              <div className="match-details">{programSunday}</div>
             </div>
-            <div className="match-details">{programSunday}</div>
           </div>
           <div className="program-info">
-            <div className="date-container">
-              <p className="date">{weekToUse.monday.day}</p>
-              <p className="month">{weekToUse.monday.monthText}</p>
+            <div className="flex-container">
+              <div className="date-container">
+                <p className="date">{weekToUse.monday.day}</p>
+                <p className="month">{weekToUse.monday.monthText}</p>
+              </div>
+              <div className="match-details">{programMonday}</div>
             </div>
-            <div className="match-details">{programMonday}</div>
           </div>
           <div className="program-info">
-            <div className="date-container">
-              <p className="date">{weekToUse.tuesday.day}</p>
-              <p className="month">{weekToUse.tuesday.monthText}</p>
+            <div className="flex-container">
+              <div className="date-container">
+                <p className="date">{weekToUse.tuesday.day}</p>
+                <p className="month">{weekToUse.tuesday.monthText}</p>
+              </div>
+              <div className="match-details">{programTuesday}</div>
             </div>
-            <div className="match-details">{programTuesday}</div>
           </div>
           <div className="program-info">
-            <div className="date-container">
-              <p className="date">{weekToUse.wednesday.day}</p>
-              <p className="month">{weekToUse.wednesday.monthText}</p>
+            <div className="flex-container">
+              <div className="date-container">
+                <p className="date">{weekToUse.wednesday.day}</p>
+                <p className="month">{weekToUse.wednesday.monthText}</p>
+              </div>
+              <div className="match-details">{programWednesday}</div>
             </div>
-            <div className="match-details">{programWednesday}</div>
           </div>
           <div className="program-info">
-            <div className="date-container">
-              <p className="date">{weekToUse.thursday.day}</p>
-              <p className="month">{weekToUse.thursday.monthText}</p>
+            <div className="flex-container">
+              <div className="date-container">
+                <p className="date">{weekToUse.thursday.day}</p>
+                <p className="month">{weekToUse.thursday.monthText}</p>
+              </div>
+              <div className="match-details">{programThursday}</div>
             </div>
-            <div className="match-details">{programThursday}</div>
           </div>
           <div className="program-info">
-            <div className="date-container">
-              <p className="date">{weekToUse.friday.day}</p>
-              <p className="month">{weekToUse.friday.monthText}</p>
+            <div className="flex-container">
+              <div className="date-container">
+                <p className="date">{weekToUse.friday.day}</p>
+                <p className="month">{weekToUse.friday.monthText}</p>
+              </div>
+              <div className="match-details">{programFriday}</div>
             </div>
-            <div className="match-details">{programFriday}</div>
           </div>
         </div>
       </div>
