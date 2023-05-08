@@ -22,6 +22,20 @@ const Program = (props) => {
 
   week === 14 ? (weekToUse = program.program14) : null;
   week === 15 ? (weekToUse = program.program15) : null;
+  week === 16 ? (weekToUse = program.program15) : null;
+  week === 17 ? (weekToUse = program.program15) : null;
+  week === 18 ? (weekToUse = program.program15) : null;
+  week === 18 ? (weekToUse = program.program15) : null;
+  week === 19 ? (weekToUse = program.program15) : null;
+  week === 20 ? (weekToUse = program.program15) : null;
+  week === 21 ? (weekToUse = program.program15) : null;
+  week === 22 ? (weekToUse = program.program15) : null;
+  week === 23 ? (weekToUse = program.program15) : null;
+  week === 24 ? (weekToUse = program.program15) : null;
+  week === 25 ? (weekToUse = program.program15) : null;
+  week === 26 ? (weekToUse = program.program15) : null;
+  week === 27 ? (weekToUse = program.program15) : null;
+  week === 28 ? (weekToUse = program.program15) : null;
 
   console.log(weekToUse);
 
