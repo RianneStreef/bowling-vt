@@ -21,6 +21,19 @@ const LiveSports1 = (props) => {
 
   currentWeek === 14 ? (weekToUse = program.program14) : null;
   currentWeek === 15 ? (weekToUse = program.program15) : null;
+  currentWeek === 16 ? (weekToUse = program.program15) : null;
+  currentWeek === 17 ? (weekToUse = program.program15) : null;
+  currentWeek === 18 ? (weekToUse = program.program15) : null;
+  currentWeek === 19 ? (weekToUse = program.program15) : null;
+  currentWeek === 20 ? (weekToUse = program.program15) : null;
+  currentWeek === 21 ? (weekToUse = program.program15) : null;
+  currentWeek === 22 ? (weekToUse = program.program15) : null;
+  currentWeek === 23 ? (weekToUse = program.program15) : null;
+  currentWeek === 24 ? (weekToUse = program.program15) : null;
+  currentWeek === 25 ? (weekToUse = program.program15) : null;
+  currentWeek === 26 ? (weekToUse = program.program15) : null;
+
+  console.log(weekToUse);
 
   let dayToUse;
 
@@ -42,7 +55,7 @@ const LiveSports1 = (props) => {
 
   const programToday = dayToUse.map((match) => {
     return (
-      <div>
+      <div key={match.index}>
         <p className="game-time">
           {match.hour} {match.category}
         </p>
