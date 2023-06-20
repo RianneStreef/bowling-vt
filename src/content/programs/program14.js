@@ -3,7 +3,7 @@ export const program14 = {
   saturday: {
     day: 1,
     month: 2,
-    monthText: "MAR",
+
     matches: [
       {
         hour: "15h00",
@@ -20,7 +20,6 @@ export const program14 = {
   sunday: {
     day: 2,
     month: 2,
-    monthText: "MAR",
     matches: [
       {
         hour: "15h00",
@@ -47,7 +46,6 @@ export const program14 = {
   monday: {
     day: 3,
     month: 2,
-    monthText: "MAR",
     matches: [
       {
         hour: "15h00",
@@ -64,7 +62,6 @@ export const program14 = {
   tuesday: {
     day: 4,
     month: 2,
-    monthText: "MAR",
     matches: [
       {
         hour: "15h00",
@@ -81,7 +78,6 @@ export const program14 = {
   wednesday: {
     day: 5,
     month: 2,
-    monthText: "MAR",
     matches: [
       {
         hour: "15h00",
@@ -99,7 +95,6 @@ export const program14 = {
   thursday: {
     day: 6,
     month: 2,
-    monthText: "MAR",
     matches: [
       {
         hour: "15h00",
@@ -116,7 +111,6 @@ export const program14 = {
   friday: {
     day: 7,
     month: 2,
-    monthText: "MAR",
     matches: [
       {
         hour: "15h00",
