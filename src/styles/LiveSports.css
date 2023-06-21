@@ -110,11 +110,13 @@
   font-size: 15px;
   margin: 0;
   font-weight: 900;
+  text-transform: uppercase;
 }
 
 .game-name {
   font-size: 18px;
   margin-top: 0;
+  text-transform: uppercase;
 }
 
 .program-info table {

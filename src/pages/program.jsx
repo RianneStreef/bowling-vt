@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { graphql } from "gatsby";
 
 import { Helmet } from "react-helmet";
 
@@ -6,129 +7,80 @@ import intakeInfo from "../content/intake";
 
 import { content } from "../content/languages";
 
-import { program } from "../content/programs/program";
-
 import phone from "../images/phone.png";
 
 const Program = (props) => {
-  let { language, languageToUse, pathname, currentWeek } = props;
+  let {
+    language,
+    languageToUse,
+    pathname,
+    day,
+    weekday,
+    newMonth,
+    year,
+    data,
+  } = props;
 
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
 
-  const [week, setWeek] = useState(currentWeek);
+  let matches = data.allContentfulMatch.nodes;
+  console.log(matches);
 
-  let weekToUse;
-
-  week === 14 ? (weekToUse = program.program14) : null;
-  week === 15 ? (weekToUse = program.program15) : null;
-  week === 16 ? (weekToUse = program.program15) : null;
-  week === 17 ? (weekToUse = program.program15) : null;
-  week === 18 ? (weekToUse = program.program15) : null;
-  week === 18 ? (weekToUse = program.program15) : null;
-  week === 19 ? (weekToUse = program.program15) : null;
-  week === 20 ? (weekToUse = program.program15) : null;
-  week === 21 ? (weekToUse = program.program15) : null;
-  week === 22 ? (weekToUse = program.program15) : null;
-  week === 23 ? (weekToUse = program.program15) : null;
-  week === 24 ? (weekToUse = program.program15) : null;
-  week === 25 ? (weekToUse = program.program15) : null;
-  week === 26 ? (weekToUse = program.program15) : null;
-  week === 27 ? (weekToUse = program.program15) : null;
-  week === 28 ? (weekToUse = program.program15) : null;
-
-  console.log(weekToUse);
-
-  let firstWeek = 14;
-  let lastWeek = 15;
+  const [daysFromSaturday, setDaysFromSaturday] = useState(0);
 
   useEffect(() => {
+    weekday === 0 ? setDaysFromSaturday(1) : null;
+    weekday === 1 ? setDaysFromSaturday(2) : null;
+    weekday === 2 ? setDaysFromSaturday(3) : null;
+    weekday === 3 ? setDaysFromSaturday(4) : null;
+    weekday === 4 ? setDaysFromSaturday(5) : null;
+    weekday === 5 ? setDaysFromSaturday(6) : null;
+    weekday === 6 ? setDaysFromSaturday(0) : null;
+
     let element = document.getElementById("live");
     element.classList.remove("scale-in");
     const timer = setTimeout(() => {
       element.classList.add("scale-in");
     }, 5);
     return () => clearTimeout(timer);
-  }, [pathname, week]);
+  }, [day, weekday, newMonth, year, pathname, daysFromSaturday]);
 
-  let currentWeekProgramSaturday = weekToUse.saturday.matches;
-  let currentWeekProgramSunday = weekToUse.sunday.matches;
-  let currentWeekProgramMonday = weekToUse.monday.matches;
-  let currentWeekProgramTuesday = weekToUse.tuesday.matches;
-  let currentWeekProgramWednesday = weekToUse.wednesday.matches;
-  let currentWeekProgramThursday = weekToUse.thursday.matches;
-  let currentWeekProgramFriday = weekToUse.friday.matches;
+  let newDate = `${year}-${newMonth}-${day}`;
+  let saturday = `${year}-${newMonth}-${day - daysFromSaturday}`;
+  let sunday = `${year}-${newMonth}-${day - daysFromSaturday + 1}`;
 
-  const programSaturday = currentWeekProgramSaturday.map((match) => {
-    return (
-      <div key={match.id}>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programSunday = currentWeekProgramSunday.map((match) => {
-    return (
-      <div key={match.id}>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programMonday = currentWeekProgramMonday.map((match) => {
-    return (
-      <div key={match.id}>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programTuesday = currentWeekProgramTuesday.map((match) => {
-    return (
-      <div key={match.id}>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programWednesday = currentWeekProgramWednesday.map((match) => {
-    return (
-      <div key={match.id}>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programThursday = currentWeekProgramThursday.map((match) => {
-    return (
-      <div key={match.id}>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
-  const programFriday = currentWeekProgramFriday.map((match) => {
-    return (
-      <div key={match.id}>
-        <p className="game-time">
-          {match.hour} {match.category}
-        </p>
-        <p className="game-name">{match.game}</p>
-      </div>
-    );
-  });
+  console.log(newDate);
+  console.log(saturday);
+
+  // let firstWeek = 1;
+  // let lastWeek = 52;
+
+  const programSaturday = matches
+    .filter((match) => match.dateTime === saturday)
+    .map((match) => {
+      return (
+        <div key={match.id}>
+          <p className="game-time">
+            {match.time} {match.category}
+          </p>
+          <p className="game-name">{match.match}</p>
+        </div>
+      );
+    });
+
+  const programSunday = matches
+    .filter((match) => match.dateTime === sunday)
+    .map((match) => {
+      return (
+        <div key={match.id}>
+          <p className="game-time">
+            {match.time} {match.category}
+          </p>
+          <p className="game-name">{match.match}</p>
+        </div>
+      );
+    });
 
   return (
     <>
@@ -149,21 +101,20 @@ const Program = (props) => {
         <h2>LIVE SPORTS TV</h2>
         <div className="juggle-buttons">
           <button
-            className={`button ${
-              week === firstWeek ? "disabled-button" : null
-            }`}
-            disabled={week === firstWeek}
-            onClick={() => setWeek(week - 1)}
+            className="button"
+            // disabled={week === firstWeek}
+            // onClick={() => setWeek(week - 1)}
           >
             &lt;
           </button>
 
-          <span>{weekToUse.week}</span>
+          <span>this week</span>
 
           <button
-            className={`button ${week === lastWeek ? "disabled-button" : null}`}
-            disabled={week === lastWeek}
-            onClick={() => setWeek(week + 1)}
+            className="button"
+            // className={`button ${week === lastWeek ? "disabled-button" : null}`}
+            // disabled={week === lastWeek}
+            // onClick={() => setWeek(week + 1)}
           >
             &gt;
           </button>
@@ -172,13 +123,48 @@ const Program = (props) => {
           <div className="program-info">
             <div className="flex-container">
               <div className="date-container">
-                <p className="date">{weekToUse.saturday.day}</p>
-                <p className="month">{weekToUse.saturday.monthText}</p>
+                <p className="date">{day - daysFromSaturday}</p>
+                <p className="month">
+                  {newMonth === "01" ? <span>JAN</span> : null}
+                  {newMonth === "02" ? <span>FEB</span> : null}
+                  {newMonth === "03" ? <span> MAR</span> : null}
+                  {newMonth === "04" ? <span>APR</span> : null}
+                  {newMonth === "05" ? <span>MAY</span> : null}
+                  {newMonth === "06" ? <span>JUN</span> : null}
+                  {newMonth === "07" ? <span>JUL</span> : null}
+                  {newMonth === "08" ? <span>AUG</span> : null}
+                  {newMonth === "09" ? <span>SEP</span> : null}
+                  {newMonth === "10" ? <span>OCT</span> : null}
+                  {newMonth === "11" ? <span>NOV</span> : null}
+                  {newMonth === "12" ? <span>DEC</span> : null}
+                </p>
               </div>
               <div className="match-details">{programSaturday}</div>
             </div>
           </div>
           <div className="program-info">
+            <div className="flex-container">
+              <div className="date-container">
+                <p className="date">{day - daysFromSaturday}</p>
+                <p className="month">
+                  {newMonth === "01" ? <span>JAN</span> : null}
+                  {newMonth === "02" ? <span>FEB</span> : null}
+                  {newMonth === "03" ? <span> MAR</span> : null}
+                  {newMonth === "04" ? <span>APR</span> : null}
+                  {newMonth === "05" ? <span>MAY</span> : null}
+                  {newMonth === "06" ? <span>JUN</span> : null}
+                  {newMonth === "07" ? <span>JUL</span> : null}
+                  {newMonth === "08" ? <span>AUG</span> : null}
+                  {newMonth === "09" ? <span>SEP</span> : null}
+                  {newMonth === "10" ? <span>OCT</span> : null}
+                  {newMonth === "11" ? <span>NOV</span> : null}
+                  {newMonth === "12" ? <span>DEC</span> : null}
+                </p>
+              </div>
+              <div className="match-details">{programSunday}</div>
+            </div>
+          </div>
+          {/* <div className="program-info">
             <div className="flex-container">
               <div className="date-container">
                 <p className="date">{weekToUse.sunday.day}</p>
@@ -231,11 +217,25 @@ const Program = (props) => {
               </div>
               <div className="match-details">{programFriday}</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
   );
 };
+
+export const matchQuery = graphql`
+  query matchesQuery {
+    allContentfulMatch {
+      nodes {
+        category
+        id
+        match
+        dateTime
+        time
+      }
+    }
+  }
+`;
 
 export default Program;

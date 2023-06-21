@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 });
 
 // const intakeInfo = require("./src/content/intake");
@@ -13,26 +13,26 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "gatsby-template",
+    title: "Bowling Val Thorens",
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "G-CR9V44788C", // Google Analytics / GA
-        ],
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: true,
-        },
-        // defaults to false
-        enableWebVitalsTracking: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     // You can add multiple tracking ids and a pageview event will be fired for all of them.
+    //     trackingIds: [
+    //       "G-CR9V44788C", // Google Analytics / GA
+    //     ],
+    //     pluginConfig: {
+    //       // Puts tracking script in the head instead of the body
+    //       head: true,
+    //     },
+    //     // defaults to false
+    //     enableWebVitalsTracking: true,
+    //     // Setting this parameter is also optional
+    //     respectDNT: true,
+    //   },
+    // },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     {
@@ -76,6 +76,13 @@ module.exports = {
       resolve: "gatsby-plugin-sitemap",
       options: {
         output: "/",
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],

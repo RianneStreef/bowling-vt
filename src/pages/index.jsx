@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
 
 import "../styles/global.css";
 
@@ -9,7 +10,6 @@ import intakeInfo from "../content/intake";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
 import LiveSports1 from "../components/LiveSports1";
-import LiveSports2 from "../components/LiveSports2";
 import LiveSports3 from "../components/LiveSports3";
 import Activities from "../components/Activities";
 import Map from "../components/Map";
@@ -17,9 +17,12 @@ import Map from "../components/Map";
 import phone from "../images/phone.png";
 
 const IndexPage = function (props) {
-  let { language, languageToUse, currentWeek } = props;
+  let { language, languageToUse, currentWeek, day, weekday, newMonth, year } =
+    props;
 
   languageToUse = content.french;
+
+  const { data } = props;
 
   return (
     <div>
@@ -46,6 +49,11 @@ const IndexPage = function (props) {
         language={language}
         languageToUse={languageToUse}
         currentWeek={currentWeek}
+        data={data}
+        day={day}
+        weekday={weekday}
+        newMonth={newMonth}
+        year={year}
       />
       {/* <LiveSports2 language={language} languageToUse={languageToUse} /> */}
       <LiveSports3 language={language} languageToUse={languageToUse} />
@@ -54,5 +62,19 @@ const IndexPage = function (props) {
     </div>
   );
 };
+
+export const matchQuery = graphql`
+  query matchQuery {
+    allContentfulMatch {
+      nodes {
+        category
+        id
+        match
+        dateTime
+        time
+      }
+    }
+  }
+`;
 
 export default IndexPage;

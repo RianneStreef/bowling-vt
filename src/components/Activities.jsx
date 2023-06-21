@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { useSwipeable } from "react-swipeable";
+
 import "../styles/Activities.css";
 import { content } from "../content/languages";
 
@@ -28,10 +30,14 @@ const Activities = (props) => {
     } else setActiveSheet(activeSheet + 1);
   }
 
+  const handlers = useSwipeable({
+    onSwiped: (eventData) => console.log("User Swiped!", eventData),
+  });
+
   return (
     <>
       {/* <div className="header-placeholder" /> */}
-      <div className="activities">
+      <div className="activities" {...handlers}>
         <div className="arrow-container arrow-container-left">
           <span onClick={() => handleClickLeft()}>&#60;</span>
         </div>

@@ -9,7 +9,26 @@ const Layout = ({ children }) => {
   let languageInStorage = "";
 
   const [pathname, setPathname] = useState("/");
-  const [currentWeek, setCurrentWeek] = useState(14);
+
+  let day = new Date().getDate();
+  let weekday = new Date().getDay();
+  let month = new Date().getMonth();
+  let year = new Date().getYear() + 1900;
+
+  let newMonth;
+
+  month === 0 ? (newMonth = "01") : null;
+  month === 1 ? (newMonth = "02") : null;
+  month === 2 ? (newMonth = "03") : null;
+  month === 3 ? (newMonth = "04") : null;
+  month === 4 ? (newMonth = "05") : null;
+  month === 5 ? (newMonth = "06") : null;
+  month === 6 ? (newMonth = "07") : null;
+  month === 7 ? (newMonth = "08") : null;
+  month === 8 ? (newMonth = "09") : null;
+  month === 9 ? (newMonth = "10") : null;
+  month === 10 ? (newMonth = "11") : null;
+  month === 11 ? (newMonth = "12") : null;
 
   // useEffect(() => {
   //   if (localStorage.getItem("languageInStorage")) {
@@ -20,17 +39,11 @@ const Layout = ({ children }) => {
   // }, []);
 
   useEffect(() => {
-    let currentDate = new Date();
-    let year = new Date(currentDate.getFullYear(), 0, 1);
-    let days = Math.floor((currentDate - year) / (24 * 60 * 60 * 1000));
-    let week = Math.ceil((currentDate.getDay() + 1 + days) / 7);
-    console.log(
-      "Week Number of the current date (" + currentDate + ") is : " + week
-    );
+    // let days = Math.floor((currentDate - year) / (24 * 60 * 60 * 1000));
+    // let week = Math.ceil((currentDate.getDay() + 1 + days) / 7);
 
     setPathname(window.location.href);
-    setCurrentWeek(week);
-  });
+  }, [day, weekday, month, year]);
 
   const childrenWithProps = React.Children.map(children, (child) =>
     React.cloneElement(child, {
@@ -38,8 +51,10 @@ const Layout = ({ children }) => {
       setLanguage,
       languageToUse,
       pathname,
-      currentWeek,
-      setCurrentWeek,
+      day,
+      weekday,
+      newMonth,
+      year,
     })
   );
   return (
