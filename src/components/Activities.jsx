@@ -30,14 +30,16 @@ const Activities = (props) => {
     } else setActiveSheet(activeSheet + 1);
   }
 
-  const handlers = useSwipeable({
-    onSwiped: (eventData) => console.log("User Swiped!", eventData),
-  });
-
   return (
     <>
       {/* <div className="header-placeholder" /> */}
-      <div className="activities" {...handlers}>
+      <div
+        {...useSwipeable({
+          onSwipedRight: () => handleClickRight(),
+          onSwipedLeft: () => handleClickLeft(),
+        })}
+        className="activities"
+      >
         <div className="arrow-container arrow-container-left">
           <span onClick={() => handleClickLeft()}>&#60;</span>
         </div>
