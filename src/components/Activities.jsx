@@ -35,8 +35,9 @@ const Activities = (props) => {
       {/* <div className="header-placeholder" /> */}
       <div
         {...useSwipeable({
-          onSwipedRight: () => handleClickRight(),
-          onSwipedLeft: () => handleClickLeft(),
+          onSwipedRight: () => handleClickLeft(),
+          onSwipedLeft: () => handleClickRight(),
+          preventScrollOnSwipe: true,
         })}
         className="activities"
       >

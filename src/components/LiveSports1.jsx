@@ -21,10 +21,8 @@ const LiveSports1 = (props) => {
   language === "french" ? (languageToUse = content.french) : null;
 
   let date = `${year}-${newMonth}-${day}`;
-  console.log(newMonth === "06");
 
   let matches = data.allContentfulMatch.nodes;
-  console.log(matches);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -38,7 +36,7 @@ const LiveSports1 = (props) => {
     .filter((match) => match.dateTime === date)
     .map((match) => {
       return (
-        <div key={match.index}>
+        <div key={match.id}>
           <p className="game-time">
             {match.time} {match.category}
           </p>
@@ -58,20 +56,37 @@ const LiveSports1 = (props) => {
             <div className="flex-container">
               <div className="date-container">
                 <p className="date">{day}</p>
-                <p className="month">
-                  {newMonth === "1" ? <span>JAN</span> : null}
-                  {newMonth === "2" ? <span>FEB</span> : null}
-                  {newMonth === "3" ? <span>MAR</span> : null}
-                  {newMonth === "4" ? <span>APR</span> : null}
-                  {newMonth === "5" ? <span>MAY</span> : null}
-                  {newMonth === "6" ? <span>JUN</span> : null}
-                  {newMonth === "7" ? <span>JUL</span> : null}
-                  {newMonth === "8" ? <span>AUG</span> : null}
-                  {newMonth === "9" ? <span>SEP</span> : null}
-                  {newMonth === "10" ? <span>OCT</span> : null}
-                  {newMonth === "11" ? <span>NOV</span> : null}
-                  {newMonth === "12" ? <span>DEC</span> : null}
-                </p>
+                {language === "french" ? (
+                  <p className="month">
+                    {newMonth === "01" ? <span>JAN</span> : null}
+                    {newMonth === "02" ? <span>FEV</span> : null}
+                    {newMonth === "03" ? <span>MAR</span> : null}
+                    {newMonth === "04" ? <span>AVR</span> : null}
+                    {newMonth === "05" ? <span>MAI</span> : null}
+                    {newMonth === "06" ? <span>JUIN</span> : null}
+                    {newMonth === "07" ? <span>JUL</span> : null}
+                    {newMonth === "08" ? <span>AOUT</span> : null}
+                    {newMonth === "09" ? <span>SEP</span> : null}
+                    {newMonth === "10" ? <span>OCT</span> : null}
+                    {newMonth === "11" ? <span>NOV</span> : null}
+                    {newMonth === "12" ? <span>DEC</span> : null}
+                  </p>
+                ) : (
+                  <p className="month">
+                    {newMonth === "01" ? <span>JAN</span> : null}
+                    {newMonth === "02" ? <span>FEB</span> : null}
+                    {newMonth === "03" ? <span> MAR</span> : null}
+                    {newMonth === "04" ? <span>APR</span> : null}
+                    {newMonth === "05" ? <span>MAY</span> : null}
+                    {newMonth === "06" ? <span>JUN</span> : null}
+                    {newMonth === "07" ? <span>JUL</span> : null}
+                    {newMonth === "08" ? <span>AUG</span> : null}
+                    {newMonth === "09" ? <span>SEP</span> : null}
+                    {newMonth === "10" ? <span>OCT</span> : null}
+                    {newMonth === "11" ? <span>NOV</span> : null}
+                    {newMonth === "12" ? <span>DEC</span> : null}
+                  </p>
+                )}
               </div>
               <div className="match-details">{programToday}</div>
             </div>
