@@ -8,55 +8,74 @@ import { content } from "../content/languages";
 import "../styles/LiveSports.css";
 
 const LiveSports1 = (props) => {
-  let {
-    language,
-    languageToUse,
-    pathname,
-    day,
-
-    weekday,
-    newMonth,
-    year,
-    data,
-  } = props;
+  let { language, languageToUse, pathname, day, newMonth, year, data } = props;
 
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
 
   let date = `${year}-${newMonth}-${day}`;
 
-  // const [tomorrow, setTomorrow] = useState(new Date());
-  // const [tomorrowDay, setTomorrowDay] = useState("01");
-  // const [tomorrowNewMonth, setTomorrowNewMonth] = useState();
+  console.log(props);
 
-  // // useEffect(() => {
-  // //   let today = new Date().getDate();
-  // //   let tomorrowCalcul = today + 1;
-  // //   tomorrow.setDate(tomorrowCalcul);
+  const [tomorrow, setTomorrow] = useState(new Date());
+  const [afterTomorrow, setafterTomorrow] = useState(new Date());
 
-  // //   return;
-  // // }, [tomorrow]);
+  console.log(tomorrow);
+  const [tomorrowDay, setTomorrowDay] = useState("01");
+  const [tomorrowNewMonth, setTomorrowNewMonth] = useState();
 
-  // // setTomorrowDay(("0" + tomorrow.getDate()).slice(-2));
+  const [afterTomorrowDay, setAfterTomorrowDay] = useState("01");
+  const [afterTomorrowNewMonth, setAfterTomorrowNewMonth] = useState();
 
-  // let tomorrowMonth = tomorrow.getMonth() + 1;
-  // tomorrowMonth === 1 ? setTomorrowNewMonth("01") : null;
-  // tomorrowMonth === 2 ? setTomorrowNewMonth("02") : null;
-  // tomorrowMonth === 3 ? setTomorrowNewMonth("03") : null;
-  // tomorrowMonth === 4 ? setTomorrowNewMonth("04") : null;
-  // tomorrowMonth === 5 ? setTomorrowNewMonth("05") : null;
-  // tomorrowMonth === 6 ? setTomorrowNewMonth("06") : null;
-  // tomorrowMonth === 7 ? setTomorrowNewMonth("07") : null;
-  // tomorrowMonth === 8 ? setTomorrowNewMonth("08") : null;
-  // tomorrowMonth === 9 ? setTomorrowNewMonth("09") : null;
-  // tomorrowMonth === 10 ? setTomorrowNewMonth("10") : null;
-  // tomorrowMonth === 11 ? setTomorrowNewMonth("11") : null;
-  // tomorrowMonth === 12 ? setTomorrowNewMonth("12") : null;
+  useEffect(() => {
+    let today = new Date().getDate();
+    let tomorrowCalcul = today + 1;
+    tomorrow.setDate(tomorrowCalcul);
 
-  // let tomorrowYear = tomorrow.getYear() + 1900;
+    let afterTomorrowCalcul = today + 2;
+    afterTomorrow.setDate(afterTomorrowCalcul);
 
-  // let tomorrowDate = `${tomorrowYear}-${tomorrowNewMonth}-${tomorrowDay}`;
-  // console.log(tomorrowDate);
+    setTomorrowDay(("0" + tomorrow.getDate()).slice(-2));
+    setAfterTomorrowDay(("0" + afterTomorrow.getDate()).slice(-2));
+
+    let tomorrowMonth = tomorrow.getMonth() + 1;
+    tomorrowMonth === 1 ? setTomorrowNewMonth("01") : null;
+    tomorrowMonth === 2 ? setTomorrowNewMonth("02") : null;
+    tomorrowMonth === 3 ? setTomorrowNewMonth("03") : null;
+    tomorrowMonth === 4 ? setTomorrowNewMonth("04") : null;
+    tomorrowMonth === 5 ? setTomorrowNewMonth("05") : null;
+    tomorrowMonth === 6 ? setTomorrowNewMonth("06") : null;
+    tomorrowMonth === 7 ? setTomorrowNewMonth("07") : null;
+    tomorrowMonth === 8 ? setTomorrowNewMonth("08") : null;
+    tomorrowMonth === 9 ? setTomorrowNewMonth("09") : null;
+    tomorrowMonth === 10 ? setTomorrowNewMonth("10") : null;
+    tomorrowMonth === 11 ? setTomorrowNewMonth("11") : null;
+    tomorrowMonth === 12 ? setTomorrowNewMonth("12") : null;
+
+    let afterTomorrowMonth = afterTomorrow.getMonth() + 1;
+    afterTomorrowMonth === 1 ? setAfterTomorrowNewMonth("01") : null;
+    afterTomorrowMonth === 2 ? setAfterTomorrowNewMonth("02") : null;
+    afterTomorrowMonth === 3 ? setAfterTomorrowNewMonth("03") : null;
+    afterTomorrowMonth === 4 ? setAfterTomorrowNewMonth("04") : null;
+    afterTomorrowMonth === 5 ? setAfterTomorrowNewMonth("05") : null;
+    afterTomorrowMonth === 6 ? setAfterTomorrowNewMonth("06") : null;
+    afterTomorrowMonth === 7 ? setAfterTomorrowNewMonth("07") : null;
+    afterTomorrowMonth === 8 ? setAfterTomorrowNewMonth("08") : null;
+    afterTomorrowMonth === 9 ? setAfterTomorrowNewMonth("09") : null;
+    afterTomorrowMonth === 10 ? setAfterTomorrowNewMonth("10") : null;
+    afterTomorrowMonth === 11 ? setAfterTomorrowNewMonth("11") : null;
+    afterTomorrowMonth === 12 ? setAfterTomorrowNewMonth("12") : null;
+
+    return;
+  }, [tomorrow, afterTomorrow]);
+
+  let tomorrowYear = tomorrow.getYear() + 1900;
+  let afterTomorrowYear = afterTomorrow.getYear() + 1900;
+
+  let tomorrowDate = `${tomorrowYear}-${tomorrowNewMonth}-${tomorrowDay}`;
+  console.log(tomorrowDate);
+  let afterTomorrowDate = `${afterTomorrowYear}-${afterTomorrowNewMonth}-${afterTomorrowDay}`;
+  console.log(afterTomorrowDate);
 
   let matches = data.allContentfulMatch.nodes;
 
@@ -96,7 +115,20 @@ const LiveSports1 = (props) => {
     });
 
   const programTomorrow = matches
-    .filter((match) => match.dateTime === date)
+    .filter((match) => match.dateTime === tomorrowDate)
+    .map((match) => {
+      return (
+        <div key={match.id}>
+          <p className="game-time">
+            {match.time} {match.category}
+          </p>
+          <p className="game-name">{match.match}</p>
+        </div>
+      );
+    });
+
+  const programAfterTomorrow = matches
+    .filter((match) => match.dateTime === afterTomorrowDate)
     .map((match) => {
       return (
         <div key={match.id}>
@@ -144,7 +176,7 @@ const LiveSports1 = (props) => {
                 <span onClick={() => handleClickRight()}>&#62;</span>
               </div>
             </div>
-            <div className="program-placeholder" />
+
             <div
               className={`program-container program-info ${
                 activeProgram === 1 ? "active-program" : ""
@@ -209,43 +241,43 @@ const LiveSports1 = (props) => {
 
               <div className="flex-container">
                 <div className="date-container">
-                  <p className="date">{day}</p>
+                  <p className="date">{tomorrowDay}</p>
 
                   <p className="month">
-                    {newMonth === "01" ? (
+                    {tomorrowNewMonth === "01" ? (
                       <span>{languageToUse.jan}</span>
                     ) : null}
-                    {newMonth === "02" ? (
+                    {tomorrowNewMonth === "02" ? (
                       <span>{languageToUse.feb}</span>
                     ) : null}
-                    {newMonth === "03" ? (
+                    {tomorrowNewMonth === "03" ? (
                       <span>{languageToUse.mar}</span>
                     ) : null}
-                    {newMonth === "04" ? (
+                    {tomorrowNewMonth === "04" ? (
                       <span>{languageToUse.apr}</span>
                     ) : null}
-                    {newMonth === "05" ? (
+                    {tomorrowNewMonth === "05" ? (
                       <span>{languageToUse.may}</span>
                     ) : null}
-                    {newMonth === "06" ? (
+                    {tomorrowNewMonth === "06" ? (
                       <span>{languageToUse.june}</span>
                     ) : null}
-                    {newMonth === "07" ? (
+                    {tomorrowNewMonth === "07" ? (
                       <span>{languageToUse.july}</span>
                     ) : null}
-                    {newMonth === "08" ? (
+                    {tomorrowNewMonth === "08" ? (
                       <span>{languageToUse.aug}</span>
                     ) : null}
-                    {newMonth === "09" ? (
+                    {tomorrowNewMonth === "09" ? (
                       <span>{languageToUse.sept}</span>
                     ) : null}
-                    {newMonth === "10" ? (
+                    {tomorrowNewMonth === "10" ? (
                       <span>{languageToUse.oct}</span>
                     ) : null}
-                    {newMonth === "11" ? (
+                    {tomorrowNewMonth === "11" ? (
                       <span>{languageToUse.nov}</span>
                     ) : null}
-                    {newMonth === "12" ? (
+                    {tomorrowNewMonth === "12" ? (
                       <span>{languageToUse.dec}</span>
                     ) : null}
                   </p>
@@ -259,52 +291,92 @@ const LiveSports1 = (props) => {
               }
             `}
             >
-              <p className="program-day">TODAY</p>
+              <p className="program-day">
+                {afterTomorrowDay}{" "}
+                <span>
+                  {afterTomorrowNewMonth === "01" ? (
+                    <span>{languageToUse.jan}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "02" ? (
+                    <span>{languageToUse.feb}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "03" ? (
+                    <span>{languageToUse.mar}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "04" ? (
+                    <span>{languageToUse.apr}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "05" ? (
+                    <span>{languageToUse.may}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "06" ? (
+                    <span>{languageToUse.june}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "07" ? (
+                    <span>{languageToUse.july}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "08" ? (
+                    <span>{languageToUse.aug}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "09" ? (
+                    <span>{languageToUse.sept}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "10" ? (
+                    <span>{languageToUse.oct}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "11" ? (
+                    <span>{languageToUse.nov}</span>
+                  ) : null}
+                  {afterTomorrowNewMonth === "12" ? (
+                    <span>{languageToUse.dec}</span>
+                  ) : null}
+                </span>
+              </p>
 
               <div className="flex-container">
                 <div className="date-container">
-                  <p className="date">{day}</p>
+                  <p className="date">{afterTomorrowDay}</p>
 
                   <p className="month">
-                    {newMonth === "01" ? (
+                    {afterTomorrowNewMonth === "01" ? (
                       <span>{languageToUse.jan}</span>
                     ) : null}
-                    {newMonth === "02" ? (
+                    {afterTomorrowNewMonth === "02" ? (
                       <span>{languageToUse.feb}</span>
                     ) : null}
-                    {newMonth === "03" ? (
+                    {afterTomorrowNewMonth === "03" ? (
                       <span>{languageToUse.mar}</span>
                     ) : null}
-                    {newMonth === "04" ? (
+                    {afterTomorrowNewMonth === "04" ? (
                       <span>{languageToUse.apr}</span>
                     ) : null}
-                    {newMonth === "05" ? (
+                    {afterTomorrowNewMonth === "05" ? (
                       <span>{languageToUse.may}</span>
                     ) : null}
-                    {newMonth === "06" ? (
+                    {afterTomorrowNewMonth === "06" ? (
                       <span>{languageToUse.june}</span>
                     ) : null}
-                    {newMonth === "07" ? (
+                    {afterTomorrowNewMonth === "07" ? (
                       <span>{languageToUse.july}</span>
                     ) : null}
-                    {newMonth === "08" ? (
+                    {afterTomorrowNewMonth === "08" ? (
                       <span>{languageToUse.aug}</span>
                     ) : null}
-                    {newMonth === "09" ? (
+                    {afterTomorrowNewMonth === "09" ? (
                       <span>{languageToUse.sept}</span>
                     ) : null}
-                    {newMonth === "10" ? (
+                    {afterTomorrowNewMonth === "10" ? (
                       <span>{languageToUse.oct}</span>
                     ) : null}
-                    {newMonth === "11" ? (
+                    {afterTomorrowNewMonth === "11" ? (
                       <span>{languageToUse.nov}</span>
                     ) : null}
-                    {newMonth === "12" ? (
+                    {afterTomorrowNewMonth === "12" ? (
                       <span>{languageToUse.dec}</span>
                     ) : null}
                   </p>
                 </div>
-                <div className="match-details">{programToday}</div>
+                <div className="match-details">{programAfterTomorrow}</div>
               </div>
             </div>
           </div>

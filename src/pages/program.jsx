@@ -37,6 +37,11 @@ const Program = (props) => {
   const [fridayDate, setFridayDate] = useState(new Date());
   console.log(saturdayDate);
   console.log(sundayDate);
+  console.log(mondayDate);
+  console.log(tuesdayDate);
+  console.log(wednesdayDate);
+  console.log(thursdayDate);
+  console.log(fridayDate);
 
   const [daysFromSaturday, setDaysFromSaturday] = useState(0);
 
@@ -231,6 +236,11 @@ const Program = (props) => {
     console.log(typeof saturdayDay);
     console.log(saturdayTotal);
     console.log(sundayTotal);
+    console.log(mondayTotal);
+    console.log(tuesdayTotal);
+    console.log(wednesdayTotal);
+    console.log(thursdayTotal);
+    console.log(fridayTotal);
 
     let element = document.getElementById("live");
     element.classList.remove("scale-in");
@@ -385,7 +395,7 @@ const Program = (props) => {
           </button>
 
           <span>
-            {saturdayDay}
+            {saturdayDay}{" "}
             {newSaturdayMonth === "01" ? (
               <span>{languageToUse.jan}</span>
             ) : null}
@@ -421,8 +431,8 @@ const Program = (props) => {
             ) : null}
             {newSaturdayMonth === "12" ? (
               <span>{languageToUse.dec}</span>
-            ) : null}
-            - {fridayDay}
+            ) : null}{" "}
+            - {fridayDay}{" "}
             {newSaturdayMonth === "01" ? (
               <span>{languageToUse.jan}</span>
             ) : null}
@@ -472,7 +482,7 @@ const Program = (props) => {
           </button>
         </div>
         <div className="program program-coded" id="live">
-          <div className="program-info">
+          <div className="week-program-info">
             <div className="flex-container">
               <div className="date-container">
                 <p className="date">{saturdayDay}</p>
@@ -518,7 +528,7 @@ const Program = (props) => {
               <div className="match-details">{programSaturday}</div>
             </div>
           </div>
-          <div className="program-info">
+          <div className="week-program-info">
             <div className="flex-container">
               <div className="date-container">
                 <p className="date">{sundayDay}</p>
@@ -564,7 +574,7 @@ const Program = (props) => {
               <div className="match-details">{programSunday}</div>
             </div>
           </div>
-          <div className="program-info">
+          <div className="week-program-info">
             <div className="flex-container">
               <div className="date-container">
                 <p className="date">{mondayDay}</p>
@@ -610,7 +620,7 @@ const Program = (props) => {
               <div className="match-details">{programMonday}</div>
             </div>
           </div>
-          <div className="program-info">
+          <div className="week-program-info">
             <div className="flex-container">
               <div className="date-container">
                 <p className="date">{tuesdayDay}</p>
@@ -656,7 +666,7 @@ const Program = (props) => {
               <div className="match-details">{programTuesday}</div>
             </div>
           </div>
-          <div className="program-info">
+          <div className="week-program-info">
             <div className="flex-container">
               <div className="date-container">
                 <p className="date">{wednesdayDay}</p>
@@ -702,7 +712,7 @@ const Program = (props) => {
               <div className="match-details">{programWednesday}</div>
             </div>
           </div>
-          <div className="program-info">
+          <div className="week-program-info">
             <div className="flex-container">
               <div className="date-container">
                 <p className="date">{thursdayDay}</p>
@@ -748,7 +758,7 @@ const Program = (props) => {
               <div className="match-details">{programThursday}</div>
             </div>
           </div>
-          <div className="program-info">
+          <div className="week-program-info">
             <div className="flex-container">
               <div className="date-container">
                 <p className="date">{fridayDay}</p>
