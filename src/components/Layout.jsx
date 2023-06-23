@@ -11,8 +11,10 @@ const Layout = ({ children }) => {
   const [pathname, setPathname] = useState("/");
 
   let day = new Date().getDate();
+
   let weekday = new Date().getDay();
   let month = new Date().getMonth();
+
   let year = new Date().getYear() + 1900;
 
   let newMonth;

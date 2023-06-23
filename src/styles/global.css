@@ -129,8 +129,14 @@ p {
   padding: 15px;
   border-radius: 10px;
   border: none;
-  transition: background-color 0.3s ease-in;
-  font-size: 15px;
+  transition: background-color 0.3s ease-in, scale 0.3s ease-in;
+  font-size: 12px;
+}
+
+.button:hover {
+  background-color: #2b2b2b;
+  transition: background-color 0.3s ease-in, scale 0.3s ease-in;
+  scale: 1.1;
 }
 
 .disabled-button {
@@ -185,6 +191,10 @@ p {
 
   .reservation-button {
     display: none;
+  }
+
+  .button {
+    font-size: 15px;
   }
 }
 

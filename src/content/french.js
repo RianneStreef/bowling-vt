@@ -21,6 +21,19 @@ export const french = {
   thursday: "Jeudi",
   friday: "Vendredi",
 
+  jan: "Janv",
+  feb: "Fevr",
+  mar: "Mars",
+  apr: "Avril",
+  may: "Mai",
+  june: "Juin",
+  july: "Juil",
+  aug: "Aout",
+  sept: "Sept",
+  oct: "Oct",
+  nov: "Nov",
+  dec: "Dec",
+
   nextWeek: "Prochaine",
   lastWeek: "Precedante",
 

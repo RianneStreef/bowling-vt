@@ -64,6 +64,9 @@ const Program = (props) => {
   const [newThursdayMonth, setNewThursdayMonth] = useState();
   const [newFridayMonth, setNewFridayMonth] = useState();
 
+  let firstSaturday = "2023-06-03";
+  let lastFriday = "20230-07-07";
+
   useEffect(() => {
     weekday === 0 ? setDaysFromSaturday(1) : null;
     weekday === 1 ? setDaysFromSaturday(2) : null;
@@ -89,18 +92,22 @@ const Program = (props) => {
     thursdayDate.setDate(thursdayDateCalcul);
     fridayDate.setDate(fridayDateCalcul);
 
-    setSaturdayDay(parseInt(("0" + saturdayDate.getDate()).slice(-2)));
-    setSundayDay(parseInt(("0" + sundayDate.getDate()).slice(-2)));
-    setMondayDay(parseInt(("0" + mondayDate.getDate()).slice(-2)));
-    setTuesdayDay(parseInt(("0" + tuesdayDate.getDate()).slice(-2)));
-    setWednesdayDay(parseInt(("0" + wednesdayDate.getDate()).slice(-2)));
-    setThursdayDay(parseInt(("0" + thursdayDate.getDate()).slice(-2)));
-    setFridayDay(parseInt(("0" + fridayDate.getDate()).slice(-2)));
+    setSaturdayDay(("0" + saturdayDate.getDate()).slice(-2));
+    setSundayDay(("0" + sundayDate.getDate()).slice(-2));
+    setMondayDay(("0" + mondayDate.getDate()).slice(-2));
+    setTuesdayDay(("0" + tuesdayDate.getDate()).slice(-2));
+    setWednesdayDay(("0" + wednesdayDate.getDate()).slice(-2));
+    setThursdayDay(("0" + thursdayDate.getDate()).slice(-2));
+    setFridayDay(("0" + fridayDate.getDate()).slice(-2));
 
     let saturdayMonth = saturdayDate.getMonth() + 1;
+
+    setNewSaturdayMonth(
+      saturdayMonth.length !== 2 ? "0" + saturdayMonth : saturdayMonth
+    );
+
     console.log(saturdayMonth);
 
-    saturdayMonth === 1 ? setNewSaturdayMonth("01") : null;
     saturdayMonth === 2 ? setNewSaturdayMonth("02") : null;
     saturdayMonth === 3 ? setNewSaturdayMonth("03") : null;
     saturdayMonth === 4 ? setNewSaturdayMonth("04") : null;
@@ -200,13 +207,13 @@ const Program = (props) => {
     fridayMonth === 11 ? setNewFridayMonth("11") : null;
     fridayMonth === 12 ? setNewFridayMonth("12") : null;
 
-    let saturdayYear = saturdayDate.getYear() + 1900;
-    let sundayYear = sundayDate.getYear() + 1900;
-    let mondayYear = mondayDate.getYear() + 1900;
-    let tuesdayYear = tuesdayDate.getYear() + 1900;
-    let wednesdayYear = wednesdayDate.getYear() + 1900;
-    let thursdayYear = thursdayDate.getYear() + 1900;
-    let fridayYear = fridayDate.getYear() + 1900;
+    let saturdayYear = JSON.stringify(saturdayDate.getYear() + 1900);
+    let sundayYear = JSON.stringify(sundayDate.getYear() + 1900);
+    let mondayYear = JSON.stringify(mondayDate.getYear() + 1900);
+    let tuesdayYear = JSON.stringify(tuesdayDate.getYear() + 1900);
+    let wednesdayYear = JSON.stringify(wednesdayDate.getYear() + 1900);
+    let thursdayYear = JSON.stringify(thursdayDate.getYear() + 1900);
+    let fridayYear = JSON.stringify(fridayDate.getYear() + 1900);
 
     setSaturdayTotal(`${saturdayYear}-${newSaturdayMonth}-${saturdayDay}`);
     setSundayTotal(`${sundayYear}-${newSundayMonth}-${sundayDay}`);
@@ -231,36 +238,33 @@ const Program = (props) => {
       element.classList.add("scale-in");
     }, 5);
     return () => clearTimeout(timer);
-  }, [day, weekday, newMonth, year, pathname, daysFromSaturday]);
-
-  let firstSaturday = "2023-06-03";
-  let lastFriday = "20230-07-07";
+  }, [day, weekday, newMonth, year, pathname, daysFromSaturday, saturdayDate]);
 
   function setPreviousWeek() {
     let previousSaturday = saturdayDate.getDate() - 7;
     console.log(previousSaturday);
     saturdayDate.setDate(previousSaturday);
-
     setSaturdayDate(saturdayDate);
     console.log(saturdayDate);
     let previousSunday = sundayDate.getDate() - 7;
     sundayDate.setDate(previousSunday);
-    // console.log(sundayDate);
+    setSundayDate(sundayDate);
+    console.log(sundayDate);
     let previousMonday = mondayDate.getDate() - 7;
     mondayDate.setDate(previousMonday);
-    // console.log(mondayDate);
-    // let previousSaturday = saturdayDate.getDate() - 7;
-    // saturdayDate.setDate(previousSaturday);
-    // console.log(saturdayDate);
-    // let previousSaturday = saturdayDate.getDate() - 7;
-    // saturdayDate.setDate(previousSaturday);
-    // console.log(saturdayDate);
-    // let previousSaturday = saturdayDate.getDate() - 7;
-    // saturdayDate.setDate(previousSaturday);
-    // console.log(saturdayDate);
-    // let previousSaturday = saturdayDate.getDate() - 7;
-    // saturdayDate.setDate(previousSaturday);
-    // console.log(saturdayDate);
+    setMondayDate(mondayDate);
+    let previousTuesday = tuesdayDate.getDate() - 7;
+    tuesdayDate.setDate(previousTuesday);
+    setTuesdayDate(tuesdayDate);
+    let previousWednesday = wednesdayDate.getDate() - 7;
+    wednesdayDate.setDate(previousWednesday);
+    setWednesdayDate(wednesdayDate);
+    let previousThursday = thursdayDate.getDate() - 7;
+    thursdayDate.setDate(previousThursday);
+    setThursdayDate(thursdayDate);
+    let previousFriday = fridayDate.getDate() - 7;
+    fridayDate.setDate(previousFriday);
+    setFridayDate(fridayDate);
   }
 
   function setNextWeek() {
@@ -372,46 +376,96 @@ const Program = (props) => {
         <div className="juggle-buttons">
           <button
             className={`button ${
-              saturdayDate === firstSaturday ? "disabled-button" : null
+              saturdayTotal === firstSaturday ? "disabled-button" : null
             }`}
-            disabled={saturdayDate === firstSaturday}
+            disabled={saturdayTotal === firstSaturday}
             onClick={() => setPreviousWeek()}
           >
             &lt;
           </button>
 
           <span>
-            {saturdayDay} {newSaturdayMonth === "01" ? <span>JAN</span> : null}
-            {newSaturdayMonth === "02" ? <span>FEB</span> : null}
-            {newSaturdayMonth === "03" ? <span>MAR</span> : null}
-            {newSaturdayMonth === "04" ? <span>APR</span> : null}
-            {newSaturdayMonth === "05" ? <span>MAY</span> : null}
-            {newSaturdayMonth === "06" ? <span>JUN</span> : null}
-            {newSaturdayMonth === "07" ? <span>JUL</span> : null}
-            {newSaturdayMonth === "08" ? <span>AUG</span> : null}
-            {newSaturdayMonth === "09" ? <span>SEP</span> : null}
-            {newSaturdayMonth === "10" ? <span>OCT</span> : null}
-            {newSaturdayMonth === "11" ? <span>NOV</span> : null}
-            {newSaturdayMonth === "12" ? <span>DEC</span> : null} - {fridayDay}{" "}
-            {newFridayMonth === "01" ? <span>JAN</span> : null}
-            {newFridayMonth === "02" ? <span>FEB</span> : null}
-            {newFridayMonth === "03" ? <span>MAR</span> : null}
-            {newFridayMonth === "04" ? <span>APR</span> : null}
-            {newFridayMonth === "05" ? <span>MAY</span> : null}
-            {newFridayMonth === "06" ? <span>JUN</span> : null}
-            {newFridayMonth === "07" ? <span>JUL</span> : null}
-            {newFridayMonth === "08" ? <span>AUG</span> : null}
-            {newFridayMonth === "09" ? <span>SEP</span> : null}
-            {newFridayMonth === "10" ? <span>OCT</span> : null}
-            {newFridayMonth === "11" ? <span>NOV</span> : null}
-            {newFridayMonth === "12" ? <span>DEC</span> : null}
+            {saturdayDay}
+            {newSaturdayMonth === "01" ? (
+              <span>{languageToUse.jan}</span>
+            ) : null}
+            {newSaturdayMonth === "02" ? (
+              <span>{languageToUse.feb}</span>
+            ) : null}
+            {newSaturdayMonth === "03" ? (
+              <span>{languageToUse.mar}</span>
+            ) : null}
+            {newSaturdayMonth === "04" ? (
+              <span>{languageToUse.apr}</span>
+            ) : null}
+            {newSaturdayMonth === "05" ? (
+              <span>{languageToUse.may}</span>
+            ) : null}
+            {newSaturdayMonth === "06" ? (
+              <span>{languageToUse.june}</span>
+            ) : null}
+            {newSaturdayMonth === "07" ? (
+              <span>{languageToUse.july}</span>
+            ) : null}
+            {newSaturdayMonth === "08" ? (
+              <span>{languageToUse.aug}</span>
+            ) : null}
+            {newSaturdayMonth === "09" ? (
+              <span>{languageToUse.sept}</span>
+            ) : null}
+            {newSaturdayMonth === "10" ? (
+              <span>{languageToUse.oct}</span>
+            ) : null}
+            {newSaturdayMonth === "11" ? (
+              <span>{languageToUse.nov}</span>
+            ) : null}
+            {newSaturdayMonth === "12" ? (
+              <span>{languageToUse.dec}</span>
+            ) : null}
+            - {fridayDay}
+            {newSaturdayMonth === "01" ? (
+              <span>{languageToUse.jan}</span>
+            ) : null}
+            {newSaturdayMonth === "02" ? (
+              <span>{languageToUse.feb}</span>
+            ) : null}
+            {newSaturdayMonth === "03" ? (
+              <span>{languageToUse.mar}</span>
+            ) : null}
+            {newSaturdayMonth === "04" ? (
+              <span>{languageToUse.apr}</span>
+            ) : null}
+            {newSaturdayMonth === "05" ? (
+              <span>{languageToUse.may}</span>
+            ) : null}
+            {newSaturdayMonth === "06" ? (
+              <span>{languageToUse.june}</span>
+            ) : null}
+            {newSaturdayMonth === "07" ? (
+              <span>{languageToUse.july}</span>
+            ) : null}
+            {newSaturdayMonth === "08" ? (
+              <span>{languageToUse.aug}</span>
+            ) : null}
+            {newSaturdayMonth === "09" ? (
+              <span>{languageToUse.sept}</span>
+            ) : null}
+            {newSaturdayMonth === "10" ? (
+              <span>{languageToUse.oct}</span>
+            ) : null}
+            {newSaturdayMonth === "11" ? (
+              <span>{languageToUse.nov}</span>
+            ) : null}
+            {newSaturdayMonth === "12" ? (
+              <span>{languageToUse.dec}</span>
+            ) : null}
           </span>
 
           <button
             className={`button ${
-              fridayDate === lastFriday ? "disabled-button" : null
+              fridayTotal === lastFriday ? "disabled-button" : null
             }`}
-            disabled={fridayDate === lastFriday}
+            disabled={fridayTotal === lastFriday}
             onClick={() => setNextWeek()}
           >
             &gt;
@@ -423,18 +477,42 @@ const Program = (props) => {
               <div className="date-container">
                 <p className="date">{saturdayDay}</p>
                 <p className="month">
-                  {newSaturdayMonth === "01" ? <span>JAN</span> : null}
-                  {newSaturdayMonth === "02" ? <span>FEB</span> : null}
-                  {newSaturdayMonth === "03" ? <span>MAR</span> : null}
-                  {newSaturdayMonth === "04" ? <span>APR</span> : null}
-                  {newSaturdayMonth === "05" ? <span>MAY</span> : null}
-                  {newSaturdayMonth === "06" ? <span>JUN</span> : null}
-                  {newSaturdayMonth === "07" ? <span>JUL</span> : null}
-                  {newSaturdayMonth === "08" ? <span>AUG</span> : null}
-                  {newSaturdayMonth === "09" ? <span>SEP</span> : null}
-                  {newSaturdayMonth === "10" ? <span>OCT</span> : null}
-                  {newSaturdayMonth === "11" ? <span>NOV</span> : null}
-                  {newSaturdayMonth === "12" ? <span>DEC</span> : null}
+                  {newSaturdayMonth === "01" ? (
+                    <span>{languageToUse.jan}</span>
+                  ) : null}
+                  {newSaturdayMonth === "02" ? (
+                    <span>{languageToUse.feb}</span>
+                  ) : null}
+                  {newSaturdayMonth === "03" ? (
+                    <span>{languageToUse.mar}</span>
+                  ) : null}
+                  {newSaturdayMonth === "04" ? (
+                    <span>{languageToUse.apr}</span>
+                  ) : null}
+                  {newSaturdayMonth === "05" ? (
+                    <span>{languageToUse.may}</span>
+                  ) : null}
+                  {newSaturdayMonth === "06" ? (
+                    <span>{languageToUse.june}</span>
+                  ) : null}
+                  {newSaturdayMonth === "07" ? (
+                    <span>{languageToUse.july}</span>
+                  ) : null}
+                  {newSaturdayMonth === "08" ? (
+                    <span>{languageToUse.aug}</span>
+                  ) : null}
+                  {newSaturdayMonth === "09" ? (
+                    <span>{languageToUse.sept}</span>
+                  ) : null}
+                  {newSaturdayMonth === "10" ? (
+                    <span>{languageToUse.oct}</span>
+                  ) : null}
+                  {newSaturdayMonth === "11" ? (
+                    <span>{languageToUse.nov}</span>
+                  ) : null}
+                  {newSaturdayMonth === "12" ? (
+                    <span>{languageToUse.dec}</span>
+                  ) : null}
                 </p>
               </div>
               <div className="match-details">{programSaturday}</div>
@@ -445,18 +523,42 @@ const Program = (props) => {
               <div className="date-container">
                 <p className="date">{sundayDay}</p>
                 <p className="month">
-                  {newSundayMonth === "01" ? <span>JAN</span> : null}
-                  {newSundayMonth === "02" ? <span>FEB</span> : null}
-                  {newSundayMonth === "03" ? <span>MAR</span> : null}
-                  {newSundayMonth === "04" ? <span>APR</span> : null}
-                  {newSundayMonth === "05" ? <span>MAY</span> : null}
-                  {newSundayMonth === "06" ? <span>JUN</span> : null}
-                  {newSundayMonth === "07" ? <span>JUL</span> : null}
-                  {newSundayMonth === "08" ? <span>AUG</span> : null}
-                  {newSundayMonth === "09" ? <span>SEP</span> : null}
-                  {newSundayMonth === "10" ? <span>OCT</span> : null}
-                  {newSundayMonth === "11" ? <span>NOV</span> : null}
-                  {newSundayMonth === "12" ? <span>DEC</span> : null}
+                  {newSaturdayMonth === "01" ? (
+                    <span>{languageToUse.jan}</span>
+                  ) : null}
+                  {newSaturdayMonth === "02" ? (
+                    <span>{languageToUse.feb}</span>
+                  ) : null}
+                  {newSaturdayMonth === "03" ? (
+                    <span>{languageToUse.mar}</span>
+                  ) : null}
+                  {newSaturdayMonth === "04" ? (
+                    <span>{languageToUse.apr}</span>
+                  ) : null}
+                  {newSaturdayMonth === "05" ? (
+                    <span>{languageToUse.may}</span>
+                  ) : null}
+                  {newSaturdayMonth === "06" ? (
+                    <span>{languageToUse.june}</span>
+                  ) : null}
+                  {newSaturdayMonth === "07" ? (
+                    <span>{languageToUse.july}</span>
+                  ) : null}
+                  {newSaturdayMonth === "08" ? (
+                    <span>{languageToUse.aug}</span>
+                  ) : null}
+                  {newSaturdayMonth === "09" ? (
+                    <span>{languageToUse.sept}</span>
+                  ) : null}
+                  {newSaturdayMonth === "10" ? (
+                    <span>{languageToUse.oct}</span>
+                  ) : null}
+                  {newSaturdayMonth === "11" ? (
+                    <span>{languageToUse.nov}</span>
+                  ) : null}
+                  {newSaturdayMonth === "12" ? (
+                    <span>{languageToUse.dec}</span>
+                  ) : null}
                 </p>
               </div>
               <div className="match-details">{programSunday}</div>
@@ -467,18 +569,42 @@ const Program = (props) => {
               <div className="date-container">
                 <p className="date">{mondayDay}</p>
                 <p className="month">
-                  {newMondayMonth === "01" ? <span>JAN</span> : null}
-                  {newMondayMonth === "02" ? <span>FEB</span> : null}
-                  {newMondayMonth === "03" ? <span>MAR</span> : null}
-                  {newMondayMonth === "04" ? <span>APR</span> : null}
-                  {newMondayMonth === "05" ? <span>MAY</span> : null}
-                  {newMondayMonth === "06" ? <span>JUN</span> : null}
-                  {newMondayMonth === "07" ? <span>JUL</span> : null}
-                  {newMondayMonth === "08" ? <span>AUG</span> : null}
-                  {newMondayMonth === "09" ? <span>SEP</span> : null}
-                  {newMondayMonth === "10" ? <span>OCT</span> : null}
-                  {newMondayMonth === "11" ? <span>NOV</span> : null}
-                  {newMondayMonth === "12" ? <span>DEC</span> : null}
+                  {newSaturdayMonth === "01" ? (
+                    <span>{languageToUse.jan}</span>
+                  ) : null}
+                  {newSaturdayMonth === "02" ? (
+                    <span>{languageToUse.feb}</span>
+                  ) : null}
+                  {newSaturdayMonth === "03" ? (
+                    <span>{languageToUse.mar}</span>
+                  ) : null}
+                  {newSaturdayMonth === "04" ? (
+                    <span>{languageToUse.apr}</span>
+                  ) : null}
+                  {newSaturdayMonth === "05" ? (
+                    <span>{languageToUse.may}</span>
+                  ) : null}
+                  {newSaturdayMonth === "06" ? (
+                    <span>{languageToUse.june}</span>
+                  ) : null}
+                  {newSaturdayMonth === "07" ? (
+                    <span>{languageToUse.july}</span>
+                  ) : null}
+                  {newSaturdayMonth === "08" ? (
+                    <span>{languageToUse.aug}</span>
+                  ) : null}
+                  {newSaturdayMonth === "09" ? (
+                    <span>{languageToUse.sept}</span>
+                  ) : null}
+                  {newSaturdayMonth === "10" ? (
+                    <span>{languageToUse.oct}</span>
+                  ) : null}
+                  {newSaturdayMonth === "11" ? (
+                    <span>{languageToUse.nov}</span>
+                  ) : null}
+                  {newSaturdayMonth === "12" ? (
+                    <span>{languageToUse.dec}</span>
+                  ) : null}
                 </p>
               </div>
               <div className="match-details">{programMonday}</div>
@@ -489,18 +615,42 @@ const Program = (props) => {
               <div className="date-container">
                 <p className="date">{tuesdayDay}</p>
                 <p className="month">
-                  {newTuesdayMonth === "01" ? <span>JAN</span> : null}
-                  {newTuesdayMonth === "02" ? <span>FEB</span> : null}
-                  {newTuesdayMonth === "03" ? <span>MAR</span> : null}
-                  {newTuesdayMonth === "04" ? <span>APR</span> : null}
-                  {newTuesdayMonth === "05" ? <span>MAY</span> : null}
-                  {newTuesdayMonth === "06" ? <span>JUN</span> : null}
-                  {newTuesdayMonth === "07" ? <span>JUL</span> : null}
-                  {newTuesdayMonth === "08" ? <span>AUG</span> : null}
-                  {newTuesdayMonth === "09" ? <span>SEP</span> : null}
-                  {newTuesdayMonth === "10" ? <span>OCT</span> : null}
-                  {newTuesdayMonth === "11" ? <span>NOV</span> : null}
-                  {newTuesdayMonth === "12" ? <span>DEC</span> : null}
+                  {newSaturdayMonth === "01" ? (
+                    <span>{languageToUse.jan}</span>
+                  ) : null}
+                  {newSaturdayMonth === "02" ? (
+                    <span>{languageToUse.feb}</span>
+                  ) : null}
+                  {newSaturdayMonth === "03" ? (
+                    <span>{languageToUse.mar}</span>
+                  ) : null}
+                  {newSaturdayMonth === "04" ? (
+                    <span>{languageToUse.apr}</span>
+                  ) : null}
+                  {newSaturdayMonth === "05" ? (
+                    <span>{languageToUse.may}</span>
+                  ) : null}
+                  {newSaturdayMonth === "06" ? (
+                    <span>{languageToUse.june}</span>
+                  ) : null}
+                  {newSaturdayMonth === "07" ? (
+                    <span>{languageToUse.july}</span>
+                  ) : null}
+                  {newSaturdayMonth === "08" ? (
+                    <span>{languageToUse.aug}</span>
+                  ) : null}
+                  {newSaturdayMonth === "09" ? (
+                    <span>{languageToUse.sept}</span>
+                  ) : null}
+                  {newSaturdayMonth === "10" ? (
+                    <span>{languageToUse.oct}</span>
+                  ) : null}
+                  {newSaturdayMonth === "11" ? (
+                    <span>{languageToUse.nov}</span>
+                  ) : null}
+                  {newSaturdayMonth === "12" ? (
+                    <span>{languageToUse.dec}</span>
+                  ) : null}
                 </p>
               </div>
               <div className="match-details">{programTuesday}</div>
@@ -511,18 +661,42 @@ const Program = (props) => {
               <div className="date-container">
                 <p className="date">{wednesdayDay}</p>
                 <p className="month">
-                  {newWednesdayMonth === "01" ? <span>JAN</span> : null}
-                  {newWednesdayMonth === "02" ? <span>FEB</span> : null}
-                  {newWednesdayMonth === "03" ? <span>MAR</span> : null}
-                  {newWednesdayMonth === "04" ? <span>APR</span> : null}
-                  {newWednesdayMonth === "05" ? <span>MAY</span> : null}
-                  {newWednesdayMonth === "06" ? <span>JUN</span> : null}
-                  {newWednesdayMonth === "07" ? <span>JUL</span> : null}
-                  {newWednesdayMonth === "08" ? <span>AUG</span> : null}
-                  {newWednesdayMonth === "09" ? <span>SEP</span> : null}
-                  {newWednesdayMonth === "10" ? <span>OCT</span> : null}
-                  {newWednesdayMonth === "11" ? <span>NOV</span> : null}
-                  {newWednesdayMonth === "12" ? <span>DEC</span> : null}
+                  {newSaturdayMonth === "01" ? (
+                    <span>{languageToUse.jan}</span>
+                  ) : null}
+                  {newSaturdayMonth === "02" ? (
+                    <span>{languageToUse.feb}</span>
+                  ) : null}
+                  {newSaturdayMonth === "03" ? (
+                    <span>{languageToUse.mar}</span>
+                  ) : null}
+                  {newSaturdayMonth === "04" ? (
+                    <span>{languageToUse.apr}</span>
+                  ) : null}
+                  {newSaturdayMonth === "05" ? (
+                    <span>{languageToUse.may}</span>
+                  ) : null}
+                  {newSaturdayMonth === "06" ? (
+                    <span>{languageToUse.june}</span>
+                  ) : null}
+                  {newSaturdayMonth === "07" ? (
+                    <span>{languageToUse.july}</span>
+                  ) : null}
+                  {newSaturdayMonth === "08" ? (
+                    <span>{languageToUse.aug}</span>
+                  ) : null}
+                  {newSaturdayMonth === "09" ? (
+                    <span>{languageToUse.sept}</span>
+                  ) : null}
+                  {newSaturdayMonth === "10" ? (
+                    <span>{languageToUse.oct}</span>
+                  ) : null}
+                  {newSaturdayMonth === "11" ? (
+                    <span>{languageToUse.nov}</span>
+                  ) : null}
+                  {newSaturdayMonth === "12" ? (
+                    <span>{languageToUse.dec}</span>
+                  ) : null}
                 </p>
               </div>
               <div className="match-details">{programWednesday}</div>
@@ -533,18 +707,42 @@ const Program = (props) => {
               <div className="date-container">
                 <p className="date">{thursdayDay}</p>
                 <p className="month">
-                  {newThursdayMonth === "01" ? <span>JAN</span> : null}
-                  {newThursdayMonth === "02" ? <span>FEB</span> : null}
-                  {newThursdayMonth === "03" ? <span>MAR</span> : null}
-                  {newThursdayMonth === "04" ? <span>APR</span> : null}
-                  {newThursdayMonth === "05" ? <span>MAY</span> : null}
-                  {newThursdayMonth === "06" ? <span>JUN</span> : null}
-                  {newThursdayMonth === "07" ? <span>JUL</span> : null}
-                  {newThursdayMonth === "08" ? <span>AUG</span> : null}
-                  {newThursdayMonth === "09" ? <span>SEP</span> : null}
-                  {newThursdayMonth === "10" ? <span>OCT</span> : null}
-                  {newThursdayMonth === "11" ? <span>NOV</span> : null}
-                  {newThursdayMonth === "12" ? <span>DEC</span> : null}
+                  {newSaturdayMonth === "01" ? (
+                    <span>{languageToUse.jan}</span>
+                  ) : null}
+                  {newSaturdayMonth === "02" ? (
+                    <span>{languageToUse.feb}</span>
+                  ) : null}
+                  {newSaturdayMonth === "03" ? (
+                    <span>{languageToUse.mar}</span>
+                  ) : null}
+                  {newSaturdayMonth === "04" ? (
+                    <span>{languageToUse.apr}</span>
+                  ) : null}
+                  {newSaturdayMonth === "05" ? (
+                    <span>{languageToUse.may}</span>
+                  ) : null}
+                  {newSaturdayMonth === "06" ? (
+                    <span>{languageToUse.june}</span>
+                  ) : null}
+                  {newSaturdayMonth === "07" ? (
+                    <span>{languageToUse.july}</span>
+                  ) : null}
+                  {newSaturdayMonth === "08" ? (
+                    <span>{languageToUse.aug}</span>
+                  ) : null}
+                  {newSaturdayMonth === "09" ? (
+                    <span>{languageToUse.sept}</span>
+                  ) : null}
+                  {newSaturdayMonth === "10" ? (
+                    <span>{languageToUse.oct}</span>
+                  ) : null}
+                  {newSaturdayMonth === "11" ? (
+                    <span>{languageToUse.nov}</span>
+                  ) : null}
+                  {newSaturdayMonth === "12" ? (
+                    <span>{languageToUse.dec}</span>
+                  ) : null}
                 </p>
               </div>
               <div className="match-details">{programThursday}</div>
@@ -555,18 +753,42 @@ const Program = (props) => {
               <div className="date-container">
                 <p className="date">{fridayDay}</p>
                 <p className="month">
-                  {newFridayMonth === "01" ? <span>JAN</span> : null}
-                  {newFridayMonth === "02" ? <span>FEB</span> : null}
-                  {newFridayMonth === "03" ? <span>MAR</span> : null}
-                  {newFridayMonth === "04" ? <span>APR</span> : null}
-                  {newFridayMonth === "05" ? <span>MAY</span> : null}
-                  {newFridayMonth === "06" ? <span>JUN</span> : null}
-                  {newFridayMonth === "07" ? <span>JUL</span> : null}
-                  {newFridayMonth === "08" ? <span>AUG</span> : null}
-                  {newFridayMonth === "09" ? <span>SEP</span> : null}
-                  {newFridayMonth === "10" ? <span>OCT</span> : null}
-                  {newFridayMonth === "11" ? <span>NOV</span> : null}
-                  {newFridayMonth === "12" ? <span>DEC</span> : null}
+                  {newSaturdayMonth === "01" ? (
+                    <span>{languageToUse.jan}</span>
+                  ) : null}
+                  {newSaturdayMonth === "02" ? (
+                    <span>{languageToUse.feb}</span>
+                  ) : null}
+                  {newSaturdayMonth === "03" ? (
+                    <span>{languageToUse.mar}</span>
+                  ) : null}
+                  {newSaturdayMonth === "04" ? (
+                    <span>{languageToUse.apr}</span>
+                  ) : null}
+                  {newSaturdayMonth === "05" ? (
+                    <span>{languageToUse.may}</span>
+                  ) : null}
+                  {newSaturdayMonth === "06" ? (
+                    <span>{languageToUse.june}</span>
+                  ) : null}
+                  {newSaturdayMonth === "07" ? (
+                    <span>{languageToUse.july}</span>
+                  ) : null}
+                  {newSaturdayMonth === "08" ? (
+                    <span>{languageToUse.aug}</span>
+                  ) : null}
+                  {newSaturdayMonth === "09" ? (
+                    <span>{languageToUse.sept}</span>
+                  ) : null}
+                  {newSaturdayMonth === "10" ? (
+                    <span>{languageToUse.oct}</span>
+                  ) : null}
+                  {newSaturdayMonth === "11" ? (
+                    <span>{languageToUse.nov}</span>
+                  ) : null}
+                  {newSaturdayMonth === "12" ? (
+                    <span>{languageToUse.dec}</span>
+                  ) : null}
                 </p>
               </div>
               <div className="match-details">{programFriday}</div>
