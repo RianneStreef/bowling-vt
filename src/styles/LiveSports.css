@@ -152,7 +152,7 @@
 }
 
 .program-day {
-  font-size: 40px;
+  font-size: 80%;
   margin: 20px;
   text-transform: uppercase;
   font-weight: 900;
@@ -279,7 +279,7 @@
   }
 
   .program-day {
-    font-size: 80px;
+    font-size: 8vw;
     margin: 100px;
   }
 

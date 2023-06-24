@@ -11,8 +11,6 @@ const Layout = ({ children }) => {
   const [pathname, setPathname] = useState("/");
 
   let day = new Date().getDate();
-
-  let weekday = new Date().getDay();
   let month = new Date().getMonth();
 
   let year = new Date().getYear() + 1900;
@@ -45,7 +43,7 @@ const Layout = ({ children }) => {
     // let week = Math.ceil((currentDate.getDay() + 1 + days) / 7);
 
     setPathname(window.location.href);
-  }, [day, weekday, month, year]);
+  }, [day, month, year]);
 
   const childrenWithProps = React.Children.map(children, (child) =>
     React.cloneElement(child, {
@@ -54,7 +52,6 @@ const Layout = ({ children }) => {
       languageToUse,
       pathname,
       day,
-      weekday,
       newMonth,
       year,
     })
