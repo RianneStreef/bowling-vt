@@ -45,6 +45,10 @@ const WeekProgram = (props) => {
   // console.log(sundayTotal);
 
   const [saturdayDay, setSaturdayDay] = useState();
+
+  console.log("saturdayDay");
+  console.log(saturdayDay);
+
   const [sundayDay, setSundayDay] = useState();
   const [mondayDay, setMondayDay] = useState();
   const [tuesdayDay, setTuesdayDay] = useState();
@@ -53,6 +57,10 @@ const WeekProgram = (props) => {
   const [fridayDay, setFridayDay] = useState();
 
   const [newSaturdayMonth, setNewSaturdayMonth] = useState();
+
+  console.log("newSaturdayMonth");
+  console.log(newSaturdayMonth);
+
   const [newSundayMonth, setNewSundayMonth] = useState();
   const [newMondayMonth, setNewMondayMonth] = useState();
   const [newTuesdayMonth, setNewTuesdayMonth] = useState();
@@ -60,11 +68,10 @@ const WeekProgram = (props) => {
   const [newThursdayMonth, setNewThursdayMonth] = useState();
   const [newFridayMonth, setNewFridayMonth] = useState();
 
-  let firstSaturday = "2023-06-10";
+  let firstSaturday = "2023-05-10";
   let lastFriday = "2023-07-07";
 
-  console.log("saturdayTotal === firstSaturday");
-  console.log(saturdayTotal === firstSaturday);
+  const newSaturday = new Date();
 
   useEffect(() => {
     console.log("useEffect running");
@@ -77,23 +84,38 @@ const WeekProgram = (props) => {
     weekday === 5 ? setDaysFromSaturday(6) : null;
     weekday === 6 ? setDaysFromSaturday(0) : null;
 
-    let saturdayDateCalcul = today.getDate() - daysFromSaturday;
-    let sundayDateCalcul = today.getDate() - daysFromSaturday + 1;
-    let mondayDateCalcul = today.getDate() - daysFromSaturday + 2;
-    let tuesdayDateCalcul = today.getDate() - daysFromSaturday + 3;
-    let wednesdayDateCalcul = today.getDate() - daysFromSaturday + 4;
-    let thursdayDateCalcul = today.getDate() - daysFromSaturday + 5;
-    let fridayDateCalcul = today.getDate() - daysFromSaturday + 6;
+    console.log("today in useEffect");
+    console.log(today);
 
-    saturdayDate.setDate(saturdayDateCalcul);
-    sundayDate.setDate(sundayDateCalcul);
-    mondayDate.setDate(mondayDateCalcul);
-    tuesdayDate.setDate(tuesdayDateCalcul);
-    wednesdayDate.setDate(wednesdayDateCalcul);
-    thursdayDate.setDate(thursdayDateCalcul);
-    fridayDate.setDate(fridayDateCalcul);
+    console.log("today get Date");
+    console.log(
+      typeof saturdayDate.setDate(today.getDate() + daysFromSaturday)
+    );
+    console.log(saturdayDate.setDate(today.getDate() + daysFromSaturday));
+
+    console.log("setting new saturday");
+
+    let todayDate = today.getDate();
+    let newSaturdayCalcul = todayDate + daysFromSaturday;
+
+    newSaturday.setDate(newSaturdayCalcul);
+    setSaturdayDate(newSaturday);
+
+    // saturdayDate.setDate(today.getDate() + daysFromSaturday);
+    sundayDate.setDate(today.getDate() + daysFromSaturday + 1);
+    mondayDate.setDate(today.getDate() + daysFromSaturday + 2);
+    tuesdayDate.setDate(today.getDate() + daysFromSaturday + 3);
+    wednesdayDate.setDate(today.getDate() + daysFromSaturday + 4);
+    thursdayDate.setDate(today.getDate() + daysFromSaturday + 5);
+    fridayDate.setDate(today.getDate() + daysFromSaturday + 6);
 
     console.log(saturdayDate);
+    // console.log(sundayDate);
+    // console.log(mondayDate);
+    // console.log(tuesdayDate);
+    // console.log(wednesdayDate);
+    // console.log(thursdayDate);
+    // console.log(fridayDate);
 
     setSaturdayDay(("0" + saturdayDate.getDate()).slice(-2));
     setSundayDay(("0" + sundayDate.getDate()).slice(-2));
@@ -104,24 +126,14 @@ const WeekProgram = (props) => {
     setFridayDay(("0" + fridayDate.getDate()).slice(-2));
 
     let saturdayMonth = saturdayDate.getMonth() + 1;
-    // setNewSaturdayMonth(
-    //   saturdayMonth.length !== 2 ? "0" + saturdayMonth : saturdayMonth
-    // );
-
-    saturdayMonth === 1 ? setNewSaturdayMonth("01") : null;
-    saturdayMonth === 2 ? setNewSaturdayMonth("02") : null;
-    saturdayMonth === 3 ? setNewSaturdayMonth("03") : null;
-    saturdayMonth === 4 ? setNewSaturdayMonth("04") : null;
-    saturdayMonth === 5 ? setNewSaturdayMonth("05") : null;
-    saturdayMonth === 6 ? setNewSaturdayMonth("06") : null;
-    saturdayMonth === 7 ? setNewSaturdayMonth("07") : null;
-    saturdayMonth === 8 ? setNewSaturdayMonth("08") : null;
-    saturdayMonth === 9 ? setNewSaturdayMonth("09") : null;
-    saturdayMonth === 10 ? setNewSaturdayMonth("10") : null;
-    saturdayMonth === 11 ? setNewSaturdayMonth("11") : null;
-    saturdayMonth === 12 ? setNewSaturdayMonth("12") : null;
+    setNewSaturdayMonth(
+      saturdayMonth.length !== 2 ? "0" + saturdayMonth : saturdayMonth
+    );
 
     console.log("saturdayMonth");
+    console.log(saturdayMonth);
+
+    console.log("newSaturdayMonth");
     console.log(newSaturdayMonth);
 
     let sundayMonth = sundayDate.getMonth() + 1;
@@ -190,18 +202,23 @@ const WeekProgram = (props) => {
       element.classList.add("scale-in");
     }, 5);
     return () => clearTimeout(timer);
-  }, [today]);
+  }, [
+    today,
+    newSaturdayMonth,
+    newSundayMonth,
+    newMondayMonth,
+    newTuesdayMonth,
+    newWednesdayMonth,
+    newThursdayMonth,
+    newFridayMonth,
+  ]);
 
   const newToday = new Date();
 
   function setPreviousWeek() {
     console.log("setting previous week");
-
     let todayDate = today.getDate();
-    let todayLastweekCalcul = todayDate - 7;
-
-    newToday.setDate(todayLastweekCalcul);
-
+    newToday.setDate(todayDate - 7);
     setToday(newToday);
 
     console.log("today");
@@ -209,7 +226,7 @@ const WeekProgram = (props) => {
   }
 
   function setNextWeek() {
-    console.log("setting previous week");
+    console.log("setting next week");
 
     let todayDate = today.getDate();
     let todayNextweekCalcul = todayDate + 7;

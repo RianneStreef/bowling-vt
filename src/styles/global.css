@@ -141,7 +141,11 @@ p {
 
 .disabled-button {
   background-color: grey;
-  transition: background-color 0.3s ease-in;
+}
+
+.disabled-button:hover {
+  background-color: grey;
+  scale: 1;
 }
 
 .reservation-button {

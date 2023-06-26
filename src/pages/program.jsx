@@ -9,7 +9,7 @@ import { content } from "../content/languages";
 
 import phone from "../images/phone.png";
 
-import WeekProgram from "../components/WeekProgram";
+import WeekProgram2 from "../components/WeekProgram2";
 
 const Program = (props) => {
   let { language, languageToUse, pathname, day, newMonth, year, data } = props;
@@ -32,7 +32,7 @@ const Program = (props) => {
         <img src={phone} alt="call button" className="phone-icon" />{" "}
         {languageToUse.reservation}
       </a>
-      <WeekProgram
+      <WeekProgram2
         day={day}
         matches={matches}
         language={language}

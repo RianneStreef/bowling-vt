@@ -31,6 +31,7 @@ const LiveSports1 = (props) => {
     let today = new Date().getDate();
     let tomorrowCalcul = today + 1;
     tomorrow.setDate(tomorrowCalcul);
+    console.log(tomorrow);
 
     let afterTomorrowCalcul = today + 2;
     afterTomorrow.setDate(afterTomorrowCalcul);
