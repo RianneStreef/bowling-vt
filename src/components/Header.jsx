@@ -38,8 +38,8 @@ const Header = (props) => {
           open={open}
           setOpen={setOpen}
           language={language}
-          setLanguage={setLanguage}
           languageToUse={languageToUse}
+          setLanguage={setLanguage}
         />
       </div>
     </div>

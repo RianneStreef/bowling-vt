@@ -2,25 +2,25 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 
-import "../styles/global.css";
+import "../../styles/global.css";
 
-import { content } from "../content/languages";
-import intakeInfo from "../content/intake";
+import { content } from "../../content/languages";
+import intakeInfo from "../../content/intake";
 
-import Hero from "../components/Hero";
-import Intro from "../components/Intro";
-import LiveSports1 from "../components/LiveSports1";
-import LiveSports3 from "../components/LiveSports3";
-import Activities from "../components/Activities";
-import Map from "../components/Map";
+import Hero from "../../components/Hero";
+import Intro from "../../components/Intro";
+import LiveSports1 from "../../components/LiveSports1";
+import LiveSports3 from "../../components/LiveSports3";
+import Activities from "../../components/Activities";
+import Map from "../../components/Map";
 
-import phone from "../images/phone.png";
+import phone from "../../images/phone.png";
 
 const IndexPage = function (props) {
   let { language, languageToUse, currentWeek, day, weekday, newMonth, year } =
     props;
 
-  languageToUse = content.french;
+  languageToUse = content.english;
 
   const { data } = props;
 
@@ -28,7 +28,7 @@ const IndexPage = function (props) {
     <div>
       <Helmet
         htmlAttributes={{
-          lang: "fr",
+          lang: "en",
         }}
       >
         <title>{languageToUse.indexTitle}</title>

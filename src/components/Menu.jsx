@@ -20,13 +20,17 @@ const Menu = (props) => {
   return (
     <ul className="links">
       <li>
-        <Link to="/" className="nav-link" onClick={() => setOpen(!open)}>
-          Accueil
+        <Link
+          to={language === "french" ? "/" : "/en/"}
+          className="nav-link"
+          onClick={() => setOpen(!open)}
+        >
+          {content.french.welcome}
         </Link>
       </li>
       <li>
         <Link
-          to="/#live-sports"
+          to={language === "french" ? "/#live-sports" : "/en/#live-sports"}
           className="nav-link"
           onClick={() => setOpen(!open)}
         >
@@ -35,7 +39,7 @@ const Menu = (props) => {
       </li>
       <li>
         <Link
-          to="/#activities"
+          to={language === "french" ? "/#activities" : "/en/#activities"}
           className="nav-link"
           onClick={() => setOpen(!open)}
         >
@@ -44,7 +48,7 @@ const Menu = (props) => {
       </li>
       <li>
         <Link
-          to="/#contact"
+          to={language === "french" ? "/#contact" : "/en/#contact"}
           className="nav-link"
           onClick={() => setOpen(!open)}
         >
@@ -52,7 +56,8 @@ const Menu = (props) => {
         </Link>
       </li>
       <div className="set-language">
-        <button
+        <Link
+          to="/en/"
           onClick={() => handleSetLanguage("english")}
           className="invisible-button"
         >
@@ -61,8 +66,9 @@ const Menu = (props) => {
             alt="english"
             className={`flag ${language === "english" ? "opaque" : "fade"} `}
           />
-        </button>
-        <button
+        </Link>
+        <Link
+          to="/"
           onClick={() => handleSetLanguage("french")}
           className="invisible-button"
         >
@@ -71,7 +77,7 @@ const Menu = (props) => {
             alt="français"
             className={`flag ${language === "french" ? "opaque" : "fade"} `}
           />
-        </button>
+        </Link>
       </div>
     </ul>
   );

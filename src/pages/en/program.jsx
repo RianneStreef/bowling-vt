@@ -3,18 +3,18 @@ import { graphql } from "gatsby";
 
 import { Helmet } from "react-helmet";
 
-import intakeInfo from "../content/intake";
+import intakeInfo from "../../content/intake";
 
-import { content } from "../content/languages";
+import { content } from "../../content/languages";
 
-import phone from "../images/phone.png";
+import phone from "../../images/phone.png";
 
-import WeekProgram2 from "../components/WeekProgram2";
+import WeekProgram2 from "../../components/WeekProgram2";
 
 const Program = (props) => {
   let { language, languageToUse, pathname, day, newMonth, year, data } = props;
 
-  languageToUse = content.french;
+  languageToUse = content.english;
 
   let matches = data.allContentfulMatch.nodes;
 
@@ -22,7 +22,7 @@ const Program = (props) => {
     <>
       <Helmet
         htmlAttributes={{
-          lang: "fr",
+          lang: "en",
         }}
       >
         <title>{languageToUse.programTitle}</title>
@@ -36,12 +36,10 @@ const Program = (props) => {
         {languageToUse.reservation}
       </a>
       <WeekProgram2
+        day={day}
         matches={matches}
         language={language}
         languageToUse={languageToUse}
-        day={day}
-        newMonth={newMonth}
-        year={year}
       />
     </>
   );

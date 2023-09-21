@@ -15,23 +15,21 @@ const LiveSports1 = (props) => {
 
   let date = `${year}-${newMonth}-${day}`;
 
-  console.log(props);
-
   const [tomorrow, setTomorrow] = useState(new Date());
-  const [afterTomorrow, setafterTomorrow] = useState(new Date());
+  const [afterTomorrow, setAfterTomorrow] = useState(new Date());
 
-  console.log(tomorrow);
   const [tomorrowDay, setTomorrowDay] = useState("01");
   const [tomorrowNewMonth, setTomorrowNewMonth] = useState();
 
   const [afterTomorrowDay, setAfterTomorrowDay] = useState("01");
   const [afterTomorrowNewMonth, setAfterTomorrowNewMonth] = useState();
 
+  const thirdDay = afterTomorrow.getDay();
+
   useEffect(() => {
     let today = new Date().getDate();
     let tomorrowCalcul = today + 1;
     tomorrow.setDate(tomorrowCalcul);
-    console.log(tomorrow);
 
     let afterTomorrowCalcul = today + 2;
     afterTomorrow.setDate(afterTomorrowCalcul);
@@ -74,9 +72,7 @@ const LiveSports1 = (props) => {
   let afterTomorrowYear = afterTomorrow.getYear() + 1900;
 
   let tomorrowDate = `${tomorrowYear}-${tomorrowNewMonth}-${tomorrowDay}`;
-  console.log(tomorrowDate);
   let afterTomorrowDate = `${afterTomorrowYear}-${afterTomorrowNewMonth}-${afterTomorrowDay}`;
-  console.log(afterTomorrowDate);
 
   let matches = data.allContentfulMatch.nodes;
 
@@ -293,6 +289,15 @@ const LiveSports1 = (props) => {
             `}
             >
               <p className="program-day">
+                {thirdDay === 0 ? <span>{languageToUse.sunday}</span> : null}
+                {thirdDay === 1 ? <span>{languageToUse.monday}</span> : null}
+                {thirdDay === 2 ? <span>{languageToUse.tuesday}</span> : null}
+                {thirdDay === 3 ? <span>{languageToUse.wednesday}</span> : null}
+                {thirdDay === 4 ? <span>{languageToUse.thursday}</span> : null}
+                {thirdDay === 5 ? <span>{languageToUse.friday}</span> : null}
+                {thirdDay === 6 ? <span>{languageToUse.saturday}</span> : null}
+              </p>
+              {/* <p className="program-day">
                 {afterTomorrowDay}{" "}
                 <span>
                   {afterTomorrowNewMonth === "01" ? (
@@ -332,7 +337,7 @@ const LiveSports1 = (props) => {
                     <span>{languageToUse.dec}</span>
                   ) : null}
                 </span>
-              </p>
+              </p> */}
 
               <div className="flex-container">
                 <div className="date-container">
@@ -383,9 +388,11 @@ const LiveSports1 = (props) => {
           </div>
         </div>
         <div className="button-container">
-          <Link to="/program" className="button">
-            {languageToUse.weekProgram}
-          </Link>
+          <button className="button">
+            <Link to="/program" className="button">
+              {languageToUse.weekProgram}
+            </Link>
+          </button>
         </div>
       </div>
     </>

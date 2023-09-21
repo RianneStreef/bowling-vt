@@ -1,91 +1,102 @@
 import React, { useEffect, useState } from "react";
 
 import { content } from "../content/languages";
+import { weeks } from "../content/weeks";
 
 const WeekProgram2 = (props) => {
-  let { language, languageToUse, matches } = props;
+  let { language, languageToUse, matches, day, newMonth, year } = props;
 
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
 
-  let firstWeek = 24;
-  let lastWeek = 27;
+  let firstWeek = 1;
+  let lastWeek = 24;
 
-  let currentDate = new Date();
-  let year = new Date(currentDate.getFullYear(), 0, 1);
-  let days = Math.floor((currentDate - year) / (24 * 60 * 60 * 1000));
-  let week = Math.ceil((currentDate.getDay() + 1 + days) / 7);
+  let date = `${year}-${newMonth}-${day}`;
 
-  const [currentWeek, setCurrentWeek] = useState(week);
-  const [datesToUse, setDatesToUse] = useState([
-    "2023-06-10",
-    "2023-06-11",
-    "2023-06-12",
-    "2023-06-13",
-    "2023-06-14",
-    "2023-06-15",
-    "2023-06-16",
-  ]);
+  const [currentWeek, setCurrentWeek] = useState(firstWeek);
+  const [datesToUse, setDatesToUse] = useState(weeks.one);
+
+  console.log("date");
+  console.log(date);
+  console.log("datesToUse");
+  console.log(datesToUse);
+  console.log("currentWeek");
+  console.log(currentWeek);
+
+  // find date in weeks
+  // get key and set datesTuUse with this info
 
   useEffect(() => {
-    currentWeek === 24
-      ? setDatesToUse([
-          "2023-06-10",
-          "2023-06-11",
-          "2023-06-12",
-          "2023-06-13",
-          "2023-06-14",
-          "2023-06-15",
-          "2023-06-16",
-        ])
-      : null;
-
-    currentWeek === 25
-      ? setDatesToUse([
-          "2023-06-17",
-          "2023-06-18",
-          "2023-06-19",
-          "2023-06-20",
-          "2023-06-21",
-          "2023-06-22",
-          "2023-06-23",
-        ])
-      : null;
-    currentWeek === 25
-      ? setDatesToUse([
-          "2023-06-17",
-          "2023-06-18",
-          "2023-06-19",
-          "2023-06-20",
-          "2023-06-21",
-          "2023-06-22",
-          "2023-06-23",
-        ])
-      : null;
-
-    currentWeek === 26
-      ? setDatesToUse([
-          "2023-06-24",
-          "2023-06-25",
-          "2023-06-26",
-          "2023-06-27",
-          "2023-06-28",
-          "2023-06-29",
-          "2023-06-30",
-        ])
-      : null;
-
-    currentWeek === 27
-      ? setDatesToUse([
-          "2023-07-01",
-          "2023-07-02",
-          "2023-07-03",
-          "2023-07-04",
-          "2023-07-05",
-          "2023-07-06",
-          "2023-07-07",
-        ])
-      : null;
+    if (currentWeek === 1) {
+      setDatesToUse(weeks.one);
+    }
+    if (currentWeek === 2) {
+      setDatesToUse(weeks.two);
+    }
+    if (currentWeek === 3) {
+      setDatesToUse(weeks.three);
+    }
+    if (currentWeek === 4) {
+      setDatesToUse(weeks.four);
+    }
+    if (currentWeek === 5) {
+      setDatesToUse(weeks.five);
+    }
+    if (currentWeek === 6) {
+      setDatesToUse(weeks.six);
+    }
+    if (currentWeek === 8) {
+      setDatesToUse(weeks.eight);
+    }
+    if (currentWeek === 9) {
+      setDatesToUse(weeks.nine);
+    }
+    if (currentWeek === 10) {
+      setDatesToUse(weeks.ten);
+    }
+    if (currentWeek === 11) {
+      setDatesToUse(weeks.eleven);
+    }
+    if (currentWeek === 12) {
+      setDatesToUse(weeks.twelve);
+    }
+    if (currentWeek === 13) {
+      setDatesToUse(weeks.thirteen);
+    }
+    if (currentWeek === 14) {
+      setDatesToUse(weeks.fourteen);
+    }
+    if (currentWeek === 15) {
+      setDatesToUse(weeks.fifteen);
+    }
+    if (currentWeek === 16) {
+      setDatesToUse(weeks.sixteen);
+    }
+    if (currentWeek === 17) {
+      setDatesToUse(weeks.seventeen);
+    }
+    if (currentWeek === 18) {
+      setDatesToUse(weeks.eighteen);
+    }
+    if (currentWeek === 19) {
+      setDatesToUse(weeks.nineteen);
+    }
+    if (currentWeek === 20) {
+      setDatesToUse(weeks.twentyOne);
+    }
+    if (currentWeek === 21) {
+      setDatesToUse(weeks.twentyTwo);
+    }
+    if (currentWeek === 22) {
+      setDatesToUse(weeks.twentyTwo);
+    }
+    if (currentWeek === 23) {
+      setDatesToUse(weeks.twentyThree);
+    }
+    if (currentWeek === 24) {
+      setDatesToUse(weeks.twentyFour);
+    }
 
     let element = document.getElementById("live");
     element.classList.remove("scale-in");
@@ -93,19 +104,14 @@ const WeekProgram2 = (props) => {
       element.classList.add("scale-in");
     }, 5);
     return () => clearTimeout(timer);
-  }, [currentWeek]);
-
-  console.log(datesToUse);
-  console.log(currentWeek);
+  }, [currentWeek, datesToUse]);
 
   function setPreviousWeek() {
     setCurrentWeek(currentWeek - 1);
-    console.log(currentWeek);
   }
 
   function setNextWeek() {
     setCurrentWeek(currentWeek + 1);
-    console.log(currentWeek);
   }
 
   const programSaturday = matches
@@ -248,40 +254,40 @@ const WeekProgram2 = (props) => {
             <span>{languageToUse.dec}</span>
           ) : null}{" "}
           - {datesToUse[6].slice(8, 10)}{" "}
-          {datesToUse[0].slice(5, 7) === "01" ? (
+          {datesToUse[6].slice(5, 7) === "01" ? (
             <span>{languageToUse.jan}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "02" ? (
+          {datesToUse[6].slice(5, 7) === "02" ? (
             <span>{languageToUse.feb}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "03" ? (
+          {datesToUse[6].slice(5, 7) === "03" ? (
             <span>{languageToUse.mar}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "04" ? (
+          {datesToUse[6].slice(5, 7) === "04" ? (
             <span>{languageToUse.apr}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "05" ? (
+          {datesToUse[6].slice(5, 7) === "05" ? (
             <span>{languageToUse.may}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "06" ? (
+          {datesToUse[6].slice(5, 7) === "06" ? (
             <span>{languageToUse.june}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "07" ? (
+          {datesToUse[6].slice(5, 7) === "07" ? (
             <span>{languageToUse.july}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "08" ? (
+          {datesToUse[6].slice(5, 7) === "08" ? (
             <span>{languageToUse.aug}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "09" ? (
+          {datesToUse[6].slice(5, 7) === "09" ? (
             <span>{languageToUse.sept}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "10" ? (
+          {datesToUse[6].slice(5, 7) === "10" ? (
             <span>{languageToUse.oct}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "11" ? (
+          {datesToUse[6].slice(5, 7) === "11" ? (
             <span>{languageToUse.nov}</span>
           ) : null}
-          {datesToUse[0].slice(5, 7) === "12" ? (
+          {datesToUse[6].slice(5, 7) === "12" ? (
             <span>{languageToUse.dec}</span>
           ) : null}
         </span>

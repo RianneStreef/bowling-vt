@@ -15,7 +15,7 @@ const Map = (props) => {
   language === "french" ? (languageToUse = content.french) : null;
   return (
     <div className="contact" id="contact">
-      <h2>VENIR AU BOWLING</h2>
+      <h2>{languageToUse.contactTitle}</h2>
       <div className="contact-container">
         <div className="map">
           <div className="google-map-iframe">
