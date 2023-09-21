@@ -14,7 +14,27 @@ const WeekProgram2 = (props) => {
 
   let date = `${year}-${newMonth}-${day}`;
 
-  const [currentWeek, setCurrentWeek] = useState(firstWeek);
+  function findThisWeek() {
+    console.log("finding current week");
+    if (weeks.one.includes(date)) {
+      setCurrentWeek(1);
+    }
+    if (weeks.two.includes(date)) {
+      setCurrentWeek(2);
+    }
+    if (weeks.three.includes(date)) {
+      setCurrentWeek(3);
+    }
+    if (weeks.four.includes(date)) {
+      setCurrentWeek(4);
+    }
+    if (weeks.five.includes(date)) {
+      console.log("setting week to 5");
+      setCurrentWeek(5);
+    }
+  }
+
+  const [currentWeek, setCurrentWeek] = useState(1);
   const [datesToUse, setDatesToUse] = useState(weeks.one);
 
   console.log("date");
@@ -23,11 +43,17 @@ const WeekProgram2 = (props) => {
   console.log(datesToUse);
   console.log("currentWeek");
   console.log(currentWeek);
-
-  // find date in weeks
-  // get key and set datesTuUse with this info
+  console.log("weeks");
+  console.log(weeks);
 
   useEffect(() => {
+    findThisWeek();
+  }, []);
+
+  useEffect(() => {
+    console.log("useEffect running");
+    // Calculate currentWeek here and set it using setThisWeek
+
     if (currentWeek === 1) {
       setDatesToUse(weeks.one);
     }
@@ -41,6 +67,7 @@ const WeekProgram2 = (props) => {
       setDatesToUse(weeks.four);
     }
     if (currentWeek === 5) {
+      console.log("setting dates from week 5");
       setDatesToUse(weeks.five);
     }
     if (currentWeek === 6) {
@@ -107,11 +134,15 @@ const WeekProgram2 = (props) => {
   }, [currentWeek, datesToUse]);
 
   function setPreviousWeek() {
-    setCurrentWeek(currentWeek - 1);
+    if (currentWeek > 1) {
+      setCurrentWeek(currentWeek - 1);
+    }
   }
 
   function setNextWeek() {
-    setCurrentWeek(currentWeek + 1);
+    if (currentWeek < 24) {
+      setCurrentWeek(currentWeek + 1);
+    }
   }
 
   const programSaturday = matches
