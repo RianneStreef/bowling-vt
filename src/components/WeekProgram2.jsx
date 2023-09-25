@@ -29,8 +29,64 @@ const WeekProgram2 = (props) => {
       setCurrentWeek(4);
     }
     if (weeks.five.includes(date)) {
-      console.log("setting week to 5");
       setCurrentWeek(5);
+    }
+    if (weeks.six.includes(date)) {
+      setCurrentWeek(6);
+    }
+    if (weeks.seven.includes(date)) {
+      setCurrentWeek(7);
+    }
+    if (weeks.eight.includes(date)) {
+      setCurrentWeek(8);
+    }
+    if (weeks.nine.includes(date)) {
+      setCurrentWeek(9);
+    }
+    if (weeks.ten.includes(date)) {
+      setCurrentWeek(10);
+    }
+    if (weeks.eleven.includes(date)) {
+      setCurrentWeek(11);
+    }
+    if (weeks.twelve.includes(date)) {
+      setCurrentWeek(12);
+    }
+    if (weeks.thirteen.includes(date)) {
+      setCurrentWeek(13);
+    }
+    if (weeks.fourteen.includes(date)) {
+      setCurrentWeek(14);
+    }
+    if (weeks.fifteen.includes(date)) {
+      setCurrentWeek(15);
+    }
+    if (weeks.sixteen.includes(date)) {
+      setCurrentWeek(16);
+    }
+    if (weeks.seventeen.includes(date)) {
+      setCurrentWeek(17);
+    }
+    if (weeks.eighteen.includes(date)) {
+      setCurrentWeek(18);
+    }
+    if (weeks.nineteen.includes(date)) {
+      setCurrentWeek(19);
+    }
+    if (weeks.twenty.includes(date)) {
+      setCurrentWeek(20);
+    }
+    if (weeks.twentyOne.includes(date)) {
+      setCurrentWeek(21);
+    }
+    if (weeks.twentyTwo.includes(date)) {
+      setCurrentWeek(22);
+    }
+    if (weeks.twentyThree.includes(date)) {
+      setCurrentWeek(23);
+    }
+    if (weeks.twentyFour.includes(date)) {
+      setCurrentWeek(24);
     }
   }
 
