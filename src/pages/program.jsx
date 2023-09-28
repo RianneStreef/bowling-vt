@@ -25,10 +25,9 @@ const Program = (props) => {
           lang: "fr",
         }}
       >
-        <title>{languageToUse.programTitle}</title>
+        <title>{languageToUse.indexTitle}</title>
         <meta name="robots" content="index, follow" />
         <meta name="description" content={languageToUse.metaDescription} />
-        <meta name="keywords" content={languageToUse.metaKeywords} />
         <link rel="canonical" href={intakeInfo.domainName} />
       </Helmet>
       <a href="tel:0033479222557" className="reservation-button">

@@ -34,7 +34,6 @@ const IndexPage = function (props) {
         <title>{languageToUse.indexTitle}</title>
         <meta name="robots" content="index, follow" />
         <meta name="description" content={languageToUse.metaDescription} />
-        <meta name="keywords" content={languageToUse.metaKeywords} />
         <link rel="canonical" href={intakeInfo.domainName} />
         <script
           src="https://cdn2.woxo.tech/a.js#60ca0c172d51e300159c2b7c"

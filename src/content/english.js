@@ -2,16 +2,19 @@ export const english = {
   language: "english",
 
   indexTitle: "Bowling Val Thorens",
-  metaDescription: "Bowling Val Thorens",
-  metaKeywords: "Bowling Val Thorens",
+  metaDescription:
+    "In the centre of the Val Thorens, come and discover the bowling lanes, the game room and the live sport matches.",
 
   welcome: "Welcome",
   reservation: "Reserve",
+  activities: "Activities",
 
   introText1:
-    "Au coeur de la station de Val Thorens, venez decouvrir les différentes activités que vous propose le Bowling de Val Thorens.  ",
-  introText2: `Le Sport's bar 'la Bicicleta' met à votre disposition 8 écrans (jusqu'à 120") et retransmet en "live" tous les évènements sportifs importants.`,
-  openingHours: "Ouvert tous les jours de 12h à 2h.",
+    "In the centre of the Val Thorens, come and discover the various activities offered by the Val Thorens Bowling.",
+  introText2:
+    "'La Bicicleta' Sports Bar offers you 8 screens (up to 120 inches) and broadcasts all major sporting events live, and in the basement, you'll find a large game room.",
+  openingHours:
+    "Open every day from 2 PM to 2 AM and on Saturdays from 10 AM to 2 AM.",
 
   saturday: "Saturday",
   sunday: "Sunday",
@@ -40,42 +43,33 @@ export const english = {
   weekProgram: "program of the week",
 
   activity1Description1:
-    "A votre disposition, 8 pistes de bowling ultra modernes et homologuées QUBICA AMF.",
+    "8 ultra-modern and QUBICA AMF approved bowling lanes at your disposal.",
   activity1Description2:
-    "La nuit, les pistes se dévoilent sous une ambiance fluo. Convivialité assurée !",
-  activity1Description3:
-    "Toutes les pistes sont équipées de barrières pour enfant.",
-  activity1Price1: "Location de chaussures - 2,00 € / personne",
-  activity1Price2: "1 partie de Bowling	- 10,00 € / personne",
+    "At night, the lanes come alive with a fluorescent atmosphere. Guaranteed fun!",
+  activity1Description3: "All lanes are equipped with barriers.",
+  activity1Price1: "1 game of bowling	- 13,00 € / person",
+  activity1Price2: "2 games of bowling	- 20,00 € / person",
 
   activity2Description1:
-    "Tous les jours de l'hiver, les plus beaux événements sportifs sont retransmis en 'live'.",
+    "Every day during the winter, the most exciting sports events are broadcast live.",
   activity2Description2:
-    "Confort assuré au sport's bar 'La Bicicleta' grace aux multiples écrans.",
-  activity2Description3:
-    "Rien d'impossible à 'La Bicicleta'. La technologie moderne des équipements vous permettra de visionner jusqu'à 4 évènement sportif en simultané...",
+    "Comfort is guaranteed at the 'La Bicicleta' sports bar thanks to multiple screens. Nothing is impossible at 'La Bicicleta.' Modern equipment technology allows you to watch up to 4 sports events simultaneously...",
+  activity2Description3: "Mojito party every Monday - Mojito for €8.",
 
   activity3Description1:
-    "Une grande variété de billards pour autant de plaisir s'offrent à vous dans nos deux salles de billards.",
-  activity3Description2: "7 pool anglais (8 ball) de 7 feet",
-  activity3Description3: "1 américain de 9 feet",
+    "A wide variety of billiards for endless enjoyment await you in our two billiards rooms",
+  activity3Description2: "5 english pool tables (8 ball) of 7 feet",
+  activity3Description3: "3 american pool tables of 9 feet",
+  activity3Price1: "1 game of pool	- 4,00 €",
+  activity3Price2: "6 games of pool	- 20,00 €",
 
-  activity4Description1: "De nombreaux jeux sont à votre disposition :",
-  activity4Description2: "Simulateur de F1",
-  activity4Description3: "Jeux vidéos",
+  activity4Description1: "Numerous games are at your disposal:",
+  activity4Description2: "air hockey - foosball - street basket",
+  activity4Description3: "video games - racing games",
 
-  instaTitle: "LAST NEWS",
-  contactTitle: "GET TO THE BOWLING",
+  instaTitle: "LATEST NEWS",
+  contactTitle: "REACH THE BOWLING",
 
-  contact: "Contact",
-  contactText: "Contact intro",
-  name: "Nom",
-  email: "Email",
-  message: "Message",
-  send: "Envoyer",
-
-  thanks: "Merci pour votre message!",
-
-  rights: "Tous droits réservés",
-  legal: "Mentions légales",
+  rights: "All rights reserved",
+  legal: "Disclaimer",
 };

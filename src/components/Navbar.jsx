@@ -68,7 +68,13 @@ const Navbar = (props) => {
   return (
     <div className="nav-bar">
       <Ul open={open}>
-        <Menu open={open} setOpen={setOpen} />
+        <Menu
+          open={open}
+          setOpen={setOpen}
+          language={language}
+          languageToUse={languageToUse}
+          setLanguage={setLanguage}
+        />
       </Ul>
     </div>
   );

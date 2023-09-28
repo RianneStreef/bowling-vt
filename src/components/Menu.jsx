@@ -25,7 +25,7 @@ const Menu = (props) => {
           className="nav-link"
           onClick={() => setOpen(!open)}
         >
-          {content.french.welcome}
+          {languageToUse.welcome}
         </Link>
       </li>
       <li>
@@ -43,7 +43,7 @@ const Menu = (props) => {
           className="nav-link"
           onClick={() => setOpen(!open)}
         >
-          Activitées
+          {languageToUse.activities}
         </Link>
       </li>
       <li>
