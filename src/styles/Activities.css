@@ -60,6 +60,10 @@
   height: 100%;
 }
 
+.activity h2 {
+  text-transform: uppercase;
+}
+
 .active-activity {
   opacity: 100%;
   transition: opacity 1s 0.2s;

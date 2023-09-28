@@ -95,7 +95,7 @@ const Activities = (props) => {
               }
               `}
             >
-              <h2>BILLARDS</h2>
+              <h2>{languageToUse.pool}</h2>
               <div className="activity-description ">
                 <p>{languageToUse.activity3Description1}</p>
                 <p>{languageToUse.activity3Description2}</p>
@@ -112,7 +112,7 @@ const Activities = (props) => {
               }
               `}
             >
-              <h2>SALLE DE JEUX</h2>
+              <h2>{languageToUse.gameRoom}</h2>
               <div className="activity-description ">
                 <p>{languageToUse.activity4Description1}</p>
                 <p>{languageToUse.activity4Description2}</p>

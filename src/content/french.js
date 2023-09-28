@@ -8,6 +8,9 @@ export const french = {
   welcome: "Accueil",
   reservation: "Réserver",
   activities: "Activitées",
+    pool: "Billards",
+    gameRoom: "Salle de Jeux",
+
 
   introText1:
     "Au coeur de la station de Val Thorens, venez decouvrir les différentes activités que vous propose le Bowling de Val Thorens. ",

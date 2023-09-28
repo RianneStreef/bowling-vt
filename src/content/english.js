@@ -8,6 +8,8 @@ export const english = {
   welcome: "Welcome",
   reservation: "Reserve",
   activities: "Activities",
+  pool: "Pool",
+  gameRoom: "Game room",
 
   introText1:
     "In the centre of the Val Thorens, come and discover the various activities offered by the Val Thorens Bowling.",
