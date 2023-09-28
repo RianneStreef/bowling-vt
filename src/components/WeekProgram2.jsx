@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { content } from "../content/languages";
 import { weeks } from "../content/weeks";
 
+import { useSwipeable } from "react-swipeable";
+
 const WeekProgram2 = (props) => {
   let { language, languageToUse, matches, day, newMonth, year } = props;
 
@@ -15,7 +17,6 @@ const WeekProgram2 = (props) => {
   let date = `${year}-${newMonth}-${day}`;
 
   function findThisWeek() {
-    console.log("finding current week");
     if (weeks.one.includes(date)) {
       setCurrentWeek(1);
     }
@@ -93,21 +94,11 @@ const WeekProgram2 = (props) => {
   const [currentWeek, setCurrentWeek] = useState(1);
   const [datesToUse, setDatesToUse] = useState(weeks.one);
 
-  console.log("date");
-  console.log(date);
-  console.log("datesToUse");
-  console.log(datesToUse);
-  console.log("currentWeek");
-  console.log(currentWeek);
-  console.log("weeks");
-  console.log(weeks);
-
   useEffect(() => {
     findThisWeek();
   }, []);
 
   useEffect(() => {
-    console.log("useEffect running");
     // Calculate currentWeek here and set it using setThisWeek
 
     if (currentWeek === 1) {
@@ -123,7 +114,6 @@ const WeekProgram2 = (props) => {
       setDatesToUse(weeks.four);
     }
     if (currentWeek === 5) {
-      console.log("setting dates from week 5");
       setDatesToUse(weeks.five);
     }
     if (currentWeek === 6) {
@@ -389,7 +379,15 @@ const WeekProgram2 = (props) => {
           &gt;
         </button>
       </div>
-      <div className="program program-coded" id="live">
+      <div
+        className="program program-coded"
+        id="live"
+        {...useSwipeable({
+          onSwipedRight: () => setPreviousWeek(),
+          onSwipedLeft: () => setNextWeek(),
+          preventScrollOnSwipe: true,
+        })}
+      >
         <div className="week-program-info">
           <div className="flex-container">
             <div className="date-container">
