@@ -6,6 +6,8 @@ import { content } from "../content/languages";
 
 import Menu from "../components/Menu";
 
+import logo from "../images/logo.png";
+
 const Ul = styled.ul`
   list-style: none;
   display: flex;
@@ -68,6 +70,7 @@ const Navbar = (props) => {
   return (
     <div className="nav-bar">
       <Ul open={open}>
+        <img src={logo} alt="" className="menu-logo" />
         <Menu
           open={open}
           setOpen={setOpen}
