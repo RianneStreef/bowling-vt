@@ -27,6 +27,7 @@ const Consent = (props) => {
   const handleAcceptCookie = () => {
     // initGA("G-4TERKF4HKD");
     initGA("G-3SGWJBYLLZ");
+    initGA("G-4TERKF4HKD");
   };
 
   const handleDeclineCookie = () => {
