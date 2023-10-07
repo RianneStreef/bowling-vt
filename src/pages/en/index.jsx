@@ -14,6 +14,8 @@ import LiveSports3 from "../../components/LiveSports3";
 import Activities from "../../components/Activities";
 import Map from "../../components/Map";
 
+import Consent from "../../components/Consent";
+
 import phone from "../../images/phone.png";
 
 const IndexPage = function (props) {
@@ -41,6 +43,8 @@ const IndexPage = function (props) {
           data-usrc
         ></script>
       </Helmet>
+      <Consent language={language} languageToUse={languageToUse} />
+
       <a href="tel:0033479222557" className="reservation-button">
         <img src={phone} alt="call button" className="phone-icon" />{" "}
         {languageToUse.reservation}

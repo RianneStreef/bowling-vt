@@ -10,6 +10,7 @@ import { content } from "../../content/languages";
 import phone from "../../images/phone.png";
 
 import WeekProgram2 from "../../components/WeekProgram2";
+import Consent from "../../components/Consent";
 
 const Program = (props) => {
   let { language, languageToUse, pathname, day, newMonth, year, data } = props;
@@ -30,6 +31,8 @@ const Program = (props) => {
         <meta name="description" content={languageToUse.metaDescription} />
         <link rel="canonical" href={intakeInfo.domainName} />
       </Helmet>
+      <Consent language={language} languageToUse={languageToUse} />
+
       <a href="tel:0033479222557" className="reservation-button">
         <img src={phone} alt="call button" className="phone-icon" />{" "}
         {languageToUse.reservation}

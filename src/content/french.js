@@ -8,9 +8,8 @@ export const french = {
   welcome: "Accueil",
   reservation: "Réserver",
   activities: "Activitées",
-    pool: "Billards",
-    gameRoom: "Salle de Jeux",
-
+  pool: "Billards",
+  gameRoom: "Salle de Jeux",
 
   introText1:
     "Au coeur de la station de Val Thorens, venez decouvrir les différentes activités que vous propose le Bowling de Val Thorens. ",
@@ -71,6 +70,11 @@ export const french = {
 
   instaTitle: "DERNIERES ACTUS",
   contactTitle: "VENIR AU BOWLING",
+
+  cookieHeader: "NOUS RESPECTONS VOTRE VIE PRIVEE!",
+  cookieText: "Ce site web utilise des cookies pour analyser notre trafic.",
+  cookieAccept: "J'accepte !",
+  cookieDecline: "Je refuse..",
 
   rights: "Tous droits réservés",
   legal: "Mentions légales",
