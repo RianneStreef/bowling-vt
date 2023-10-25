@@ -157,7 +157,7 @@ p {
   background-color: var(--color-highlight);
   color: var(--color-text-dark);
   padding: 10px;
-  z-index: 999;
+  z-index: 998;
   text-decoration: none;
   text-transform: uppercase;
   display: flex;

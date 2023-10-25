@@ -1,9 +1,10 @@
 .cookie-text-header {
-  font-size: 30px;
+  font-size: 20px;
   margin: 5px;
 }
 .cookie-text {
   margin: 5px;
+  font-size: 20px;
 }
 
 #rcc-decline-button {
@@ -25,4 +26,14 @@
 
 .CookieConsent button {
   font-family: "Archivo" !important;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .cookie-text-header {
+    font-size: 30px;
+  }
+  .cookie-text {
+    font-size: 30px;
+  }
 }
