@@ -11,12 +11,15 @@ const WeekProgram2 = (props) => {
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
 
-  let firstWeek = 1;
+  let firstWeek = 0;
   let lastWeek = 24;
 
   let date = `${year}-${newMonth}-${day}`;
 
   function findThisWeek() {
+    if (weeks.zero.includes(date)) {
+      setCurrentWeek(0);
+    }
     if (weeks.one.includes(date)) {
       setCurrentWeek(1);
     }
@@ -91,8 +94,8 @@ const WeekProgram2 = (props) => {
     }
   }
 
-  const [currentWeek, setCurrentWeek] = useState(1);
-  const [datesToUse, setDatesToUse] = useState(weeks.one);
+  const [currentWeek, setCurrentWeek] = useState(0);
+  const [datesToUse, setDatesToUse] = useState(weeks.zero);
 
   useEffect(() => {
     findThisWeek();
@@ -101,6 +104,9 @@ const WeekProgram2 = (props) => {
   useEffect(() => {
     // Calculate currentWeek here and set it using setThisWeek
 
+    if (currentWeek === 0) {
+      setDatesToUse(weeks.zero);
+    }
     if (currentWeek === 1) {
       setDatesToUse(weeks.one);
     }
@@ -180,7 +186,7 @@ const WeekProgram2 = (props) => {
   }, [currentWeek, datesToUse]);
 
   function setPreviousWeek() {
-    if (currentWeek > 1) {
+    if (currentWeek > 0) {
       setCurrentWeek(currentWeek - 1);
     }
   }
