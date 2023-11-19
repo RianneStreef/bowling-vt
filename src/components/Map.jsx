@@ -6,6 +6,7 @@ import { content } from "../content/languages";
 
 import location from "../images/location.png";
 import telephone from "../images/telephone.png";
+import whatsapp from "../images/whatsapp.png";
 import email from "../images/at.png";
 
 const Map = (props) => {
@@ -28,26 +29,26 @@ const Map = (props) => {
           </div>
         </div>
         <div className="contact-text hidden-mobile">
-          <div>
+          <div className="contact-block">
             <img src={location} alt="" className="contact-icon" />
 
             <p className="address">Place de l'Arche</p>
             <p className="address">Grand Rue</p>
             <p className="address"> Val Thorens</p>
           </div>
-          <p>
-            <img src={telephone} alt="" className="contact-icon" />
+          <div className="contact-block">
+            <img src={whatsapp} alt="" className="contact-icon" />
             <br />
-            <a href="tel:0033479222557"> +33479222557</a>
-          </p>
+            <p className="address">+33 7 89 63 06 87</p>
+          </div>
 
-          <p>
+          {/* <p>
             <img src={email} alt="" className="contact-icon" />
             <br />
             <a href="mailto:bowling.valthorens@orange.fr">
               bowling.valthorens@orange.fr
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
