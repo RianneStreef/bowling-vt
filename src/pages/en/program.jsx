@@ -49,7 +49,7 @@ const Program = (props) => {
 
 export const matchQuery = graphql`
   query matchesQuery {
-    allContentfulMatch {
+    allContentfulMatch(sort: { time: ASC }) {
       nodes {
         category
         id

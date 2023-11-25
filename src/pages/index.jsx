@@ -71,7 +71,7 @@ const IndexPage = function (props) {
 
 export const matchQuery = graphql`
   query matchQuery {
-    allContentfulMatch {
+    allContentfulMatch(sort: { time: ASC }) {
       nodes {
         category
         id

@@ -16,6 +16,8 @@ const WeekProgram2 = (props) => {
 
   let date = `${year}-${newMonth}-${day}`;
 
+  console.log(matches);
+
   function findThisWeek() {
     if (weeks.zero.includes(date)) {
       setCurrentWeek(0);
