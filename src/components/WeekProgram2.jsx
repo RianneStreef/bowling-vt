@@ -127,6 +127,9 @@ const WeekProgram2 = (props) => {
     if (currentWeek === 6) {
       setDatesToUse(weeks.six);
     }
+    if (currentWeek === 7) {
+      setDatesToUse(weeks.seven);
+    }
     if (currentWeek === 8) {
       setDatesToUse(weeks.eight);
     }
