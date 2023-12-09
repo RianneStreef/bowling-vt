@@ -14,9 +14,39 @@ const WeekProgram2 = (props) => {
   let firstWeek = 0;
   let lastWeek = 24;
 
+  if ((day = 1)) {
+    day = "01";
+  }
+  if ((day = 2)) {
+    day = "02";
+  }
+  if ((day = 3)) {
+    day = "03";
+  }
+  if ((day = 4)) {
+    day = "04";
+  }
+  if ((day = 5)) {
+    day = "05";
+  }
+  if ((day = 6)) {
+    day = "06";
+  }
+  if ((day = 7)) {
+    day = "07";
+  }
+  if ((day = 8)) {
+    day = "08";
+  }
+  if ((day = 9)) {
+    day = "09";
+  }
+
   let date = `${year}-${newMonth}-${day}`;
 
   console.log(matches);
+
+  const [currentWeek, setCurrentWeek] = useState(0);
 
   function findThisWeek() {
     if (weeks.zero.includes(date)) {
@@ -94,13 +124,15 @@ const WeekProgram2 = (props) => {
     if (weeks.twentyFour.includes(date)) {
       setCurrentWeek(24);
     }
+    console.log(currentWeek);
   }
 
-  const [currentWeek, setCurrentWeek] = useState(0);
   const [datesToUse, setDatesToUse] = useState(weeks.zero);
 
   useEffect(() => {
     findThisWeek();
+    console.log(date);
+    console.log(weeks.three[0]);
   }, []);
 
   useEffect(() => {
