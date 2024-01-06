@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/Hero.css";
 import { content } from "../content/languages";
 
-import heroVideo from "../images/intro-movie.mp4";
+import heroVideo from "../images/intro-movie-small.mp4";
 
 const Hero = (props) => {
   let { language, languageToUse } = props;
