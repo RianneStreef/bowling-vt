@@ -148,7 +148,7 @@
   margin: var(--margin-mobile);
   background-color: #000;
   overflow: hidden;
-  min-height: 800px;
+  min-height: 1200px;
 }
 
 .program-day {
