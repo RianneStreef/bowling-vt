@@ -13,7 +13,18 @@ const LiveSports1 = (props) => {
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
 
+  day === 1 ? (day = "01") : null;
+  day === 2 ? (day = "02") : null;
+  day === 3 ? (day = "03") : null;
+  day === 4 ? (day = "04") : null;
+  day === 5 ? (day = "05") : null;
+  day === 6 ? (day = "06") : null;
+  day === 7 ? (day = "07") : null;
+  day === 8 ? (day = "08") : null;
+  day === 9 ? (day = "09") : null;
+
   let date = `${year}-${newMonth}-${day}`;
+  console.log(date);
 
   const [tomorrow, setTomorrow] = useState(new Date());
   const [afterTomorrow, setAfterTomorrow] = useState(new Date());
