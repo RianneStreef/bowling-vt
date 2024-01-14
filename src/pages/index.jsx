@@ -49,7 +49,7 @@ const IndexPage = function (props) {
         {languageToUse.reservation}
       </a>
       <div className="header-placeholder-mobile" />
-      <Hero language={language} languageToUse={languageToUse} />
+      <Hero language={language} languageToUse={languageToUse} data={data} />
       <Intro language={language} languageToUse={languageToUse} />
       <LiveSports1
         language={language}
@@ -78,6 +78,15 @@ export const matchQuery = graphql`
         match
         dateTime
         time
+      }
+    }
+    allContentfulVideo {
+      edges {
+        node {
+          video {
+            url
+          }
+        }
       }
     }
   }

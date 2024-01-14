@@ -3,18 +3,20 @@ import React from "react";
 import "../styles/Hero.css";
 import { content } from "../content/languages";
 
-import heroVideo from "../images/intro-movie-small.mp4";
-
 const Hero = (props) => {
-  let { language, languageToUse } = props;
+  let { language, languageToUse, data } = props;
 
   language === "english" ? (languageToUse = content.english) : null;
   language === "french" ? (languageToUse = content.french) : null;
 
+  let video = data.allContentfulVideo.edges[0].node.video.url;
+
+  console.log(data.allContentfulVideo.edges[0].node.video.url);
+
   return (
     <div className="hero">
       <video id="background-video" autoPlay muted playsInline loop>
-        <source src={heroVideo} type="video/mp4" />
+        <source src={video} type="video/mp4" />
       </video>
     </div>
   );
