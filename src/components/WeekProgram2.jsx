@@ -199,10 +199,10 @@ const WeekProgram2 = (props) => {
       setDatesToUse(weeks.nineteen);
     }
     if (currentWeek === 20) {
-      setDatesToUse(weeks.twentyOne);
+      setDatesToUse(weeks.twenty);
     }
     if (currentWeek === 21) {
-      setDatesToUse(weeks.twentyTwo);
+      setDatesToUse(weeks.twentyOne);
     }
     if (currentWeek === 22) {
       setDatesToUse(weeks.twentyTwo);
