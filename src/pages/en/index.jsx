@@ -38,9 +38,8 @@ const IndexPage = function (props) {
         <meta name="description" content={languageToUse.metaDescription} />
         <link rel="canonical" href={intakeInfo.domainName} />
         <script
-          src="https://cdn2.woxo.tech/a.js#60ca0c172d51e300159c2b7c"
+          src="https://static.elfsight.com/platform/platform.js"
           async
-          data-usrc
         ></script>
       </Helmet>
       <Consent language={language} languageToUse={languageToUse} />

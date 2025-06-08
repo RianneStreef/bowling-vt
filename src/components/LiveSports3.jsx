@@ -18,8 +18,8 @@ const LiveSports1 = (props) => {
         <h2>{languageToUse.instaTitle}</h2>
         <div>
           <div
-            className="insta-feed"
-            data-mc-src="421b6f6d-e3df-4773-ac79-83a19f0692c2#instagram"
+            class="elfsight-app-5d0dc641-523b-4576-84f7-31216c74c37c"
+            data-elfsight-app-lazy
           ></div>
         </div>
       </div>
