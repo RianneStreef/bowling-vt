@@ -14,7 +14,7 @@ export const french = {
   introText1:
     "Au coeur de la station de Val Thorens, venez decouvrir les différentes activités que vous propose le Bowling de Val Thorens. ",
   introText2: `Le Sport's bar 'la Bicicleta' met à votre disposition 8 écrans (jusqu'à 120") et retransmet en "live" tous les évènements sportifs importants, et au sous-sol vous trouvez une grande salle de jeux.`,
-  openingHours: "Ouvert tous les jours de 14h à 2h et les samedis de 10h à 2h.",
+  openingHours: "Ouvert tous les jours de 16h à 2h et les samedis de 10h à 2h.",
 
   saturday: "Samedi",
   sunday: "Dimanche",

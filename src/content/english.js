@@ -16,7 +16,7 @@ export const english = {
   introText2:
     "'La Bicicleta' Sports Bar offers you 8 screens (up to 120 inches) and broadcasts all major sporting events live, and in the basement, you'll find a large game room.",
   openingHours:
-    "Open every day from 2 PM to 2 AM and on Saturdays from 10 AM to 2 AM.",
+    "Open every day from 4 PM to 2 AM and on Saturdays from 10 AM to 2 AM.",
 
   saturday: "Saturday",
   sunday: "Sunday",
